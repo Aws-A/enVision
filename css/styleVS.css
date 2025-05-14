@@ -1,0 +1,353 @@
+body {
+    font-family: Avenir;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #378CCB;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 400;
+    color: #378CCB;
+    margin-top: -1%;
+    margin-left: 0%;
+    white-space: nowrap;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 300;
+    color: #000000;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #F8F8F8;
+    background-color: #378CCB;
+    padding: 2%;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #575757;
+    border-bottom: 1px solid #575757;
+    padding: 2%;
+}
+
+p {
+    font-size: 19px;
+    color: #000000;
+}
+
+header {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    background-image: url("../images/headerBackground.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 40%;
+    margin-top: -0.5%;
+    margin-left: -0.5%;
+}
+
+.logo img{
+    margin-left: 1%;
+    width: 33%;
+}
+
+form  {
+    display: flex;
+    width: 115%;
+    height: 50%;
+    margin-top: 6%;
+    margin-right: 5%;
+}
+
+header h2 {
+    margin-top: 7%;
+    margin-right: 4%;
+}
+
+
+button {
+    width: 15%;
+    height: 38%;
+    margin-top: 1.5%;
+    background-color: #378CCB;
+    border: 1px solid #378CCB;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.searchButton img{
+    width: 80%;
+}
+
+input {
+    width: 100%;
+    height: 38%;
+    margin-top: 1.5%;
+    border: 1px solid #378CCB;
+    border-radius: 0px 5px 5px 0px;
+}
+
+input::placeholder {
+    font-size: 20px;
+    padding: 2%;
+}
+
+.topics {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    margin-top: -22%;
+    margin-left: 15%;
+    padding-top: 7%;
+    padding-left: 40%;
+    width: 630px;
+    height: 750px;
+    background-color: rgba(55, 140, 203, 0.25);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+
+.topicsTag {
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    margin-top: 38%;
+    margin-left: 3%;
+    width: 125px;
+    height: 30px;
+    color: #FFFFFF;
+    background-color:  #378CCB;
+    border: 1px solid  #378CCB;
+    border-radius: 25px 25px 25px 25px;
+}
+
+.topicsTag:hover {
+    color: #0C507A;
+    background-color: #ffffff; /* Change the background color when clicked */
+    border-color: #ffffff; /* Change the border color if needed */
+}
+
+.topicsTag.clicked {
+    background-color: #0C507A; /* Change the background color when clicked */
+    border-color: #0C507A; /* Change the border color if needed */
+    pointer-events: none;
+}
+
+.subTopics {
+    display: none;
+    margin-top: -22%;
+    margin-left: 15%;
+}
+
+.subTopics .topicsTag:hover {
+    color: #396DC9;
+    background-color:  #ffffff;
+    border: 1px solid  #396DC9;
+}
+
+.subTopics .topicsTag {
+    background-color:  #709CE8;
+    border: 1px solid  #709CE8;
+}
+
+.subTopics .topicsTag.clicked {
+    background-color: #396DC9; /* Change the background color when clicked */
+    border-color: #396DC9; /* Change the border color if needed */
+    pointer-events: none;
+}
+
+.subTopicsSoc {
+    display: none;
+    margin-top: -22%;
+    margin-left: 15%;
+}
+
+.subTopicsSoc .topicsTag {
+    background-color:  #709CE8;
+    border: 1px solid  #709CE8;
+}
+
+.subTopicsSoc .topicsTag:hover {
+    color: #396DC9;
+    background-color:  #ffffff;
+    border: 1px solid  #396DC9;
+}
+
+.subTopicsSoc .topicsTag.clicked {
+    background-color:  #396DC9;
+    border: 1px solid  #396DC9;
+}
+
+.subTopicsGeo {
+    display: none;
+    margin-top: -22%;
+    margin-left: 15%;
+}
+
+.subTopicsGeo .topicsTag {
+    background-color:  #709CE8;
+    border: 1px solid  #709CE8;
+}
+
+.subTopicsGeo .topicsTag:hover {
+    color: #396DC9;
+    background-color:  #ffffff;
+    border: 1px solid  #396DC9;
+}
+
+.subTopicsGeo .topicsTag.clicked {
+    background-color:  #396DC9;
+    border: 1px solid  #396DC9;
+}
+
+#map {
+    position: absolute;
+    z-index: -4;
+    margin-top: 0%;
+    margin-bottom: -15%;
+}
+
+.st0{
+    fill:#DDDDDD;
+    stroke:#F8F8F8;
+    stroke-width:1;
+    stroke-miterlimit:9.9998;
+}
+
+.list {
+    display: none;
+    position: relative;
+    margin-top: -55%;
+    font-size: 25px;
+    color: #575757;
+}
+
+.listButton {
+    position: relative;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: rgba(55, 140, 203);
+    border: 1px solid rgba(55, 140, 203);
+    border-radius: 5px 5px 0px 0px;
+    width: 100px;
+    height: 27px;
+    margin-left: 19%;
+    z-index: 4;
+}
+
+.listButton:hover {
+    background-color: #1370aa;
+}
+
+.titleP {
+    margin-top: 0px;
+}
+
+.title {
+    width: 375px;
+    height: 75px;
+    background-color: #0C507A;
+    margin-bottom: 1%;
+}
+
+.title h3 {
+    color: #F8F8F8;
+    font-size: 33px;
+    font-weight: 400;
+    padding-top: 4%;
+}
+
+.statBar {
+    display: flex;
+    width: 375px;
+    height: 50px;
+    background-color: rgba(55, 140, 203, 0.5);
+    margin-bottom: 0.5%;
+    overflow: hidden;
+    animation: expandWidth 1s forwards;
+}
+
+.collapse {
+    animation: collapseWidth 1s forwards;
+}
+
+@keyframes expandWidth {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 375px;
+    }
+}
+
+@keyframes collapseWidth {
+    0% {
+        width: 375px;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.num {
+    background-color:  #378CCB;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
+}
+
+.num h3 {
+    color: #F8F8F8;
+    margin-top: 14%;
+    padding-right: 17%;
+}
+
+.country {
+    width: 225px;
+}
+
+.per {
+    background-color: #F8F8F8;
+    width: 90px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 30% 100%);
+}
+
+.per h3 {
+    color: #575757;
+    margin-top: 14%;
+    padding-left: 17%;
+}
+
+footer {
+    display: none;
+    font-family: Avenir;
+    font-size: 22px;
+    color: #575757;
+    margin-top: 20%;
+    margin-bottom: 2%;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+footer img {
+    height: 33%;
+}
+
+.socials {
+    text-align: center;
+    margin-top: 1.5%;
+}

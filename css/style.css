@@ -1,0 +1,123 @@
+.logo img{
+    width: 17%;
+}
+
+.up {
+    display: flex;
+}
+
+.up .cirV {
+    margin-top: 2%;
+    margin-left: 12%;
+}
+
+.cirV {
+    width: 500px;
+    display: flex;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease; 
+}
+
+.circle, .logoV, button {
+    flex-shrink: 0;
+}
+
+.logoV {
+    margin-top: 8%;
+    margin-left: -20%;
+}
+
+.logoG{
+    width: 66%;
+    height: 77%;
+}
+
+.logoO {
+    width: 66%;
+    height: 77%;
+}
+
+.logoB {
+    width: 66%;
+    height: 200%;
+
+}
+
+#cirO {
+    margin-left: 14%;
+}
+
+.down {
+    margin-top: 5%;
+    margin-bottom: -5%;
+    margin-left: 38%;
+}
+
+button {
+    display: none;
+    position: relative;
+    width: 333px;
+    height: 50px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 29%;
+    margin-left: -80%;
+    border: none;
+    font-family: Avenir;
+    font-size: 25px;
+}
+
+#btnG {
+    margin-left: -121%;
+    margin-top: 44%;
+}
+
+#btnB {
+    margin-left: -120%;
+    margin-top: 44%;
+}
+
+#btnG:hover {
+    background-color: #37B651;
+    color: #FFFFFF;
+}
+
+#btnO:hover {
+    background-color: #F36F40;
+    color: #FFFFFF;
+}
+
+#btnB:hover {
+    background-color: #378CCB ;
+    color: #FFFFFF;
+}
+
+.content a {
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    font-family: Avenir;
+    font-size: 22px;
+    color: #272727;
+    margin-top: 12%;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+footer img {
+    height: 33%;
+}
+
+.socials {
+    text-align: center;
+    margin-top: 1.5%;
+}
