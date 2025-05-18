@@ -26,3 +26,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".arti img");
+
+  images.forEach((img) => {
+    console.log("Found image:", img);
+
+    if (img.complete) {
+      console.log("Image is already loaded:", img.src);
+      applyMargin(img);
+    } else {
+      img.onload = () => {
+        console.log("Image loaded later:", img.src);
+        applyMargin(img);
+      };
+      img.onerror = () => {
+        console.error("Failed to load image:", img.src);
+      };
+    }
+  });
+
+  function applyMargin(img) {
+    const width = img.naturalWidth;
+    const height = img.naturalHeight;
+
+    console.log("Image dimensions:", width, height);
+
+    if (height > width) {
+      img.style.marginTop = "-25%";
+      console.log("Applied portrait margin");
+    } else if (width > height) {
+      img.style.marginTop = "-10%";
+      console.log("Applied landscape margin");
+    } else {
+      img.style.marginTop = "-15%";
+      console.log("Applied square image margin");
+    }
+  }
+});
