@@ -1,5 +1,6 @@
 body {
     font-family: Avenir;
+    background: url('../images/background.png') no-repeat center center fixed;
 }
 
 h1 {
