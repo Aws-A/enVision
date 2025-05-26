@@ -657,7 +657,7 @@ function showCri() {
     document.querySelector('.country10').textContent = "Jamaica";
     document.querySelector('.per10').textContent = "67.42";
     document.querySelector("path#Venezuela.st0").style.fill="#5DAAE3";
-    document.querySelector("path#	Papua-New-Guinea.st0").style.fill="#5DAAE3";
+    document.querySelector("path#Papua-New-Guinea.st0").style.fill="#5DAAE3";
     document.querySelector("path#South-Africa.st0").style.fill="#5DAAE3";
     document.querySelector("path#Afghanistan.st0").style.fill="#5DAAE3";
     document.querySelector("path#Honduras.st0").style.fill="#5DAAE3";
