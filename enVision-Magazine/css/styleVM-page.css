@@ -230,5 +230,400 @@ footer img {
     margin-top: 1.5%;
 }
 
-.socials img {
+/* Show menu icon and hide nav links on small screens */
+@media (max-width: 500px) {
+  #menu-icon {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
+
+/* Hide mobile menu by default */
+#mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px; /* adjust as needed */
+  right: 10px;
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Style the links */
+#mobile-menu a {
+  text-decoration: none;
+  padding: 10px 0;
+  color: #333;
+}
+
+/* Media Query: 500px to 800px */
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  header {
+       height: 12%;
+  }
+  .logo img{
+       width: 60%;
+   }
+   nav {
+       margin-top: -3.5%;
+   }
+   nav a {
+        font-size: 17px;
+   }
+   form {
+       width: 500%;
+   }
+   .searchButton img {
+       width: 150%;
+   }
+  .allContent {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  /* Use :nth-of-type to target the structure without changing HTML */
+  .allContent > .list,
+  .allContent > .articles {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .allContent > .list {
+    width: 40%;
+    float: left;
+    box-sizing: border-box;
+  }
+
+  .allContent > .articles {
+    width: 60%;
+    float: right;
+    box-sizing: border-box;
+  }
+
+  .allContent > .stories {
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .stories .str {
+    flex: 1 1 calc(50% - 10px); /* 2 per row */
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .stories .strTop {
+    flex: 1 1 100%;
+  }
+  footer p {
+    font-size: 15px;
+  }
+  footer img {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 719px) and (max-width: 721px) {
+  header {
+       height: 15%;
+       margin-left: -1%;
+       margin-top: -1%;
+  }
+  .logo img{
+       width: 60%;
+   }
+   nav {
+       margin-top: -4.5%;
+   }
+   form {
+       width: 500%;
+   }
+   .searchButton img {
+       width: 150%;
+   }
+  .allContent {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (min-width: 539px) and (max-width: 668px) {
+  header {
+       height: 15%;
+       width: 102%;
+       margin-top: -2%;
+       margin-left: -2%;
+       padding: 1%;
+  }
+  .logo img{
+       width: 50%;
+   }
+   nav {
+       margin-top: -4.5%;
+   }
+   nav a {
+    margin-left: -5%;
+    margin-top: 10%;
+    padding: 15px;
+   }
+   form {
+       width: 500%;
+   }
+   .searchButton img {
+       width: 150%;
+   }
+  .allContent {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  footer {
+    font-size: 14px;
+  }
+  footer img {
+    height: 20%;
+  }
+  footer p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (width: 667px) {
+    header {
+        height: 25%;
+        padding: 2%;
+    }
+}
+
+/* Media Query: Mobile (≤500px) */
+@media screen and (max-width: 500px) {
+   header {
+    height: 10%;
+    margin-top: -2%;
+    margin-left: -2%;
+   }
+  .logo img{
+       width: 60%;
+   }
+   form {
+       width: 500%;
+   }
+   .searchButton img {
+       width: 150%;
+   }
+    #menu-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        margin: 10px;
+    }
+   
+   nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    right: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+   }
+
+  .allContent {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .stories {
+    margin-left: -1%;
+  }
+
+  /* Use :nth-of-type to target the structure without changing HTML */
+  .allContent > .list,
+  .allContent > .articles {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .allContent > .list {
+    width: 40%;
+    float: left;
+    box-sizing: border-box;
+  }
+
+  .allContent > .articles {
+    width: 60%;
+    float: right;
+    box-sizing: border-box;
+  }
+
+  .allContent > .stories {
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .stories .str {
+    flex: 1 1 calc(50% - 10px); /* 2 per row */
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .stories .strTop {
+    flex: 1 1 100%;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer img {
+    width: 7%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+    header {
+        width: 106%;
+    }
+    .stories {
+        margin-left: -5%;
+    }
+}
+
+@media screen and (width: 1024px) {
+    nav {
+        margin-top: -2.5%;
+    }
+    form {
+        width: 150%;
+    }
+    .searchButton img {
+        width: 150%;
+    }
+    
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 990px) {
+    header {
+        height: 30%;
+        width: 101%;
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+    nav {
+       margin-top: -3%;
+    }
+    form {
+        width: 250%;
+    }
+    .searchButton img {
+        width: 150%;
+    }
+    .logo img {
+        width: 50%;
+    }
+    .allContent {
+        width: 95%;
+    }
+}
+
+@media screen and (width: 1024px) and (height: 768px) {
+    header {
+        width: 101%;
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+}
+
+@media screen and (min-width: 730px) and (max-width: 750px) {
+    header {
+        height: 25%;
+        width: 102%;
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+}
+
+
+@media screen and (width: 912px) and (height: 1368px) {
+    header {
+        height: 12%;
+    }
+    form {
+        width: 250%;
+    }
+    .logo img{
+       width: 60%;
+    }
+}
+
+@media screen and (width: 1024px) and (height: 1366px) {
+    header {
+        height: 12%;
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+    .allContent {
+        width: 95%;
+    }
+    form {
+        width: 250%;
+    }
+    .logo img{
+       width: 60%;
+    }
+}
+
+@media screen and (width: 820px) {
+    header {
+       height: 12%;
+    }
+    .logo img{
+       width: 60%;
+    }
+    nav {
+       margin-top: -2.5%;
+    }
+}
+
+@media screen and (width: 853px) and (height: 1280px) {
+    header {
+       height: 12%;
+    }
+    .logo img{
+       width: 60%;
+    }
+    nav {
+       margin-top: -2.5%;
+    }
+}
+
+@media screen and (width: 1280px) {
+    header {
+        margin-left: 0%;
+    }
 }
