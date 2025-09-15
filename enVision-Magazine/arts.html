@@ -14,23 +14,31 @@
              <div class="logo">
                 <img src="images/enVisionG.png">
             </div>
+            <img src="images/menu.png" id="menu-icon" alt="Menu">
             <nav>
                 <a href="enVisionMagazine.html"> Home </a>
                 <a href="about.html"> About </a>
                 <a href="#contact"> Contact </a>
             </nav>
-            <form>
+            <form action="search.html" method="get">
                 <button type="submit" class="searchButton"> <img src="images/searchIcon.svg"></button>
                 <input type="text" name="query" placeholder="Search...">
             </form>
        </header>
 
+<!-- Hidden menu content -->
+<div id="mobile-menu">
+    <a href="enVisionMagazine.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#contact">Contact</a>
+</div>
+
 <h2> Digital Magazine for diverse topics </h2>
 <section class="allContent">
     <div class="list">
         <h4> Humanities </h4>
-            <a href="spirituality&philosohoy.html"><h5> Spirituality & Philosophy </h5></a>
-            <a href="languages.html"><h5> Langauges </h5></a>
+            <a href="spirituality&philosophy.html"><h5> Spirituality & Philosophy </h5></a>
+            <a href="languages.html"><h5> Languages </h5></a>
             <a href="history.html"><h5> History </h5></a>
             <a href="geography.html"><h5> Geography </h5></a>
             <a href="politics.html"><h5> Politics </h5></a>
@@ -39,7 +47,7 @@
             <a href="biology.html"><h5> Biology </h5></a>
             <a href="health.html"><h5> Health </h5></a>
             <a href="chemistry.html"><h5> Chemistry </h5></a>
-            <a href="Mathematics.html"><h5> Mathematics </h5></a>
+            <a href="mathematics.html"><h5> Mathematics </h5></a>
             <a href="physics.html"><h5> Physics </h5></a>
             <a href="astronomy.html"><h5> Astronomy </h5></a>
             <a href="technology.html"><h5> Technology </h5></a>
@@ -68,23 +76,55 @@
             <h3> Beethoven Best Moment </h3>
             <p>
              Ludwig van Beethoven, the renowned composer and pianist, had numerous significant moments and… <br>
-             <a href="enVisionMagazine-page2.html">See More</a>
+             <a href="enVisionMagazine-a2.html">See More</a>
             </p> 
         </div>
         <div class="arti">
-            <div class="tag">Asrt</div>
+            <div class="tag">Arts</div>
             <img src="images/surrealism.jpeg">
             <h3> Surrealism Beginnings </h3>
             <p>
               Surrealism began in the early 1920s, born from the ashes of World War I and shaped by Dadaism’s rejection of reason… <br>
-              <a href="enVisionMagazine-a2.html">See More</a>
+              <a href="enVisionMagazine-a3.html">See More</a>
             </p>
+        </div>
+        <div class="arti">
+            <div class="tag">Arts</div>
+            <img src="images/romanticism.jpg">
+            <h3> The Romanticism Era in Art </h3>
+            <p>
+              The Romanticism era, spanning the late 18th to mid-19th centuries, celebrated emotion, imagination, and nature over… <br>
+              <a href="enVisionMagazine-a4.html">See More</a>
+            </p>
+        </div>
+        <div class="arti">
+            <div class="tag">Arts</div>
+            <img src="images/bauhaus.jpg">
+            <h3> The Bauhaus Effect  </h3>
+            <p>
+             Founded in Germany in 1919 by Walter Gropius, the Bauhaus school revolutionized art, design, and architecture… <br>
+              <a href="enVisionMagazine-a5.html">See More</a>
+            </p>
+        </div>
+        <!-- Pagination -->
+        <div id="pagination" style="display: flex; align-items: center; gap: 10px;">
+            <button id="prevPage" class="prevPage1" style="background: none; border: none; cursor: pointer;">
+                <img id="prevImg" src="images/previous.png" alt="Previous" style="width: 30px; height: 30px;">
+            </button>
+            <!-- Page number in a circle -->
+            <div id="pageNumber" >
+                1
+            </div>
+            <!-- Next button as image -->
+            <button id="nextPage" style="background: none; border: none; cursor: pointer;">
+                <img id="nextImg" src="images/next.png" alt="Next" style="width: 30px; height: 30px;">
+            </button>
         </div>
     </div>
 
     <div class="stories">
         <h1 class="storiesTitle"> Top Stories</h1>
-        <a href="enVisionMagazine-top.html" onclick="localStorage.setItem('activeStory', 'charles-dickens');" style="text-decoration: none; color: inherit;">
+        <a href="enVisionMagazine-l3.html" onclick="localStorage.setItem('activeStory', 'charles-dickens');" style="text-decoration: none; color: inherit;">
             <div class="str strTop" data-id="charles-dickens">
                 <h3> Charles Dickens </h3>
                 <p> 
@@ -92,7 +132,7 @@
                 </p> 
             </div>
         </a>
-        <a href="enVisionMagazine-top2.html" onclick="localStorage.setItem('activeStory', 'light-speed');" style="text-decoration: none; color: inherit;">
+        <a href="enVisionMagazine-py3.html" onclick="localStorage.setItem('activeStory', 'light-speed');" style="text-decoration: none; color: inherit;">
             <div class="str strR" data-id="light-speed">
                 <h3> Light Speed </h3>
                 <p> 
@@ -100,7 +140,7 @@
                 </p>  
             </div>
         </a>
-        <a href="enVisionMagazine-top3.html" onclick="localStorage.setItem('activeStory', 'bees-life');" style="text-decoration: none; color: inherit;">
+        <a href="enVisionMagazine-b3.html" onclick="localStorage.setItem('activeStory', 'bees-life');" style="text-decoration: none; color: inherit;">
             <div class="str strR" data-id="bees-life"> 
                 <h3> Bees Life </h3>
                 <p> 
@@ -116,14 +156,86 @@
 <footer>
 <p> Copyright innovi 2022 -2024 </p>
 <div class="socials">
-    <img src="images/facebook.png" >
-    <img src="images/twitter.png" >
+    <img src="images/facebookHover.png" >
+    <img src="images/x.png" >
     <img src="images/youtube.png" >
 </div>
 <p> info.-envision@innovi.com </p>
 </footer>
 
 <!-- Footer -->
+<script type="module">
 
+const nextBtn = document.getElementById("nextPage");
+const pageNumber = document.getElementById("pageNumber");
+
+let lastVisibleDocs = {};   
+let currentPage = 1;
+const pageSize = 5;
+
+
+// --- Next button ---
+nextBtn.addEventListener("click", () => {
+  if (currentPage === 1) {
+    loadArticles(2);
+  } else {
+    loadArticles(currentPage + 1);
+  }
+});
+
+
+// --- Hover effects for arrows ---
+
+const nextImg = document.getElementById("nextImg");
+nextImg.addEventListener("mouseenter", () => nextImg.src = "images/nextHover.png");
+nextImg.addEventListener("mouseleave", () => nextImg.src = "images/next.png");
+
+// Navigate to arts2.html on click
+nextImg.addEventListener("click", () => {
+    window.location.href = "arts2.html";
+});
+
+const pagination = document.getElementById("pagination");
+const pageNumberDiv = document.getElementById("pageNumber");
+
+function createPages() {
+    pageNumberDiv.innerHTML = ""; // clear old
+
+    for (let i = 1; i <= 2; i++) {
+        const page = document.createElement("div");
+        page.textContent = i;
+        page.style.cssText = `
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; cursor: pointer;
+            margin: 0 5px;
+            background-color: ${i === currentPage ? "#35B851" : "rgba(248,248,248,0.75)"};
+            color: ${i === currentPage ? "white" : "black"};
+        `;
+
+        page.addEventListener("click", () => {
+            currentPage = i;
+            createPages();
+
+            if (currentPage === 1) {
+                // stay on the same page
+                // show static articles
+                staticArticles.forEach(div => div.style.display = "block");
+                articlesContainer.innerHTML = "";
+            } else if (currentPage === 2) {
+                // navigate to arts2.html
+                window.location.href = "arts2.html";
+            }
+        });
+
+        pageNumberDiv.appendChild(page);
+    }
+}
+
+// initialize pages
+createPages();
+
+</script>
 	</body>
 </html>
