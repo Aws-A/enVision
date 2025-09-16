@@ -188,205 +188,203 @@ p {
     <div id="results"></div>
 
     <script type="module">
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyB_aEQJrZILdy2JYl6HbLwT43myJhVJH6g",
-        authDomain: "envision-ed5f3.firebaseapp.com",
-        projectId: "envision-ed5f3",
-        storageBucket: "envision-ed5f3.appspot.com",
-        messagingSenderId: "202691344541",
-        appId: "1:202691344541:web:2f6c93e7f5138adf127c74",
-        measurementId: "G-3NB50YD8F0"
-    };
+        const firebaseConfig = {
+            apiKey: "AIzaSyB_aEQJrZILdy2JYl6HbLwT43myJhVJH6g",
+            authDomain: "envision-ed5f3.firebaseapp.com",
+            projectId: "envision-ed5f3",
+            storageBucket: "envision-ed5f3.appspot.com",
+            messagingSenderId: "202691344541",
+            appId: "1:202691344541:web:2f6c93e7f5138adf127c74",
+            measurementId: "G-3NB50YD8F0"
+        };
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-    const params = new URLSearchParams(window.location.search);
-    const query = params.get("query")?.toLowerCase() || "";
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get("query")?.toLowerCase() || "";
 
-    const resultsDiv = document.getElementById("results");
+        // ✅ Set <h1> text dynamically
+        const heading = document.querySelector(".articles h1");
+        if (query) {
+        heading.textContent = `Search Results for "${query}"`;
+        } else {
+        heading.textContent = "Search Results";
+        }
 
-    const topicCollectionMap = {
-        "geography": "geography-articles",
-        "history": "history-articles",
-        "languages": "languages-articles",
-        "biology": "biology-articles",
-        "health": "health-articles",
-        "technology": "technology-articles",
-        "sports": "sports-articles",
-        "hobbies": "hobbies-articles",
-        "travel": "travel-articles",
-        "food": "food-articles",
-        "spirituality & philosophy": "spirituality&philosophy-articles",
-        "politics": "politics-articles",
-        "arts": "arts-articles",
-        "chemistry": "chemistry-articles",
-        "mathematics": "mathematics-articles",
-        "physics": "physics-articles",
-        "astronomy": "astronomy-articles",
-        "social sciences": "social-articles",
-        "economics": "economics-articles",
-        "geography": "geography1-articles",
-        "history": "history1-articles",
-        "languages": "languages1-articles",
-        "biology": "biology1-articles",
-        "health": "health1-articles",
-        "technology": "technology1-articles",
-        "sports": "sports1-articles",
-        "hobbies": "hobbies1-articles",
-        "travel": "travel1-articles",
-        "food": "food1-articles",
-        "spirituality & philosophy": "spirituality&philosophy1-articles",
-        "politics": "politics1-articles",
-        "arts": "arts1-articles",
-        "chemistry": "chemistry1-articles",
-        "mathematics": "mathematics1-articles",
-        "physics": "physics1-articles",
-        "astronomy": "astronomy1-articles",
-        "social sciences": "social1-articles",
-        "economics": "economics1-articles",
-    };
+        const resultsDiv = document.getElementById("results");
 
-    async function searchArticles() {
-        let allArticles = [];
+        const topicCollectionMap = {
+            "geography": ["geography-articles", "geography1-articles"],
+            "history": ["history-articles", "history1-articles"],
+            "languages": ["languages-articles", "languages1-articles"],
+            "biology": ["biology-articles", "biology1-articles"],
+            "health": ["health-articles", "health1-articles"],
+            "technology": ["technology-articles", "technology1-articles"],
+            "sports": ["sports-articles", "sports1-articles"],
+            "hobbies": ["hobbies-articles", "hobbies1-articles"],
+            "travel": ["travel-articles", "travel1-articles"],
+            "food": ["food-articles", "food1-articles"],
+            "spirituality & philosophy": ["spirituality&philosophy-articles", "spirituality&philosophy1-articles"],
+            "politics": ["politics-articles", "politics1-articles"],
+            "arts": ["arts-articles", "arts1-articles"],
+            "chemistry": ["chemistry-articles", "chemistry1-articles"],
+            "mathematics": ["mathematics-articles", "mathematics1-articles"],
+            "physics": ["physics-articles", "physics1-articles"],
+            "astronomy": ["astronomy-articles", "astronomy1-articles"],
+            "social sciences": ["social-articles", "social1-articles"],
+            "economics": ["economics-articles", "economics1-articles"],
+        };
 
-        // fetch all articles
-        for (const topic in topicCollectionMap) {
-            const colName = topicCollectionMap[topic];
-            const snapshot = await getDocs(collection(db, colName));
-            snapshot.forEach(doc => {
-                const data = doc.data();
-                    allArticles.push({
-                        id: doc.id,
-                        collection: colName,
-                        title: data.title || "",
-                        body: data.body || "",
-                        topic: data.topic || topic,
-                        imageUrl: data.imageUrl || "images/magazine.png",
-                        link: data.link || `article.html?id=${doc.id}&collection=${colName}` // 👈 use Firebase link if available
+        async function searchArticles() {
+            let allArticles = [];
+
+            // fetch all articles
+            for (const topic in topicCollectionMap) {
+                const colNames = topicCollectionMap[topic]; // now an array
+                for (const colName of colNames) {
+                    const snapshot = await getDocs(collection(db, colName));
+                    snapshot.forEach(doc => {
+                        const data = doc.data();
+                        allArticles.push({
+                            id: doc.id,
+                            collection: colName,
+                            title: data.title || "",
+                            body: data.body || "",
+                            topic: data.topic || topic,
+                            imageUrl: data.imageUrl || "images/magazine.png",
+                            link: data.link || null // keep null if no Firebase link
+                        });
                     });
+                }
+            }
+
+            const filtered = allArticles.filter(a =>
+                a.title.toLowerCase().includes(query) ||
+                a.body.toLowerCase().includes(query) ||
+                a.topic.toLowerCase().includes(query)
+            );
+
+            resultsDiv.innerHTML = "";
+
+            if (!query) {
+                resultsDiv.innerHTML = "<p>Please type something in the search box.</p>";
+                return;
+            } else if (filtered.length === 0) {
+                resultsDiv.innerHTML = "<p>No results found.</p>";
+                return;
+            }
+
+            // dynamically create HTML like your static .arti
+            filtered.forEach(a => {
+                const artiDiv = document.createElement("div");
+                artiDiv.className = "arti";
+
+                const tagDiv = document.createElement("div");
+                tagDiv.className = "tag";
+                tagDiv.textContent = a.topic;
+
+                const img = document.createElement("img");
+                img.src = a.imageUrl;
+
+                const h3 = document.createElement("h3");
+                h3.textContent = a.title;
+
+                const p = document.createElement("p");
+                const words = (a.body || "").split(" ").slice(0, 15).join(" ");
+                
+                // decide link: Firebase link or internal article page
+                const link = a.link 
+                    ? `<a href="${a.link}" target="_blank">See More</a>`
+                    : `<a href="enVisionMagazine-article.html?id=${a.id}&collection=${encodeURIComponent(a.collection)}">See More</a>`;
+
+                p.innerHTML = `${words}${(a.body && a.body.split(" ").length > 15 ? "..." : "")} <br> ${link}`;
+
+                artiDiv.append(tagDiv, img, h3, p);
+                resultsDiv.appendChild(artiDiv);
             });
         }
 
-        const filtered = allArticles.filter(a =>
-            a.title.toLowerCase().includes(query) ||
-            a.body.toLowerCase().includes(query) ||
-            a.topic.toLowerCase().includes(query)
-        );
+        searchArticles();
 
-        resultsDiv.innerHTML = "";
+        // js/indexVM.js
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("indexVM.js loaded ✅");
 
-        if (!query) {
-            resultsDiv.innerHTML = "<p>Please type something in the search box.</p>";
-            return;
-        } else if (filtered.length === 0) {
-            resultsDiv.innerHTML = "<p>No results found.</p>";
-            return;
-        }
+            const resultsDiv = document.getElementById("results");
 
-        // dynamically create HTML like your static .arti
-        filtered.forEach(a => {
-            const artiDiv = document.createElement("div");
-            artiDiv.className = "arti";
-
-            const tagDiv = document.createElement("div");
-            tagDiv.className = "tag";
-            tagDiv.textContent = a.topic;
-
-            const img = document.createElement("img");
-            img.src = a.imageUrl;
-
-            const h3 = document.createElement("h3");
-            h3.textContent = a.title;
-
-            const p = document.createElement("p");
-            p.innerHTML = `${a.body.substring(0, 150)}... <br> <a href="${a.link}">See More</a>`;
-
-            artiDiv.append(tagDiv, img, h3, p);
-            resultsDiv.appendChild(artiDiv);
-        });
-    }
-
-    searchArticles();
-
-// js/indexVM.js
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("indexVM.js loaded ✅");
-
-    const resultsDiv = document.getElementById("results");
-
-    // Apply margin to all current images
-    const initialImages = resultsDiv.querySelectorAll(".arti img");
-    initialImages.forEach((img) => {
-        if (img.complete) {
-            applyMargin(img);
-        } else {
-            img.onload = () => applyMargin(img);
-        }
-    });
-
-    // Watch for new images being added dynamically
-    const observer = new MutationObserver(() => {
-        const images = resultsDiv.querySelectorAll(".arti img");
-        images.forEach((img) => {
-            if (!img.dataset.adjusted) {
+            // Apply margin to all current images
+            const initialImages = resultsDiv.querySelectorAll(".arti img");
+            initialImages.forEach((img) => {
                 if (img.complete) {
                     applyMargin(img);
                 } else {
                     img.onload = () => applyMargin(img);
-                    img.onerror = () =>
-                        console.error("Image failed:", img.src);
+                }
+            });
+
+            // Watch for new images being added dynamically
+            const observer = new MutationObserver(() => {
+                const images = resultsDiv.querySelectorAll(".arti img");
+                images.forEach((img) => {
+                    if (!img.dataset.adjusted) {
+                        if (img.complete) {
+                            applyMargin(img);
+                        } else {
+                            img.onload = () => applyMargin(img);
+                            img.onerror = () =>
+                                console.error("Image failed:", img.src);
+                        }
+                    }
+                });
+            });
+
+            observer.observe(resultsDiv, { childList: true, subtree: true });
+
+            // Create image with fallback
+            function createArticleImage(article, artiDiv) {
+                const img = document.createElement("img");
+                img.src = article.imageUrl || "images/magazine.png";
+
+                img.onerror = () => {
+                    img.src = "images/magazine.png";
+                };
+
+                artiDiv.appendChild(img);
+
+                if (img.complete) {
+                    applyMargin(img);
+                } else {
+                    img.addEventListener("load", () => applyMargin(img));
                 }
             }
+
+            // Margin logic
+            function applyMargin(img) {
+                if (img.dataset.adjusted) return;
+
+                const width = img.naturalWidth;
+                const height = img.naturalHeight;
+
+                if (height > width) {
+                    img.style.marginTop = "-27%";
+                    console.log("portrait applied:", img.src);
+                } else if (width > height) {
+                    img.style.marginTop = "-10%";
+                    console.log("landscape applied:", img.src);
+                } else {
+                    img.style.marginTop = "-15%";
+                    console.log("square applied:", img.src);
+                }
+
+                img.dataset.adjusted = "true";
+            }
         });
-    });
-
-    observer.observe(resultsDiv, { childList: true, subtree: true });
-
-    // Create image with fallback
-    function createArticleImage(article, artiDiv) {
-        const img = document.createElement("img");
-        img.src = article.imageUrl || "images/magazine.png";
-
-        img.onerror = () => {
-            img.src = "images/magazine.png";
-        };
-
-        artiDiv.appendChild(img);
-
-        if (img.complete) {
-            applyMargin(img);
-        } else {
-            img.addEventListener("load", () => applyMargin(img));
-        }
-    }
-
-    // Margin logic
-    function applyMargin(img) {
-        if (img.dataset.adjusted) return;
-
-        const width = img.naturalWidth;
-        const height = img.naturalHeight;
-
-        if (height > width) {
-            img.style.marginTop = "-27%";
-            console.log("portrait applied:", img.src);
-        } else if (width > height) {
-            img.style.marginTop = "-10%";
-            console.log("landscape applied:", img.src);
-        } else {
-            img.style.marginTop = "-15%";
-            console.log("square applied:", img.src);
-        }
-
-        img.dataset.adjusted = "true";
-    }
-});
-
     </script>
+
 </div>
 
     <div class="stories">
