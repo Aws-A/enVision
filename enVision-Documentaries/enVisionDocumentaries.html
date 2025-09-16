@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> enVisionMagazine </title>
+<title> enVision Documentaries </title>
 <link href="css/styleVD.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/indexVD.js"></script>
 </head>
@@ -15,24 +15,34 @@
                 <div class="logo">
                     <img src="images/enVisionO.png">
                 </div>
+                <img src="images/menu.png" id="menu-icon" alt="Menu">
                 <nav>
-                    <a href="enVisionMagazine.html"> Home </a>
+                    <a href="enVisionDocumentaries.html"> Home </a>
                     <a href="about.html"> About </a>
                     <a href="#contact"> Contact </a>
                 </nav>
-                <form>
+                <form action="search.html" method="get">
                     <button type="submit" class="searchButton"> <img src="images/searchIcon.svg"></button>
                     <input type="text" name="query" placeholder="Search...">
                 </form>
             </div>
-            <h2 class="title"> Your Favourites </h2>
+            <h1 class="title"> Your Favourites </h1>
             <div class="favourites">
                 <img src="images/favourite1.png" class="fav1"/>
-                <img src="images/favourite2.png" class="fav2"/>
+                <img src="images/favourite2.png" class="fav2" onclick="location.href='videoPage2.html'" style="cursor: pointer;"/>
                 <img src="images/favourite3.png" class="fav3"/>
                 <img src="images/favourite4.png" class="fav4"/>
+                <img src="images/favourite5.png" class="fav5" onclick="location.href='videoPage.html'" style="cursor: pointer;"/>
             </div>
        </header>
+
+        <!-- Hidden menu content -->
+        <div id="mobile-menu">
+            <a href="enVisionMagazine.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
        <section class="allContent">
             <div class="views">
                 <h3> Most Views </h3>
@@ -58,8 +68,8 @@
 <footer id="contact">
 <p> Copyright innovi 2022 -2024 </p>
 <div class="socials">
-    <img src="images/facebook.png" >
-    <img src="images/twitter.png" >
+    <img src="images/facebookHover.png" >
+    <img src="images/x.png" >
     <img src="images/youtube.png" >
 </div>
 <p> info.-envision@innovi.com </p>
