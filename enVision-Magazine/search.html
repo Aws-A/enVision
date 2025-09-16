@@ -259,15 +259,15 @@ p {
             const snapshot = await getDocs(collection(db, colName));
             snapshot.forEach(doc => {
                 const data = doc.data();
-                allArticles.push({
-                    id: doc.id,
-                    collection: colName,
-                    title: data.title || "",
-                    body: data.body || "",
-                    topic: data.topic || topic,
-                    imageUrl: data.imageUrl || "images/magazine.png",
-                    link: `article.html?id=${doc.id}&collection=${colName}`
-                });
+                    allArticles.push({
+                        id: doc.id,
+                        collection: colName,
+                        title: data.title || "",
+                        body: data.body || "",
+                        topic: data.topic || topic,
+                        imageUrl: data.imageUrl || "images/magazine.png",
+                        link: data.link || `article.html?id=${doc.id}&collection=${colName}` // 👈 use Firebase link if available
+                    });
             });
         }
 
