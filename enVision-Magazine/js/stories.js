@@ -15,7 +15,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// List all your article collections
 const articleCollections = [
   "geography-articles","geography1-articles",
   "history-articles","history1-articles",
@@ -62,15 +61,12 @@ async function loadTopStories() {
     return;
   }
 
-  // Sort by likes descending, stable sort
-  allArticles.sort((a, b) => b.likes - a.likes);
-
-  // Take top 3
+  allArticles.sort((a, b) => b.likes - a.likes); // sort by likes
   const top3 = allArticles.slice(0, 3);
 
-  // Clear old HTML
   storiesDiv.innerHTML = `<h1 class="storiesTitle"> Top Stories </h1>`;
 
+  // Append top 3 stories
   top3.forEach((story, index) => {
     const preview = story.body.split(" ").slice(0, 10).join(" ") + "...";
     const storyDiv = document.createElement("a");
@@ -85,7 +81,17 @@ async function loadTopStories() {
     `;
     storiesDiv.appendChild(storyDiv);
   });
+
+  // Append the "Write Your Article.." link once, after all stories
+  const writeLink = document.createElement("a");
+  writeLink.href = "writing-article.html";
+  writeLink.style = "text-decoration: none; color: inherit;";
+  writeLink.innerHTML = `
+    <div class="str strR">
+      <h3>Write Your Article..</h3>
+    </div>
+  `;
+  storiesDiv.appendChild(writeLink);
 }
 
-// Load top stories
 document.addEventListener("DOMContentLoaded", loadTopStories);

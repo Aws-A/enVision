@@ -80,6 +80,10 @@ a{
     text-decoration: none;
 }
 
+h3 a:active{
+  color: #35B851;
+}
+
 #menu-icon {
   width: 32px;
   cursor: pointer;
