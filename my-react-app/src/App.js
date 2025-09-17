@@ -39,7 +39,7 @@ function App() {
       </list>
     </content>
     <footer>
-      <p>Copyright innovi 2022 - 2024</p>
+      <p>Copyright innovi 2022 - 2025</p>
       <div className="socials">
         <img src={facebook} alt="icons"/>
         <img src={twitter}alt="icons"/>

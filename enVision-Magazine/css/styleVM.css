@@ -598,6 +598,14 @@ nav {
             display: flex; 
   }
 
+.facebookIcon , .xIcon{
+  width: 12%;
+}
+
+.youtubeIcon {
+  width: 12%;
+}
+
 /* Show menu icon and hide nav links on small screens */
 @media (max-width: 500px) {
   #menu-icon {
