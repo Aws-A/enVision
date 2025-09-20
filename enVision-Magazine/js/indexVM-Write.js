@@ -54,7 +54,8 @@ window.addEventListener("DOMContentLoaded", () => {
  document.getElementById("saveArticle").addEventListener("click", async () => {
     const topic = document.getElementById("topic-select").value;
     const title = document.getElementById("articleTitle").value.trim();
-    const body = document.getElementById("articleBody").value.trim();
+    let body = document.getElementById("articleBody").value.trim();
+    body = body.replace(/\n/g, "<br>");  // 👈 key line
     const file = imageInput.files[0];
 
     if (!title || !body || !topic) {
@@ -108,11 +109,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const rawTopic = document.getElementById("topic-select").value;
         const normalizedTopic = normalize(rawTopic); // for lookup
-        const topic = toTitleCase(rawTopic); // for saving/display
+        const displayTopic = toTitleCase(rawTopic); // for saving/display
         const collectionName = topicCollectionMap[normalizedTopic] || "general-articles";
 
         await addDoc(collection(db, collectionName), {
-          topic, // Saved like "Arts", "Social Sciences"
+          displayTopic, // Saved like "Arts", "Social Sciences"
           title,
           body,
           imageUrl,

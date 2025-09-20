@@ -76,7 +76,7 @@ async function loadTopStories() {
       <div class="str ${index === 0 ? "strTop" : "strR"}" data-id="${story.id}">
         <h3>${story.title}</h3>
         <p>${preview} <br>
-        <a href="${story.link}" style="color:#35B851;font-weight:bold;">See More</a></p>
+        <a href="${story.link}" style="color:#35B851;font-weight:bold;">Read More</a></p>
       </div>
     `;
     storiesDiv.appendChild(storyDiv);

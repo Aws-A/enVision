@@ -119,6 +119,10 @@ input {
     height: 33.5px;
 }
 
+#articleImage {
+  border-radius: 5px;
+}
+
 .specialButton {
     height: 37.5px;
 }

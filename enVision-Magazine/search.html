@@ -61,7 +61,7 @@ p {
 
 .arti {
     position: relative;
-    width: 150%;
+    width: 160%;
     padding: 2% 2% 5% 5%;
     margin-bottom: 55%;
     box-sizing: border-box;
@@ -298,8 +298,8 @@ p {
                 
                 // decide link: Firebase link or internal article page
                 const link = a.link 
-                    ? `<a href="${a.link}" target="_blank">See More</a>`
-                    : `<a href="enVisionMagazine-article.html?id=${a.id}&collection=${encodeURIComponent(a.collection)}">See More</a>`;
+                    ? `<a href="${a.link}" target="_blank">Read More</a>`
+                    : `<a href="enVisionMagazine-article.html?id=${a.id}&collection=${encodeURIComponent(a.collection)}">Read More</a>`;
 
                 p.innerHTML = `${words}${(a.body && a.body.split(" ").length > 15 ? "..." : "")} <br> ${link}`;
 

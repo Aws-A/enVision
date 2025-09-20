@@ -217,7 +217,7 @@ img.addEventListener("load", () => {
   const words = (article.body || '').split(' ').slice(0, 15).join(' ');
   const collectionName = "sports-articles"; // same collection you queried
   p.innerHTML = `${words}${(article.body && article.body.split(' ').length > 15 ? '...' : '')} <br>
-  <a href="enVisionMagazine-article.html?id=${doc.id}&collection=${encodeURIComponent(collectionName)}">See More</a>`;
+  <a href="enVisionMagazine-article.html?id=${doc.id}&collection=${encodeURIComponent(collectionName)}">Read More</a>`;
   artiDiv.appendChild(p);
 
   // Append article to container
