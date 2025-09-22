@@ -119,10 +119,6 @@ input {
     height: 33.5px;
 }
 
-#articleImage {
-  border-radius: 5px;
-}
-
 .specialButton {
     height: 37.5px;
 }
@@ -537,11 +533,12 @@ nav {
   border: none;
 }
 
-#articleImage {
+#articleImageUrl {
   width: 95%;
   height: 3%;
   margin-bottom: -10%;
   padding: 2%;
+  border-radius: 5px;
   z-index: 1000;
 }
 

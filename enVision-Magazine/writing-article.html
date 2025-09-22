@@ -94,9 +94,9 @@
                 </optgroup>
                 </select>
             </div>
-            <!-- Image Upload -->
-            <label for="articleImage"><strong>Upload Image:</strong></label><br>
-            <input type="file" id="articleImage" accept="image/*"><br><br>
+            <!-- Image URL -->
+            <label for="articleImageUrl"><strong>Image URL:</strong></label><br>
+            <input type="text" id="articleImageUrl" placeholder="https://example.com/image.jpg"><br><br>
             <img id="previewImage" src="" style="display:none; width:200px;"><br><br>
 
             <!-- Title Input -->
@@ -156,19 +156,21 @@
 <p> info.-envision@innovi.com </p>
 </footer>
 
-<!-- Footer -->
+    <!-- Footer -->
     <script>
-    const articleImageInput = document.getElementById("articleImage");
+    const imageUrlInput = document.getElementById("articleImageUrl");
     const previewImage = document.getElementById("previewImage");
 
-    articleImageInput.addEventListener("change", (event) => {
-        console.log("Clicked!");
-        const file = event.target.files[0];
-        if (file) {
-        previewImage.src = URL.createObjectURL(file);
+    // Show preview when user pastes/edits a link
+    imageUrlInput.addEventListener("input", () => {
+    const url = imageUrlInput.value.trim();
+    if (url) {
+        previewImage.src = url;
         previewImage.style.display = "block";
-        console.log("File selected:", file.name);
-        }
+    } else {
+        previewImage.src = "";
+        previewImage.style.display = "none";
+    }
     });
     </script>
     <script type="module" src="js/stories.js"></script>
