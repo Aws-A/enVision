@@ -38,86 +38,84 @@ window.addEventListener("DOMContentLoaded", () => {
   const db = getFirestore(app);
   const storage = getStorage(app);
 
-  // ---------- IMAGE PREVIEW ----------
-  const imageInput = document.getElementById("articleImage");
-  const preview = document.getElementById("previewImage");
+// ---------- IMAGE PREVIEW ----------
+const imageInput = document.getElementById("articleImageUrl"); // text input
+const preview = document.getElementById("previewImage");
 
-  imageInput.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      preview.src = URL.createObjectURL(file);
-      preview.style.display = "block";
-    }
-  });
+imageInput.addEventListener("input", (event) => {
+  const url = event.target.value.trim();
+  if (url) {
+    preview.src = url;
+    preview.style.display = "block";
+  } else {
+    preview.src = "";
+    preview.style.display = "none";
+  }
+});
 
-  // ---------- SAVE ARTICLE ----------
- document.getElementById("saveArticle").addEventListener("click", async () => {
+
+// ---------- SAVE ARTICLE ----------
+document.getElementById("saveArticle").addEventListener("click", async () => {
     const topic = document.getElementById("topic-select").value;
     const title = document.getElementById("articleTitle").value.trim();
     let body = document.getElementById("articleBody").value.trim();
     body = body.replace(/\n/g, "<br>");  // 👈 key line
-    const file = imageInput.files[0];
+
+    // Get image URL from text input (no file upload)
+    const imageUrl = imageInput.value.trim();
 
     if (!title || !body || !topic) {
-      alert("⚠️ Please fill all fields.");
-      return;
+        alert("⚠️ Please fill all fields.");
+        return;
     }
 
-    let imageUrl = "";
-
     try {
-        if (file) {
-            const storageRef = ref(storage, "articles/" + Date.now() + "_" + file.name);
-            await uploadBytes(storageRef, file);
-            imageUrl = await getDownloadURL(storageRef);
-        }
-
         // Normalize (for lookup)
         function normalize(str) {
-          return str.trim().toLowerCase();
+            return str.trim().toLowerCase();
         }
 
         // Capitalize first letter of each word (for saving/display)
         function toTitleCase(str) {
-          return str.replace(/\w\S*/g, (word) => {
-            return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
-          });
+            return str.replace(/\w\S*/g, (word) => {
+                return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+            });
         }
 
         // Use only lowercase keys for mapping
         const topicCollectionMap = {
-          "geography": "geography-articles",
-          "history": "history-articles",
-          "languages": "languages-articles",
-          "biology": "biology-articles",
-          "health": "health-articles",
-          "technology": "technology-articles",
-          "sports": "sports-articles",
-          "hobbies": "hobbies-articles",
-          "travel": "travel-articles",
-          "food": "food-articles",
-          "spirituality & philosophy": "spirituality&philosophy-articles",
-          "politics": "politics-articles",
-          "arts": "arts-articles",
-          "chemistry": "chemistry-articles",
-          "mathematics": "mathematics-articles",
-          "physics": "physics-articles",
-          "astronomy": "astronomy-articles",
-          "social sciences": "social-articles",
-          "economics": "economics-articles"
+            "geography": "geography-articles",
+            "history": "history-articles",
+            "languages": "languages-articles",
+            "biology": "biology-articles",
+            "health": "health-articles",
+            "technology": "technology-articles",
+            "sports": "sports-articles",
+            "hobbies": "hobbies-articles",
+            "travel": "travel-articles",
+            "food": "food-articles",
+            "spirituality & philosophy": "spirituality&philosophy-articles",
+            "politics": "politics-articles",
+            "arts": "arts-articles",
+            "chemistry": "chemistry-articles",
+            "mathematics": "mathematics-articles",
+            "physics": "physics-articles",
+            "astronomy": "astronomy-articles",
+            "social sciences": "social-articles",
+            "economics": "economics-articles"
         };
 
         const rawTopic = document.getElementById("topic-select").value;
         const normalizedTopic = normalize(rawTopic); // for lookup
-        const displayTopic = toTitleCase(rawTopic); // for saving/display
+        const topic = toTitleCase(rawTopic); // for saving/display
         const collectionName = topicCollectionMap[normalizedTopic] || "general-articles";
 
         await addDoc(collection(db, collectionName), {
-          displayTopic, // Saved like "Arts", "Social Sciences"
-          title,
-          body,
-          imageUrl,
-          createdAt: serverTimestamp()
+            topic,
+            title,
+            body,
+            imageUrl, // comes from text input
+            createdAt: serverTimestamp()
         });
 
         alert("✅ Article saved successfully!");
