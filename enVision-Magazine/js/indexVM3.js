@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Image dimensions:", width, height);
 
     if (height > width) {
-      img.style.marginTop = "-25%";
+      img.style.marginTop = "-27%";;
       console.log("Applied portrait margin");
     } else if (width > height) {
       img.style.marginTop = "-10%";

@@ -43,17 +43,6 @@
 
   const shareOptions = document.getElementById("share-options");
 
-
-// Close share-options when clicking outside
-document.addEventListener("click", (event) => {
-  if (!shareOptions) return;
-
-  // If share-options is visible and the click is outside of it
-  if (shareOptions.style.display !== "none" && !shareOptions.contains(event.target)) {
-    shareOptions.style.display = "none";
-  }
-});
-
   // --- Load article content into the page ---
   async function loadArticleContent(id) {
     try {
@@ -102,6 +91,28 @@ function attachRealtimeListeners(id) {
       shareCountEl.textContent = 0;
     }
   });
+
+  // --- Close share when clicking outside (and don't close when clicking share icon or share-options) ---
+document.addEventListener("click", (event) => {
+  if (!shareOptions) return;
+  if (shareOptions.style.display && shareOptions.style.display !== "none") {
+    if (!shareOptions.contains(event.target) && event.target.id !== "share") {
+      shareOptions.style.display = "none";
+    }
+  }
+});
+
+shareImg?.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent document click from firing
+    if (!shareOptions) return;
+
+    // Treat "" or "none" as hidden
+    const isHidden = !shareOptions.style.display || shareOptions.style.display === "none";
+    shareOptions.style.display = isHidden ? "flex" : "none";
+});
+
+shareOptions?.addEventListener("click", (e) => e.stopPropagation()); // don't close when clicking inside
+document.addEventListener("click", () => { shareOptions.style.display = "none"; });
 
   const commentsRef = collection(db, collectionName, id, "comments");
   const commentsQuery = query(commentsRef, orderBy("createdAt", "asc"));
@@ -193,6 +204,27 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
     reply.innerHTML = `<img src="Images/comment.png" alt="Reply" class="icon" width="17" height="17" style="margin-right: 10px; cursor: pointer;">`;
     reply.className = "comment-icon";
     attachHoverAndClick(reply, "reply");
+
+    function attachReplyCount(commentDiv, commentId, replySpan) {
+    const repliesRef = collection(db, collectionName, articleId, "comments", commentId, "replies");
+    const q = query(repliesRef, orderBy("createdAt", "asc"));
+
+    onSnapshot(q, (snapshot) => {
+      replySpan.textContent = snapshot.size; // always update number
+    });
+  }
+
+  // Replies count span (always visible)
+  let repliesCountSpan = document.createElement("span");
+  repliesCountSpan.className = "replies-count";
+  repliesCountSpan.style.marginLeft = "2px";
+  repliesCountSpan.style.marginRight = "15px";
+  reply.appendChild(repliesCountSpan);
+
+  // Attach real-time listener to update count
+  attachReplyCount(commentDiv, commentId, repliesCountSpan);
+
+
     
     function loadReplies(commentDiv, articleId, commentId) {
       const repliesRef = collection(db, collectionName, articleId, "comments", commentId, "replies");
@@ -513,73 +545,77 @@ edit.addEventListener("click", () => {
       }
     });
 
-reply.addEventListener("click", () => {
-  // 1️⃣ Ensure textarea exists
-  let commentBox = commentDiv.querySelector(".comment-box");
-  if (!commentBox) {
-    commentBox = document.createElement("div");
-    commentBox.className = "comment-box";
-    commentBox.style.marginTop = "10px";
+  reply.addEventListener("click", () => {
+    // ✅ Ensure input box exists
+    let commentBox = commentDiv.querySelector(".comment-box");
+    if (!commentBox) {
+      commentBox = document.createElement("div");
+      commentBox.className = "comment-box";
+      commentBox.style.marginTop = "10px";
 
-    const textarea = document.createElement("textarea");
-    textarea.rows = 3;
-    textarea.style.width = "100%";
-    textarea.placeholder = "Write a reply...";
-    textarea.style.backgroundColor = "rgb(0, 0, 0, 0.05)";
-    textarea.style.border = "none";
+      const textarea = document.createElement("textarea");
+      textarea.rows = 3;
+      textarea.style.width = "100%";
+      textarea.placeholder = "Write a reply...";
+      textarea.style.backgroundColor = "rgba(0,0,0,0.05)";
+      textarea.style.border = "none";
 
-    const submitBtn = document.createElement("button");
-    submitBtn.textContent = "Reply";
-    submitBtn.style.marginTop = "5px";
-    submitBtn.style.width = "75px";
-    submitBtn.style.height = "35px";
-    submitBtn.style.border = "none";
-    submitBtn.style.borderRadius = "5px";
-    submitBtn.style.color = "white";
-    submitBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
-
-    // Hover effects
-    submitBtn.addEventListener("mouseenter", () => {
-      submitBtn.style.background = "linear-gradient(#2fa843, #068217, #035e12)";
-    });
-    submitBtn.addEventListener("mouseleave", () => {
+      const submitBtn = document.createElement("button");
+      submitBtn.textContent = "Reply";
+      submitBtn.style.marginTop = "5px";
+      submitBtn.style.width = "75px";
+      submitBtn.style.height = "35px";
+      submitBtn.style.border = "none";
+      submitBtn.style.borderRadius = "5px";
+      submitBtn.style.color = "white";
       submitBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
-    });
-
-    commentBox.appendChild(textarea);
-    commentBox.appendChild(submitBtn);
-    commentDiv.appendChild(commentBox);
-
-    submitBtn.addEventListener("click", async () => {
-      const text = textarea.value.trim();
-      if (!text) return;
-
-      const repliesRef = collection(db, collectionName, articleId, "comments", commentId, "replies");
-      await addDoc(repliesRef, {
-        text,
-        createdAt: serverTimestamp(),
-        likes: 0
+      
+      // Hover effect
+      submitBtn.addEventListener("mouseenter", () => {
+        submitBtn.style.background = "linear-gradient(#2fa843, #068217, #035e12)";
       });
-      textarea.value = "";
-    });
-  }
+      submitBtn.addEventListener("mouseleave", () => {
+        submitBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
+      });
 
-  // 2️⃣ Toggle textarea visibility
-  commentBox.style.display = commentBox.style.display === "none" ? "block" : "none";
+      commentBox.appendChild(textarea);
+      commentBox.appendChild(submitBtn);
+      commentDiv.appendChild(commentBox);
 
-  // 3️⃣ Ensure replies container exists
-  let repliesContainer = commentDiv.querySelector(".replies-container");
-  if (!repliesContainer) {
-    repliesContainer = document.createElement("div");
-    repliesContainer.className = "replies-container";
-    repliesContainer.style.marginLeft = "40px";
-    repliesContainer.style.marginTop = "10px";
-    commentDiv.appendChild(repliesContainer);
-  }
+      // Submit reply
+      submitBtn.addEventListener("click", async () => {
+        const text = textarea.value.trim();
+        if (!text) return;
 
-  // 4️⃣ Load existing replies into repliesContainer
-  loadReplies(commentDiv, articleId, commentId);
-});
+        const repliesRef = collection(db, collectionName, articleId, "comments", commentId, "replies");
+        await addDoc(repliesRef, { text, createdAt: serverTimestamp(), likes: 0 });
+        textarea.value = "";
+      });
+      textarea.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                submitBtn.click();
+            }
+        });
+    }
+
+    // ✅ Show the input box
+    commentBox.style.display = "block";
+
+    // ✅ Ensure replies container exists
+    let repliesContainer = commentDiv.querySelector(".replies-container");
+    if (!repliesContainer) {
+      repliesContainer = document.createElement("div");
+      repliesContainer.className = "replies-container";
+      repliesContainer.style.marginLeft = "40px";
+      repliesContainer.style.marginTop = "10px";
+      commentDiv.appendChild(repliesContainer);
+    }
+
+    // ✅ Load existing replies
+    loadReplies(commentDiv, articleId, commentId);
+  });
+
 
       toolbar.append(like, reply, edit, del);
       commentDiv.append(p, toolbar);

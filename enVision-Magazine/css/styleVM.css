@@ -211,6 +211,7 @@ input {
 .arti p {
     position: relative;
     z-index: 1;
+    margin-top: 7%;
 }
 
 .arti img {
@@ -324,10 +325,10 @@ input {
   cursor: pointer;
 }
 
-.share-options {
+#share-options {
   position: absolute;
-  top: 123%; /* show just below the share icon */
-  left: 33%;
+  top: 140%;  /* distance below share icon */
+  left: 42%;    /* align with left edge */
   display: none; /* hidden by default */
   flex-direction: row;
   background: rgba(255, 255, 255, 0.5);
@@ -339,14 +340,14 @@ input {
 }
 
 
-.share-options img {
+#share-options img {
   width: 32px;
   height: 32px;
   cursor: pointer;
   transition: transform 0.2s;
 }
 
-.share-options img:hover {
+#share-options img:hover {
   transform: scale(1.2);
 }
 

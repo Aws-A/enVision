@@ -7,6 +7,19 @@ document.addEventListener("DOMContentLoaded", function() {
       link.classList.add('active');
     }
   });
+
+    Object.keys(hoverMap).forEach(id => {
+      const img = document.getElementById(id);
+      const [normalSrc, hoverSrc] = hoverMap[id];
+
+      img.addEventListener("mouseenter", () => {
+          img.src = hoverSrc;
+      });
+
+      img.addEventListener("mouseleave", () => {
+          img.src = normalSrc;
+      });
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -65,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Image dimensions:", width, height);
 
     if (height > width) {
-      img.style.marginTop = "-25%";
+      img.style.marginTop = "-27%";;
       console.log("Applied portrait margin");
     } else if (width > height) {
       img.style.marginTop = "-10%";
@@ -76,5 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+const hoverMap = {
+    like: ["Images/like.png", "Images/likeHover.png"],
+    comment: ["Images/comment.png", "Images/commentHover.png"],
+    share: ["Images/share.png", "Images/shareHover.png"]
+};
 
 

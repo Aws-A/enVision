@@ -243,6 +243,16 @@ function attachRealtimeListeners() {
 
     attachHoverAndClick(reply, "reply");
 
+    // --- Function to show reply count always ---
+    function attachReplyCount(commentDiv, commentId, replyCountSpan) {
+      const repliesRef = collection(db, collectionName, articleId, "comments", commentId, "replies");
+      const q = query(repliesRef);
+
+      onSnapshot(q, snapshot => {
+        replyCountSpan.textContent = snapshot.size; // always show number of replies
+      });
+    }
+
     // Grab reply count element
     const replyCountSpan = document.createElement("span");
     replyCountSpan.className = "reply-count";
@@ -250,16 +260,19 @@ function attachRealtimeListeners() {
     replyCountSpan.style.marginLeft = "8px";
     replyCountSpan.style.marginRight = "16px";
     replyCountSpan.style.fontSize = "14px";
-
     reply.appendChild(replyCountSpan);
 
-    reply.addEventListener("click", () => {
-    // 1️⃣ Ensure reply box exists
+    // ✅ Attach real-time count
+    attachReplyCount(commentDiv, commentId, replyCountSpan);
+
+reply.addEventListener("click", () => {
+    // Ensure reply box exists
     let commentBox = commentDiv.querySelector(".comment-box");
     if (!commentBox) {
         commentBox = document.createElement("div");
         commentBox.className = "comment-box";
         commentBox.style.marginTop = "10px";
+        commentBox.style.display = "block"; // show immediately
 
         const textarea = document.createElement("textarea");
         textarea.rows = 3;
@@ -280,13 +293,8 @@ function attachRealtimeListeners() {
         submitBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
         submitBtn.style.cursor = "pointer";
 
-        // Hover effect for button
-        submitBtn.addEventListener("mouseenter", () => {
-        submitBtn.style.background = "linear-gradient(#2fa843, #068217, #035e12)";
-        });
-        submitBtn.addEventListener("mouseleave", () => {
-        submitBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
-        });
+        submitBtn.addEventListener("mouseenter", () => submitBtn.style.background = "linear-gradient(#2fa843, #068217, #035e12)");
+        submitBtn.addEventListener("mouseleave", () => submitBtn.style.background = "linear-gradient(#575757, #333333, #000000)");
 
         commentBox.appendChild(textarea);
         commentBox.appendChild(submitBtn);
@@ -294,29 +302,23 @@ function attachRealtimeListeners() {
 
         // Submit reply
         submitBtn.addEventListener("click", async () => {
-        const replyText = (textarea.value || "").trim();
-        if (!replyText) return;
-
-        const repliesRef = collection(db, collectionName, articleId, "comments", commentId, "replies");
-        await addDoc(repliesRef, {
-            text: replyText,
-            likes: 0,
-            createdAt: serverTimestamp()
-        });
-        textarea.value = "";
+            const replyText = (textarea.value || "").trim();
+            if (!replyText) return;
+            const repliesRef = collection(db, collectionName, articleId, "comments", commentId, "replies");
+            await addDoc(repliesRef, { text: replyText, likes: 0, createdAt: serverTimestamp() });
+            textarea.value = "";
         });
 
-        // Submit on Enter
         textarea.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            submitBtn.click();
-        }
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                submitBtn.click();
+            }
         });
+    } else {
+        // Toggle if already exists
+        commentBox.style.display = commentBox.style.display === "none" ? "block" : "none";
     }
-
-    // Toggle reply box visibility
-    commentBox.style.display = commentBox.style.display === "none" ? "block" : "none";
 
     // Ensure replies container exists
     let repliesContainer = commentDiv.querySelector(".replies-container");
@@ -330,7 +332,7 @@ function attachRealtimeListeners() {
 
     // Load existing replies
     loadReplies(commentDiv, articleId, commentId, replyCountSpan);
-    });
+});
 
     // --- Load replies function ---
     async function loadReplies(commentDiv, articleId, commentId, replyCountSpan) {
