@@ -1,6 +1,151 @@
+header {
+    display: flex;
+}
 .logo img{
     width: 17%;
 }
+
+#authContainer {
+    font-family: Avenir;
+}
+
+.dropdown-modal {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999; /* ensure it’s on top */
+}
+
+.input-group {
+  position: relative;
+  margin: 10px 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px 40px 8px 10px; /* right padding to make space for icon */
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;      /* moves it to the right edge */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.toggle-password img {
+  width: 20px;       /* size of the eye icon */
+  height: 20px;
+}
+
+#toggleForm {
+  color: #37B651;
+  cursor: pointer;
+}
+
+#accountIn-Out {
+    display: flex;
+    justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically */
+    height: 100%;            /* set a height for the container */
+    gap: 10px;                /* spacing between authBtn and signOutBtn */
+}
+
+#authBtn {
+    margin-left: -100px;
+    width: 200px;
+    height: 33px;
+    padding: 0px 5px 20px 5px;
+    background: transparent;
+    border: 1px solid;
+    border-color: #118ab2;
+    border-radius: 5px;
+    color: #118ab2;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 17px;
+    text-align: center;
+}
+    
+#authBtn:hover {
+  border-color: #2e9847;
+   color: #2e9847;
+}
+
+#signOutBtn {
+    width: 100px;
+    height: 55px;
+    font-size: 17px;
+    border: 1px solid #F36F40;
+    color: #F36F40;
+    background-color: transparent;
+}
+
+#signOutBtn:hover {
+    background-color: #F36F40;
+    color: #FFFFFF;
+}
+
+/* Modal Overlay */
+#authModal {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: -229px;
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#authModal button {
+    width: 100%;
+    height: 50%;
+    background-color: #118ab2;
+    padding: 1%;
+    font-size: 22px;
+}
+
+#goSignUp {
+    color: #118ab2;
+    cursor: pointer;
+}
+
+#goSignUp:hover {
+    color: #2e9847;
+    cursor: pointer;
+}
+
+table { margin-left: 10px; border-collapse: collapse; }
+.cell {
+  width: 100px;
+  height: 7px;
+  background-color: #fff;      /* default */
+  border: 1px solid #ddd;
+}
+.meter-labels td {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 4px;
+  color: #555;
+}
+.cellTx { margin: 6px 12px; font-size: 13px; }
+
+/* Optional colors used via JS */
+.text-red { color: #F36F40; }
+.text-orange { color: #118ab2; }
+.text-green { color: #2e9847; }
+
 
 .up {
     display: flex;
@@ -60,28 +205,37 @@
 }
 
 button {
-    display: none;
-    position: relative;
     width: 333px;
     height: 50px;
     border-radius: 5px;
     color: #FFFFFF;
     background-color: rgba(0, 0, 0, 0.7);
-    margin-top: 29%;
-    margin-left: -80%;
     border: none;
     font-family: Avenir;
     font-size: 25px;
 }
 
+.content button {
+    visibility: hidden;   /* or opacity: 0 */
+    position: absolute;   /* take out of normal flow */
+}
+
+#cirO:hover #btnO,
+#cirG:hover #btnG,
+#cirB:hover #btnB {
+  visibility: visible;  /* or opacity: 1 */
+}
+
 #btnG {
-    margin-left: -121%;
-    margin-top: 44%;
+    margin-top: 10%;
+}
+
+#btnO {
+    margin-top: 10%;
 }
 
 #btnB {
-    margin-left: -120%;
-    margin-top: 44%;
+    margin-top: 10%;
 }
 
 #btnG:hover {

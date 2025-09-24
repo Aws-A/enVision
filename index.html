@@ -7,7 +7,7 @@
 <head>
 <title> enVision </title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/index.js"></script>
+<script type="module" src="js/index.js"></script>
 <style>
     body {
       background: url('images/background.png') no-repeat center center fixed;
@@ -19,27 +19,107 @@
             <div class="logo">
                 <img src="images/enVision-Logo.png">
             </div>
+
+        <div id="authContainer" style="position: relative; display:inline-block;"> 
+            <div id="accountIn-Out">
+                    <div id="authBtn" role="button" tabindex="0"> 
+                    <p id="btn-text">Sign Up / Sign In</p>
+                </div>
+                <button id="signOutBtn" style="display: none;">Sign Out</button>
+            </div>
+            <!-- Dropdown Modal -->
+            <div id="authModal" class="dropdown-modal">
+                <!-- Tabs -->
+                <div class="tab-header">
+                     <span id="signInTab" class="active">Sign In</span>
+                    <span id="signUpTab">Sign Up</span>
+                 </div>
+
+            <!-- Sign In Form -->
+            <div id="signInForm" class="form-section">
+            <div class="input-group">
+                <input type="email" id="signinEmail" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Enter password">
+                <span id="togglePassword" class="toggle-password">
+                    <img id="eyeIcon1" src="images/hide.png" alt="toggle password">
+                </span>
+            </div>
+            <button id="signInBtn">Sign In</button>
+            <p class="switch-text">Don't have an account? <span id="goSignUp">Sign Up</span></p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signUpForm" class="form-section" style="display: none;">       
+                <div class="input-group">
+                     <input type="email" id="signupEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                    <span id="togglePassword2" class="toggle-password">
+                        <img src="images/hide.png" id="eyeIcon2" alt="toggle password" />
+                    </span>
+                </div>
+                <div id="strength-text" class="strength-text">
+                </div>
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <span id="togglePassword3" class="toggle-password">
+                        <img src="images/hide.png" id="eyeIcon3" alt="toggle password" />
+                    </span>
+                </div>
+                <!-- Strength meter + labels -->
+                <div id="password-meter">
+                    <table> 
+                        <tr>
+                            <td id="weakCell" class="cell"></td>
+                            <td id="goodCell" class="cell"></td>
+                            <td id="strongCell" class="cell"></td>
+                        </tr>
+                        <tr class="meter-labels">
+                            <td>Weak</td>
+                            <td>Good</td>
+                            <td>Strong</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Messages -->
+                <div id="pwdMessages">
+                    <p id="strengthText" class="cellTx"></p>
+                    <p id="lengthMsg" class="cellTx"></p>
+                    <p id="matchMsg" class="cellTx"></p>
+                </div>
+                <button id="signUpBtn">Sign Up</button>
+                <p class="switch-text">Already have an account?
+                    <span id="goSignIn">Sign In</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
         </header>
-        <section class="content" onmouseover="show()" onmouseout="unshow()">
+        <section class="content">
             <div class="up">
                 <div id="cirG" class="cirV">
                     <img src="images/circleG.png" class="circle">
                     <img src="images/enVisionG.png" class="logoV logoG">
-                    <a href="enVision-Magazine/enVisionMagazine.html"> <button id="btnG"> Digital Magazine </button></a>
+                    <button id="btnG" onclick="window.open('enVision-Magazine/enVisionMagazine.html', '_blank')"> Digital Magazine </button>
                 </div>
                 <div id="cirO" class="cirV">
                     <img src="images/circleO.png" class="circle">
                     <img src="images/enVisionO.png" class="logoV logoO">
-                    <button id="btnO"> Documentaries Filmming </button>
+                    <button id="btnO" onclick="window.open('enVision-Documentaries/enVisionDocumentaries.html', '_blank')"> Documentaries Filmming </button>
                 </div>
             </div>
             <div id="cirB" class="down cirV">
                 <img src="images/circleB.png" class="circle">
                 <img src="images/enVisionB.png" class="logoV logoB">
-                <a href="enVision-Statistics/enVisionStatistics.html"><button id="btnB"> Statistics Website</button> </a>
+                <button id="btnB" onclick="window.open('enVision-Statistics/enVisionStatistics.html', '_blank')"> Statistics Website</button>
             </div>
         </section>
-    <script type="module" src="js/stories.js"></script>
 
 	</body>
 
@@ -56,8 +136,6 @@
 </footer>
 
 <!-- Footer -->
-
-	<script type="module" src="js/stories.js"></script>
 
 	</body>
 </html>
