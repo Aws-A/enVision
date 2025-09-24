@@ -112,7 +112,6 @@ shareImg?.addEventListener("click", (e) => {
 });
 
 shareOptions?.addEventListener("click", (e) => e.stopPropagation()); // don't close when clicking inside
-document.addEventListener("click", () => { shareOptions.style.display = "none"; });
 
   const commentsRef = collection(db, collectionName, id, "comments");
   const commentsQuery = query(commentsRef, orderBy("createdAt", "asc"));
@@ -659,19 +658,9 @@ edit.addEventListener("click", () => {
 async function handleShare() {
   try {
     if (!articleId) return;
-
-    // Toggle UI immediately
-    if (shareOptions) {
-      // Force display to block if currently hidden
-      if (shareOptions.style.display === "none" || shareOptions.style.display === "") {
-        shareOptions.style.display = "flex"; // or "block"
-      } else {
-        shareOptions.style.display = "none";
-      }
-    }
+    const ref = doc(db, collectionName, articleId);
 
     // Firestore update
-    const ref = doc(db, collectionName, articleId);
     await setDoc(ref, {}, { merge: true }); // ensure doc exists
     await updateDoc(ref, { shares: increment(1) });
   } catch (err) {
@@ -734,34 +723,73 @@ commentIcon.addEventListener("click", handleCommentIconClick);
 
   // --- Init flow ---
   (async function init() {
-    if (!articleId) {
-      console.warn("No article id in URL (?id=...)");
-      return;
-    }
-    await ensureArticleCounters(articleId);
-    await loadArticleContent(articleId);
-    attachRealtimeListeners(articleId);
-    bindEvents();
-  })();
+  if (!articleId) {
+    console.warn("No article id in URL (?id=...)");
+    return;
+  }
 
-// Map of normal -> hover images
-const hoverMap = {
-  "email": ["Images/email.png", "Images/emailHover.png"],
-  "facebook": ["Images/facebookHover.png", "Images/facebookHover.png"],
-  "twitter": ["Images/twitter.png", "Images/x.png"], // special case
-  "whatsapp": ["Images/whatsapp.png", "Images/whatsappHover.png"],
-  "telegram": ["Images/telegram.png", "Images/telegramHover.png"],
-  "instagram": ["Images/instagram.png", "Images/instagramHover.png"],
-  "linkedIn": ["Images/linkedIn.png", "Images/linkedInHover.png"]
-};
+  await ensureArticleCounters(articleId);
+  await loadArticleContent(articleId);
+  attachRealtimeListeners(articleId);
 
-// Attach hover events
-Object.keys(hoverMap).forEach((id) => {
-  const img = document.querySelector(`#share-options img.${id}`);
-  if (!img) return;
+  // --- Grab DOM elements here, after content loaded ---
+  const shareOptions = document.getElementById("share-options");
+  const shareImg = document.getElementById("share");
 
-  const [normalSrc, hoverSrc] = hoverMap[id];
-
-  img.addEventListener("mouseenter", () => img.src = hoverSrc);
-  img.addEventListener("mouseleave", () => img.src = normalSrc);
+shareImg.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (getComputedStyle(shareOptions).display === "none") {
+    shareOptions.style.display = "flex";
+  } else {
+    shareOptions.style.display = "none";
+  }
 });
+
+
+// Attach click to toggle shareOptions
+if (shareImg && shareOptions) {
+  shareImg.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent click from propagating
+    // Toggle display between "flex" and "none"
+    shareOptions.style.display =
+      shareOptions.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Hide share options when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!shareOptions.contains(e.target) && e.target !== shareImg) {
+      shareOptions.style.display = "none";
+    }
+  });
+
+  // Hover effect for share icons
+  const hoverMap = {
+    email: ["Images/email.png", "Images/emailHover.png"],
+    facebook: ["Images/facebook.png", "Images/facebookHover.png"],
+    twitter: ["Images/twitter.png", "Images/x.png"],
+    whatsapp: ["Images/whatsapp.png", "Images/whatsappHover.png"],
+    telegram: ["Images/telegram.png", "Images/telegramHover.png"],
+    instagram: ["Images/instagram.png", "Images/instagramHover.png"],
+    linkedIn: ["Images/linkedIn.png", "Images/linkedInHover.png"],
+  };
+
+  Object.keys(hoverMap).forEach((id) => {
+    const img = shareOptions.querySelector(`img.${id}`);
+    if (!img) return;
+    const [normalSrc, hoverSrc] = hoverMap[id];
+    img.addEventListener("mouseenter", () => (img.src = hoverSrc));
+    img.addEventListener("mouseleave", () => (img.src = normalSrc));
+  });
+}
+
+  // Close shareOptions when clicking outside
+  document.addEventListener("click", (event) => {
+    if (shareOptions && shareOptions.style.display === "flex") {
+      if (!shareOptions.contains(event.target) && event.target.id !== "share") {
+        shareOptions.style.display = "none";
+      }
+    }
+  });
+
+  bindEvents(); // keep your existing event bindings
+})();

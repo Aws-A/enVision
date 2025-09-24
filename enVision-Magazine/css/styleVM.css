@@ -327,7 +327,7 @@ input {
 
 #share-options {
   position: absolute;
-  top: 140%;  /* distance below share icon */
+  top: 133%;  /* distance below share icon */
   left: 42%;    /* align with left edge */
   display: none; /* hidden by default */
   flex-direction: row;
