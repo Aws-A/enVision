@@ -38,7 +38,7 @@ function App() {
         {/* Rest of your content */}
       </list>
     </content>
-    <footer>
+    <footer id="contact">
       <p>Copyright innovi 2022 - 2025</p>
       <div className="socials">
         <img src={facebook} alt="icons"/>
