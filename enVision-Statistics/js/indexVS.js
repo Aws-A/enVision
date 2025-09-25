@@ -352,14 +352,14 @@ function showAge() {
 
 function showFer() {
     document.getElementById("age").classList.remove("clicked");
-    document.getElementById("fer").classList.remove("clicked");
+    document.getElementById("age").classList.remove("clicked");
     document.getElementById("img").classList.remove("clicked");
     document.getElementById("urba").classList.remove("clicked");
-    var button = document.getElementById("age");
+    var button = document.getElementById("fer");
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Fertility Rate (births per woman - 2025)";
+    document.querySelector('.titleP').textContent = "Fertility Rate (Births Per Woman - 2025)";
     document.querySelector('.country1').textContent = "Niger";
     document.querySelector('.per1').textContent = "6.64";
     document.querySelector('.country2').textContent = "Angola";
@@ -401,7 +401,7 @@ function showImg() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "migration (number per 1000 in 2024)";
+    document.querySelector('.titleP').textContent = "migration (Number Per 1000 in 2024)";
     document.querySelector('.country1').textContent = "US";
     document.querySelector('.per1').textContent = "50.6";
     document.querySelector('.country2').textContent = "Germany";
@@ -1058,7 +1058,7 @@ function showExp() {
     document.querySelector('.list').style.display = 'block';
 
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Healthcare Expenditure per Capita (USD, 2025)";
+    document.querySelector('.titleP').textContent = "Healthcare Expenditure per Capita (2025)";
     document.querySelector('.country1').textContent = "United States";
     document.querySelector('.per1').textContent = "$12,555";
     document.querySelector('.country2').textContent = "Switzerland";
@@ -1254,7 +1254,7 @@ function showEn() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "Renewable Energy Production (TWh, 2023)";
+    document.querySelector('.titleP').textContent = "Renewable Energy Production (2023)";
     document.querySelector('.country1').textContent = "China";
     document.querySelector('.per1').textContent = "2,780";
     document.querySelector('.country2').textContent = "United States";
@@ -1342,7 +1342,7 @@ function showAir() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "Air Quality Index (Worst 10 Countries, 2023)";
+    document.querySelector('.titleP').textContent = "Air Quality Index (Worst 2023)";
     document.querySelector('.country1').textContent = "Bangladesh";
     document.querySelector('.per1').textContent = "162";
     document.querySelector('.country2').textContent = "Pakistan";
@@ -1483,13 +1483,13 @@ function showInter() {
     document.querySelector("path#Luxembourg.st0").style.fill = "#5DAAE3";
 }
 
-function showMobiles() {
+function showMob() {
     reset();
     document.getElementById("inter").classList.remove("clicked");
     document.getElementById("rd").classList.remove("clicked");
     document.getElementById("AI").classList.remove("clicked");
     document.getElementById("pat").classList.remove("clicked");
-    var button = document.getElementById("mobiles");
+    var button = document.getElementById("mob");
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
@@ -1576,7 +1576,7 @@ function showAI() {
     document.getElementById("mob").classList.remove("clicked");
     document.getElementById("rd").classList.remove("clicked");
     document.getElementById("pat").classList.remove("clicked");
-    var button = document.getElementById("ai");
+    var button = document.getElementById("AI");
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 

@@ -130,11 +130,11 @@ input::placeholder {
     display: none;
     position: absolute;
     z-index: 2;
-    margin-top: -22%;
+    margin-top: -17%;
     margin-left: -4%;
     padding-top: 7%;
     padding-left: 40%;
-    width: 100%;
+    width: 63%;
     height: 750px;
     /* background-color: rgba(55, 140, 203, 0.25); */
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%);
@@ -275,7 +275,7 @@ input::placeholder {
 }
 
 .title {
-    width: 375px;
+    width: 444px;
     height: 75px;
     background-color: #0C507A;
     margin-bottom: 1%;
@@ -290,7 +290,7 @@ input::placeholder {
 
 .statBar {
     display: flex;
-    width: 375px;
+    width: 444px;
     height: 50px;
     background-color: rgba(55, 140, 203, 0.5);
     margin-bottom: 0.5%;
@@ -307,13 +307,13 @@ input::placeholder {
         width: 0;
     }
     100% {
-        width: 375px;
+        width: 444px;
     }
 }
 
 @keyframes collapseWidth {
     0% {
-        width: 375px;
+        width: 444px;
     }
     100% {
         width: 0;
@@ -340,16 +340,16 @@ input::placeholder {
 
 .per {
     background-color: #F8F8F8;
-    width: 90px;
+    width: 160px;
     height: 50px;
     text-align: center;
     font-size: 25px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 30% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
 }
 
 .per h3 {
     color: #575757;
-    margin-top: 14%;
+    margin-top: 7%;
     padding-left: 17%;
 }
 
