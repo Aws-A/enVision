@@ -115,18 +115,6 @@ input {
     border-radius: 0px 5px 5px 0px;
 }
 
-.specialInput {
-    height: 33.5px;
-}
-
-.specialButton {
-    height: 37.5px;
-}
-
-.specialImage {
-  margin-top: 10%;
-}
-
 .searchButton img{
     width: 80%;
 }

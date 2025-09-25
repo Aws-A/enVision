@@ -43,17 +43,18 @@ async function loadTopStories() {
 
   for (const col of articleCollections) {
     const snapshot = await getDocs(collection(db, col));
-    snapshot.forEach(doc => {
-      const data = doc.data();
-      allArticles.push({
-        id: doc.id,
-        title: data.title || "Untitled",
-        body: data.body || "",
-        likes: data.likes || 0,
-        link: data.link || "#",
-        imageUrl: data.imageUrl || "images/magazine.png"
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        allArticles.push({
+          id: doc.id,
+          title: data.title || "Untitled",
+          body: data.body || "",
+          likes: data.likes || 0,
+          link: data.link || "#",
+          imageUrl: data.imageUrl || "images/magazine.png",
+          collection: col   // 👈 important
+        });
       });
-    });
   }
 
   if (allArticles.length === 0) {
@@ -66,21 +67,32 @@ async function loadTopStories() {
 
   storiesDiv.innerHTML = `<h1 class="storiesTitle"> Top Stories </h1>`;
 
-  // Append top 3 stories
-  top3.forEach((story, index) => {
-    const preview = story.body.split(" ").slice(0, 10).join(" ") + "...";
-    const storyDiv = document.createElement("a");
-    storyDiv.href = story.link;
-    storyDiv.style = "text-decoration: none; color: inherit;";
-    storyDiv.innerHTML = `
-      <div class="str ${index === 0 ? "strTop" : "strR"}" data-id="${story.id}">
-        <h3>${story.title}</h3>
-        <p>${preview} <br>
-        <a href="${story.link}" style="color:#35B851;font-weight:bold;">Read More</a></p>
-      </div>
-    `;
-    storiesDiv.appendChild(storyDiv);
-  });
+// Append top 3 stories
+top3.forEach((story, index) => {
+  const preview = story.body.split(" ").slice(0, 10).join(" ") + "...";
+  const storyDiv = document.createElement("div");
+  storyDiv.className = `str ${index === 0 ? "strTop" : "strR"}`;
+  storyDiv.setAttribute("data-id", story.id);
+
+  let readMoreLink = "";
+
+  if (story.link && story.link !== "#") {
+    // ✅ If link exists in Firebase, use it directly
+    readMoreLink = `<a href="${story.link}" style="color:#35B851;font-weight:bold;">Read More</a>`;
+  } else {
+    // ✅ Otherwise, dynamic article → build URL with id + collection
+    readMoreLink = `<a href="enVisionMagazine-article.html?id=${story.id}&collection=${encodeURIComponent(story.collection)}" 
+                      style="color:#35B851;font-weight:bold;">Read More</a>`;
+  }
+
+  storyDiv.innerHTML = `
+    <h3>${story.title}</h3>
+    <p>${preview} <br> ${readMoreLink}</p>
+  `;
+
+  storiesDiv.appendChild(storyDiv);
+});
+
 
   // Append the "Write Your Article.." link once, after all stories
   const writeLink = document.createElement("a");

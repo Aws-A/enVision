@@ -1,10 +1,10 @@
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv='cache-control' content='no-cache'> 
-  <meta http-equiv='expires' content='0'> 
-  <meta http-equiv='pragma' content='no-cache'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> enVisionMagazine </title>
 <link href="css/styleVM.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/indexVM.js"></script>
@@ -20,9 +20,9 @@
                 <a href="about.html"> About </a>
                 <a href="#contact"> Contact </a>
             </nav>
-           <form action="search.html" method="get">
-                <button type="submit" class="searchButton specialButton"> <img src="images/searchIcon.svg" class="specialImage"></button>
-                <input type="text" name="query" placeholder="Search..." class="specialInput">
+            <form action="search.html" method="get">
+                <button type="submit" class="searchButton"> <img src="images/searchIcon.svg"></button>
+                <input type="text" name="query" placeholder="Search...">
             </form>
        </header>
 
@@ -31,7 +31,7 @@
     <a href="enVisionMagazine.html">Home</a>
     <a href="about.html">About</a>
     <a href="#contact">Contact</a>
-</div>
+</div>       
 
 <h2> Digital Magazine For Diverse Topics </h2>
 <section class="allContent">
@@ -39,8 +39,8 @@
         <h4> Humanities </h4>
             <a href="spirituality&philosophy.html"><h5> Spirituality & Philosophy </h5></a>
             <a href="languages.html"><h5> Languages </h5></a>
-            <a href="history.html"><h5> History </h5></a>
-            <a href="geography.html" class="active-page"><h5> Geography </h5></a>
+            <a href="history.html" class="active-page"><h5> History </h5></a>
+            <a href="geography.html"><h5> Geography </h5></a>
             <a href="politics.html"><h5> Politics </h5></a>
             <a href="arts.html"><h5> Arts </h5></a>
         <h4> Science </h4>
@@ -62,10 +62,9 @@
 
     <div class="articles">
         <h1> Geography Articles </h1>
-
         <div id="loaded-articles">
-            <!-- Articles from Firebase will be loaded here dynamically -->
-        </div>
+              <!-- Articles from Firebase will be loaded here dynamically -->
+          </div>
         <!-- Pagination -->
         <div id="pagination" style="display: flex; align-items: center; gap: 10px;">
             <button id="prevPage" style="background: none; border: none; cursor: pointer;">
@@ -81,8 +80,6 @@
             </button>
         </div>
     </div>
-
-    
 
     <div class="stories">
         <h1 class="storiesTitle"> Top Stories</h1>
@@ -128,6 +125,7 @@
 <p> info.-envision@innovi.com </p>
 </footer>
 
+<!-- Footer -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -260,7 +258,7 @@ function createPages() {
       createPages(); // refresh highlight
 
       if (currentPage === 1) {
-        // Navigate to geography1.html
+        // Navigate to geography.html
         window.location.href = "geography.html";
       } else if (currentPage === 2) {
         staticArticles.forEach(div => div.style.display = "none");
@@ -309,10 +307,6 @@ prevImg.addEventListener("click", () => {
 // --- Initialize ---
 createPages();
 </script>
-
-
-<!-- Footer -->
-
 	<script type="module" src="js/stories.js"></script>
 
 	</body>
