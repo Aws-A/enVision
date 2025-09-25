@@ -14,6 +14,7 @@ function search() {
 }
 
 function showEco() {
+    reset();
     document.getElementById("Dem").classList.remove("clicked");
     document.getElementById("Soc").classList.remove("clicked");
     document.getElementById("Geo").classList.remove("clicked");
@@ -42,27 +43,27 @@ function showGDP() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "GDP (USD in Trillions-2025)";
+    document.querySelector('.titleP').textContent = "GDP (USD in Trillions 2025)";
     document.querySelector('.country1').textContent = "USA";
-    document.querySelector('.per1').textContent = "$30.51";
+    document.querySelector('.per1').textContent = "$30.51T";
     document.querySelector('.country2').textContent = "China";
-    document.querySelector('.per2').textContent = "	$19.23";
+    document.querySelector('.per2').textContent = "	$19.23T";
     document.querySelector('.country3').textContent = "Germany";
-    document.querySelector('.per3').textContent = "$4.74";
+    document.querySelector('.per3').textContent = "$4.74T";
     document.querySelector('.country4').textContent = "India";
-    document.querySelector('.per4').textContent = "$4.19";
+    document.querySelector('.per4').textContent = "$4.19T";
     document.querySelector('.country5').textContent = "Japan";
-    document.querySelector('.per5').textContent = "$4.18";
+    document.querySelector('.per5').textContent = "$4.18T";
     document.querySelector('.country6').textContent = "UK";
-    document.querySelector('.per6').textContent = "$3.84";
+    document.querySelector('.per6').textContent = "$3.84T";
     document.querySelector('.country7').textContent = "France ";
-    document.querySelector('.per7').textContent = "$3.21";
+    document.querySelector('.per7').textContent = "$3.21T";
     document.querySelector('.country8').textContent = "Italy";
-    document.querySelector('.per8').textContent = "	$2.42";
+    document.querySelector('.per8').textContent = "	$2.42T";
     document.querySelector('.country9').textContent = "Canada";
-    document.querySelector('.per9').textContent = "$2.23";
+    document.querySelector('.per9').textContent = "$2.23T";
     document.querySelector('.country10').textContent = "Brazil";
-    document.querySelector('.per10').textContent = "$2.12";
+    document.querySelector('.per10').textContent = "$2.12T";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
     document.querySelector("path#China.st0").style.fill="#5DAAE3";
     document.querySelector("path#Germany.st0").style.fill="#5DAAE3";
@@ -85,7 +86,7 @@ function showInf() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Inflation Rate (percentage- 2024)";
+    document.querySelector('.titleP').textContent = "Inflation Rate (Percentage 2024)";
     document.querySelector('.country1').textContent = "Venzeula";
     document.querySelector('.per1').textContent = "400.0%";
     document.querySelector('.country2').textContent = "Zimbabwe";
@@ -128,27 +129,27 @@ function showTra() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Trade Surplus (USD Billion - 2023)";
+    document.querySelector('.titleP').textContent = "Trade Surplus (USD Billion 2023)";
     document.querySelector('.country1').textContent = "China";
-    document.querySelector('.per1').textContent = "	$386.0";
+    document.querySelector('.per1').textContent = "	$386.0B";
     document.querySelector('.country2').textContent = "	Singapore";
-    document.querySelector('.per2').textContent = "	$187.3";
+    document.querySelector('.per2').textContent = "	$187.3B";
     document.querySelector('.country3').textContent = "Germany";
-    document.querySelector('.per3').textContent = "	$185.5";
+    document.querySelector('.per3').textContent = "	$185.5B";
     document.querySelector('.country4').textContent = "Ireland";
     document.querySelector('.per4').textContent = "$182.9";
     document.querySelector('.country5').textContent = "Netherlands";
-    document.querySelector('.per5').textContent = "$81.3";
+    document.querySelector('.per5').textContent = "$81.3B";
     document.querySelector('.country6').textContent = "Russia";
-    document.querySelector('.per6').textContent = "$80.0";
+    document.querySelector('.per6').textContent = "$80.0B";
     document.querySelector('.country7').textContent = "Norway";
-    document.querySelector('.per7').textContent = "	$70.0";
+    document.querySelector('.per7').textContent = "	$70.0B";
     document.querySelector('.country8').textContent = "Switzerland";
-    document.querySelector('.per8').textContent = "$65.0";
+    document.querySelector('.per8').textContent = "$65.0B";
     document.querySelector('.country9').textContent = "South Korea";
-    document.querySelector('.per9').textContent = "$58.0";
+    document.querySelector('.per9').textContent = "$58.0B";
     document.querySelector('.country10').textContent = "Taiwan";
-    document.querySelector('.per10').textContent = "$55.0";
+    document.querySelector('.per10').textContent = "$55.0B";
     document.querySelector("path#China.st0").style.fill="#5DAAE3";
     document.querySelector("path#Singapore.st0").style.fill="#5DAAE3";
     document.querySelector("path#Germany.st0").style.fill="#5DAAE3";
@@ -171,7 +172,7 @@ function showGrow() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Growth Rates (Percentage - 2025)";
+    document.querySelector('.titleP').textContent = "Growth Rates (Percentage 2025)";
     document.querySelector('.country1').textContent = "Guyana";
     document.querySelector('.per1').textContent = "16.3%";
     document.querySelector('.country2').textContent = "	Niger";
@@ -214,7 +215,7 @@ function showDeb() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Debt to GDP (Ratio - 2025)";
+    document.querySelector('.titleP').textContent = "Debt To GDP (Ratio 2025)";
     document.querySelector('.country1').textContent = "Lebanon";
     document.querySelector('.per1').textContent = "357.7%";
     document.querySelector('.country2').textContent = "Japan";
@@ -248,6 +249,7 @@ function showDeb() {
 }
 
 function showDem() {
+    reset();
     document.getElementById("Eco").classList.remove("clicked");
     document.getElementById("Soc").classList.remove("clicked");
     document.getElementById("Geo").classList.remove("clicked");
@@ -267,6 +269,7 @@ function showDem() {
 }
 
 function showPop() {
+    reset();
     document.getElementById("age").classList.remove("clicked");
     document.getElementById("fer").classList.remove("clicked");
     document.getElementById("img").classList.remove("clicked");
@@ -277,25 +280,25 @@ function showPop() {
     // Update the content of the selected elements
     document.querySelector('.titleP').textContent = "Population (In Millions)";
     document.querySelector('.country1').textContent = "India";
-    document.querySelector('.per1').textContent = "1435";
+    document.querySelector('.per1').textContent = "1435M";
     document.querySelector('.country2').textContent = "China";
-    document.querySelector('.per2').textContent = "1425";
+    document.querySelector('.per2').textContent = "1425M";
     document.querySelector('.country3').textContent = "US";
-    document.querySelector('.per3').textContent = "340";
+    document.querySelector('.per3').textContent = "340M";
     document.querySelector('.country4').textContent = "Indonesia";
-    document.querySelector('.per4').textContent = "278";
+    document.querySelector('.per4').textContent = "278M";
     document.querySelector('.country5').textContent = "Pakistan";
-    document.querySelector('.per5').textContent = "242";
+    document.querySelector('.per5').textContent = "242M";
     document.querySelector('.country6').textContent = "Nigeria";
-    document.querySelector('.per6').textContent = "226";
+    document.querySelector('.per6').textContent = "226M";
     document.querySelector('.country7').textContent = "Brazil";
-    document.querySelector('.per7').textContent = "217";
+    document.querySelector('.per7').textContent = "217M";
     document.querySelector('.country8').textContent = "Bangladesh";
-    document.querySelector('.per8').textContent = "173";
+    document.querySelector('.per8').textContent = "173M";
     document.querySelector('.country9').textContent = "Russia";
-    document.querySelector('.per9').textContent = "144";
+    document.querySelector('.per9').textContent = "144M";
     document.querySelector('.country10').textContent = "Mexico";
-    document.querySelector('.per10').textContent = "128";
+    document.querySelector('.per10').textContent = "128M";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
     document.querySelector("path#China.st0").style.fill="#5DAAE3";
     document.querySelector("path#Mexico.st0").style.fill="#5DAAE3";
@@ -309,6 +312,7 @@ function showPop() {
 }
 
 function showAge() {
+    reset();
     document.getElementById("pop").classList.remove("clicked");
     document.getElementById("fer").classList.remove("clicked");
     document.getElementById("img").classList.remove("clicked");
@@ -317,7 +321,7 @@ function showAge() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = " Age Structure (Ratio - 2025)";
+    document.querySelector('.titleP').textContent = " Age Structure (Ratio 2025)";
     document.querySelector('.country1').textContent = "Monaco";
     document.querySelector('.per1').textContent = "36.4%";
     document.querySelector('.country2').textContent = "Japan";
@@ -351,6 +355,7 @@ function showAge() {
 }
 
 function showFer() {
+    reset();
     document.getElementById("age").classList.remove("clicked");
     document.getElementById("age").classList.remove("clicked");
     document.getElementById("img").classList.remove("clicked");
@@ -359,7 +364,7 @@ function showFer() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Fertility Rate (Births Per Woman - 2025)";
+    document.querySelector('.titleP').textContent = "Fertility Rate (Births Per Woman 2025)";
     document.querySelector('.country1').textContent = "Niger";
     document.querySelector('.per1').textContent = "6.64";
     document.querySelector('.country2').textContent = "Angola";
@@ -393,6 +398,7 @@ function showFer() {
 }
 
 function showImg() {
+    reset();
     document.getElementById("pop").classList.remove("clicked");
     document.getElementById("age").classList.remove("clicked");
     document.getElementById("fer").classList.remove("clicked");
@@ -401,7 +407,7 @@ function showImg() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "migration (Number Per 1000 in 2024)";
+    document.querySelector('.titleP').textContent = "Migration (Number Per 1000 in 2024)";
     document.querySelector('.country1').textContent = "US";
     document.querySelector('.per1').textContent = "50.6";
     document.querySelector('.country2').textContent = "Germany";
@@ -424,7 +430,7 @@ function showImg() {
     document.querySelector('.per10').textContent = "6.8";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
     document.querySelector("path#Germany.st0").style.fill="#5DAAE3";
-    document.querySelector("path#Saudi-Arabia.st0").style.fill="#5DAAE3";
+    document.querySelector("path#KSA.st0").style.fill="#5DAAE3";
     document.querySelector("path#Russia.st0").style.fill="#5DAAE3";
     document.querySelector("path#UK.st0").style.fill="#5DAAE3";
     document.querySelector("path#UAE.st0").style.fill="#5DAAE3";
@@ -435,6 +441,7 @@ function showImg() {
 }
 
 function showUrba() {
+    reset();
     document.getElementById("pop").classList.remove("clicked");
     document.getElementById("age").classList.remove("clicked");
     document.getElementById("fer").classList.remove("clicked");
@@ -443,7 +450,7 @@ function showUrba() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Urban Land Area ((% of Total Land)";
+    document.querySelector('.titleP').textContent = "Urban Land Area (% of Total Land)";
     document.querySelector('.country1').textContent = "Bahrain";
     document.querySelector('.per1').textContent = "69.85%";
     document.querySelector('.country2').textContent = "Netherlands";
@@ -477,6 +484,7 @@ function showUrba() {
 }
 
 function showSoc() {
+    reset();
     document.getElementById("Eco").classList.remove("clicked");
     document.getElementById("Dem").classList.remove("clicked");
     document.getElementById("Geo").classList.remove("clicked");
@@ -507,25 +515,25 @@ function showCars() {
     // Update the content of the selected elements
     document.querySelector('.titleP').textContent = "Cars (In Millions)";
     document.querySelector('.country1').textContent = "China";
-    document.querySelector('.per1').textContent = "25.72";
+    document.querySelector('.per1').textContent = "25.72M";
     document.querySelector('.country2').textContent = "US";
-    document.querySelector('.per2').textContent = "10.88";
+    document.querySelector('.per2').textContent = "10.88M";
     document.querySelector('.country3').textContent = "Japan";
-    document.querySelector('.per3').textContent = " 9.68";
+    document.querySelector('.per3').textContent = " 9.68M";
     document.querySelector('.country4').textContent = "Germany";
-    document.querySelector('.per4').textContent = "4.66";
+    document.querySelector('.per4').textContent = "4.66M";
     document.querySelector('.country5').textContent = "India";
-    document.querySelector('.per5').textContent = "4.51";
+    document.querySelector('.per5').textContent = "4.51M";
     document.querySelector('.country6').textContent = "Mexico";
-    document.querySelector('.per6').textContent = "3.99";
+    document.querySelector('.per6').textContent = "3.99M";
     document.querySelector('.country7').textContent = "South-korea";
-    document.querySelector('.per7').textContent = "3.95";
+    document.querySelector('.per7').textContent = "3.95M";
     document.querySelector('.country8').textContent = "Brazil";
-    document.querySelector('.per8').textContent = "2.94";
+    document.querySelector('.per8').textContent = "2.94M";
     document.querySelector('.country9').textContent = "Spain";
-    document.querySelector('.per9').textContent = "2.82";
+    document.querySelector('.per9').textContent = "2.82M";
     document.querySelector('.country10').textContent = "France";
-    document.querySelector('.per10').textContent = "2.20";
+    document.querySelector('.per10').textContent = "2.20M";
     document.querySelector("path#Japan.st0").style.fill="#5DAAE3";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
     document.querySelector("path#China.st0").style.fill="#5DAAE3";
@@ -650,7 +658,7 @@ function showCri() {
     document.querySelector('.per6').textContent = "71.63";
     document.querySelector('.country7').textContent = "Guyana";
     document.querySelector('.per7').textContent = "68.74";
-    document.querySelector('.country8').textContent = "ElSalvador";
+    document.querySelector('.country8').textContent = "El Salvador";
     document.querySelector('.per8').textContent = "67.79";
     document.querySelector('.country9').textContent = "Brazil";
     document.querySelector('.per9').textContent = "	67.49";
@@ -661,9 +669,9 @@ function showCri() {
     document.querySelector("path#South-Africa.st0").style.fill="#5DAAE3";
     document.querySelector("path#Afghanistan.st0").style.fill="#5DAAE3";
     document.querySelector("path#Honduras.st0").style.fill="#5DAAE3";
-    document.querySelector("path#Trinidad&Tobago.st0").style.fill="#5DAAE3";
+    document.querySelector("path#Trinidad-and-Tobago.st0").style.fill="#5DAAE3";
     document.querySelector("path#Guyana.st0").style.fill="#5DAAE3";
-    document.querySelector("path#ElSalvador.st0").style.fill="#5DAAE3";
+    document.querySelector("path#El-Salvador.st0").style.fill="#5DAAE3";
     document.querySelector("path#Brazil.st0").style.fill="#5DAAE3";
     document.querySelector("path#Jamaica.st0").style.fill="#5DAAE3";
 }
@@ -681,7 +689,7 @@ function showUnemp() {
     document.querySelector('.titleP').textContent = "Crime Index (2025)";
     document.querySelector('.country1').textContent = "Puerto Rico";
     document.querySelector('.per1').textContent = "	42.9";
-    document.querySelector('.country2').textContent = "	Swaziland";
+    document.querySelector('.country2').textContent = "Swaziland";
     document.querySelector('.per2').textContent = "34.4";
     document.querySelector('.country3').textContent = "South Africa";
     document.querySelector('.per3').textContent = "33.2";
@@ -699,7 +707,7 @@ function showUnemp() {
     document.querySelector('.per9').textContent = "19.1";
     document.querySelector('.country10').textContent = "Kosovo";
     document.querySelector('.per10').textContent = "30.5";
-    document.querySelector("path#Puerto-Rico.st0").style.fill="#5DAAE3";
+    // document.querySelector("path#Puerto-Rico.st0").style.fill="#5DAAE3";
     document.querySelector("path#Swaziland.st0").style.fill="#5DAAE3";
     document.querySelector("path#South-Africa.st0").style.fill="#5DAAE3";
     document.querySelector("path#Djibouti.st0").style.fill="#5DAAE3";
@@ -741,17 +749,18 @@ function showLifeEx() {
     document.querySelector('.per10').textContent = "83.55";
     document.querySelector("path#Japan.st0").style.fill="#5DAAE3";
     document.querySelector("path#Switzerland.st0").style.fill="#5DAAE3";
-    //document.querySelector("path#Singapore.st0").style.fill="#5DAAE3";
+    document.querySelector("path#Singapore.st0").style.fill="#5DAAE3";
     document.querySelector("path#Italy.st0").style.fill="#5DAAE3";
     document.querySelector("path#South-Korea.st0").style.fill="#5DAAE3";
     document.querySelector("path#Spain.st0").style.fill="#5DAAE3";
-    //document.querySelector("path#Malta.st0").style.fill="#5DAAE3";
+    document.querySelector("path#Malta.st0").style.fill="#5DAAE3";
     document.querySelector("path#Australia.st0").style.fill="#5DAAE3";
     document.querySelector("path#Sweden.st0").style.fill="#5DAAE3";
     document.querySelector("path#Norway.st0").style.fill="#5DAAE3";
 }
 
 function showGeo() {
+    reset();
     document.getElementById("Eco").classList.remove("clicked");
     document.getElementById("Dem").classList.remove("clicked");
     document.getElementById("Soc").classList.remove("clicked");
@@ -782,25 +791,25 @@ function showAreas() {
     // Update the content of the selected elements
     document.querySelector('.titleP').textContent = "Areas (In millions km2)";
     document.querySelector('.country1').textContent = "Russia";
-    document.querySelector('.per1').textContent = "17.09";
+    document.querySelector('.per1').textContent = "17.09M";
     document.querySelector('.country2').textContent = "Canada";
-    document.querySelector('.per2').textContent = "9.984";
+    document.querySelector('.per2').textContent = "9.984M";
     document.querySelector('.country3').textContent = "US";
-    document.querySelector('.per3').textContent = " 9.883";
+    document.querySelector('.per3').textContent = " 9.883M";
     document.querySelector('.country4').textContent = "China";
-    document.querySelector('.per4').textContent = "9.596";
+    document.querySelector('.per4').textContent = "9.596M";
     document.querySelector('.country5').textContent = "Brazil";
-    document.querySelector('.per5').textContent = "8.515";
+    document.querySelector('.per5').textContent = "8.515M";
     document.querySelector('.country6').textContent = "Australia";
-    document.querySelector('.per6').textContent = "7.741";
+    document.querySelector('.per6').textContent = "7.741M";
     document.querySelector('.country7').textContent = "Argentina";
-    document.querySelector('.per7').textContent = "3.745";
+    document.querySelector('.per7').textContent = "3.745M";
     document.querySelector('.country8').textContent = "India";
-    document.querySelector('.per8').textContent = "3.287";
+    document.querySelector('.per8').textContent = "3.287M";
     document.querySelector('.country9').textContent = "Kazakhstan";
-    document.querySelector('.per9').textContent = "2.724";
+    document.querySelector('.per9').textContent = "2.724M";
     document.querySelector('.country10').textContent = "Algeria";
-    document.querySelector('.per10').textContent = "2.381";
+    document.querySelector('.per10').textContent = "2.381M";
     document.querySelector("path#Australia.st0").style.fill="#5DAAE3";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
     document.querySelector("path#China.st0").style.fill="#5DAAE3";
@@ -825,25 +834,25 @@ function showResources() {
     // Update the content of the selected elements
     document.querySelector('.titleP').textContent = "Resources (In trillions)";
     document.querySelector('.country1').textContent = "Russia";
-    document.querySelector('.per1').textContent = "75";
+    document.querySelector('.per1').textContent = "$75T";
     document.querySelector('.country2').textContent = "US";
-    document.querySelector('.per2').textContent = "45";
+    document.querySelector('.per2').textContent = "$45T";
     document.querySelector('.country3').textContent = "Saudi Arabia";
-    document.querySelector('.per3').textContent = " 34.4";
+    document.querySelector('.per3').textContent = "$34.4T";
     document.querySelector('.country4').textContent = "Canada";
-    document.querySelector('.per4').textContent = "33.2";
+    document.querySelector('.per4').textContent = "$33.2T";
     document.querySelector('.country5').textContent = "Iran";
-    document.querySelector('.per5').textContent = "27.3";
+    document.querySelector('.per5').textContent = "$27.3T";
     document.querySelector('.country6').textContent = "China";
-    document.querySelector('.per6').textContent = "23";
+    document.querySelector('.per6').textContent = "$23T";
     document.querySelector('.country7').textContent = "Brazil";
-    document.querySelector('.per7').textContent = "21.8";
+    document.querySelector('.per7').textContent = "$21.8T";
     document.querySelector('.country8').textContent = "Australia";
-    document.querySelector('.per8').textContent = "19.9";
+    document.querySelector('.per8').textContent = "$19.9T";
     document.querySelector('.country9').textContent = "Iraq";
-    document.querySelector('.per9').textContent = "15.9";
+    document.querySelector('.per9').textContent = "$15.9T";
     document.querySelector('.country10').textContent = "Venezuela";
-    document.querySelector('.per10').textContent = "14.3";
+    document.querySelector('.per10').textContent = "$14.3T";
     document.querySelector("path#Australia.st0").style.fill="#5DAAE3";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
     document.querySelector("path#China.st0").style.fill="#5DAAE3";
@@ -866,27 +875,27 @@ function showClim() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Resources (In trillions)";
+    document.querySelector('.titleP').textContent = "Climate Change Performance Index";
     document.querySelector('.country1').textContent = "Denmark";
-    document.querySelector('.per1').textContent = "75";
+    document.querySelector('.per1').textContent = "75%";
     document.querySelector('.country2').textContent = "Sweden";
-    document.querySelector('.per2').textContent = "45";
+    document.querySelector('.per2').textContent = "45%";
     document.querySelector('.country3').textContent = "Chile";
-    document.querySelector('.per3').textContent = " 34.4";
+    document.querySelector('.per3').textContent = " 34.4%";
     document.querySelector('.country4').textContent = "Morocco";
-    document.querySelector('.per4').textContent = "33.2";
+    document.querySelector('.per4').textContent = "33.2%";
     document.querySelector('.country5').textContent = "India";
-    document.querySelector('.per5').textContent = "27.3";
+    document.querySelector('.per5').textContent = "27.3%";
     document.querySelector('.country6').textContent = "Norway";
-    document.querySelector('.per6').textContent = "23";
+    document.querySelector('.per6').textContent = "23%";
     document.querySelector('.country7').textContent = "UK";
-    document.querySelector('.per7').textContent = "21.8";
+    document.querySelector('.per7').textContent = "21.8%";
     document.querySelector('.country8').textContent = "Lithuania";
-    document.querySelector('.per8').textContent = "19.9";
+    document.querySelector('.per8').textContent = "19.9%";
     document.querySelector('.country9').textContent = "Finland";
-    document.querySelector('.per9').textContent = "15.9";
+    document.querySelector('.per9').textContent = "15.9%";
     document.querySelector('.country10').textContent = "Germany";
-    document.querySelector('.per10').textContent = "14.3";
+    document.querySelector('.per10').textContent = "14.3%";
     document.querySelector("path#Denmark.st0").style.fill="#5DAAE3";
     document.querySelector("path#Sweden.st0").style.fill="#5DAAE3";
     document.querySelector("path#Chile.st0").style.fill="#5DAAE3";
@@ -909,27 +918,27 @@ function showWat() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Water Area (In Thousands)";
+    document.querySelector('.titleP').textContent = "Water Area (In km² Thousands)";
     document.querySelector('.country1').textContent = "Canada";
-    document.querySelector('.per1').textContent = "891";
+    document.querySelector('.per1').textContent = "891K";
     document.querySelector('.country2').textContent = "Russia";
-    document.querySelector('.per2').textContent = "720";
+    document.querySelector('.per2').textContent = "720K";
     document.querySelector('.country3').textContent = "US";
-    document.querySelector('.per3').textContent = "664";
+    document.querySelector('.per3').textContent = "664K";
     document.querySelector('.country4').textContent = "India";
-    document.querySelector('.per4').textContent = "314";
+    document.querySelector('.per4').textContent = "314K";
     document.querySelector('.country5').textContent = "Sudan";
-    document.querySelector('.per5').textContent = "129";
+    document.querySelector('.per5').textContent = "129K";
     document.querySelector('.country6').textContent = "Iran";
-    document.querySelector('.per6').textContent = "116";
+    document.querySelector('.per6').textContent = "116K";
     document.querySelector('.country7').textContent = "Ethiopia";
-    document.querySelector('.per7').textContent = "104";
+    document.querySelector('.per7').textContent = "104K";
     document.querySelector('.country8').textContent = "Colombia";
-    document.querySelector('.per8').textContent = "100";
+    document.querySelector('.per8').textContent = "100K";
     document.querySelector('.country9').textContent = "Indonesia";
-    document.querySelector('.per9').textContent = "93";
+    document.querySelector('.per9').textContent = "93K";
     document.querySelector('.country10').textContent = "China";
-    document.querySelector('.per10').textContent = "82";
+    document.querySelector('.per10').textContent = "82K";
     document.querySelector("path#Canada.st0").style.fill="#5DAAE3";
     document.querySelector("path#Russia.st0").style.fill="#5DAAE3";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
@@ -952,27 +961,27 @@ function showCoast() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Coastline Length (In Thousands)";
+    document.querySelector('.titleP').textContent = "Coastline Length (In km Thousands)";
     document.querySelector('.country1').textContent = "Canada";
-    document.querySelector('.per1').textContent = "202";
+    document.querySelector('.per1').textContent = "202K";
     document.querySelector('.country2').textContent = "Norway";
-    document.querySelector('.per2').textContent = "58";
+    document.querySelector('.per2').textContent = "58K";
     document.querySelector('.country3').textContent = "Indonesia";
-    document.querySelector('.per3').textContent = "54";
+    document.querySelector('.per3').textContent = "54K";
     document.querySelector('.country4').textContent = "Russia";
-    document.querySelector('.per4').textContent = "37";
+    document.querySelector('.per4').textContent = "37K";
     document.querySelector('.country5').textContent = "Philippines";
-    document.querySelector('.per5').textContent = "36";
+    document.querySelector('.per5').textContent = "36K";
     document.querySelector('.country6').textContent = "Japan";
-    document.querySelector('.per6').textContent = "29";
+    document.querySelector('.per6').textContent = "29K";
     document.querySelector('.country7').textContent = "Australia";
-    document.querySelector('.per7').textContent = "25";
+    document.querySelector('.per7').textContent = "25K";
     document.querySelector('.country8').textContent = "US";
-    document.querySelector('.per8').textContent = "19";
+    document.querySelector('.per8').textContent = "19K";
     document.querySelector('.country9').textContent = "New Zealand";
-    document.querySelector('.per9').textContent = "15";
+    document.querySelector('.per9').textContent = "15K";
     document.querySelector('.country10').textContent = "China";
-    document.querySelector('.per10').textContent = "14";
+    document.querySelector('.per10').textContent = "14K";
     document.querySelector("path#Canada.st0").style.fill="#5DAAE3";
     document.querySelector("path#Norway.st0").style.fill="#5DAAE3";
     document.querySelector("path#Indonesia.st0").style.fill="#5DAAE3";
@@ -986,6 +995,7 @@ function showCoast() {
 }
 
 function showHeal() {
+    reset();
     document.getElementById("Eco").classList.remove("clicked");
     document.getElementById("Dem").classList.remove("clicked");
     document.getElementById("Soc").classList.remove("clicked");
@@ -1014,7 +1024,7 @@ function showVac() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Vaccination Rate (Coverage in 2025)";
+    document.querySelector('.titleP').textContent = "Vaccination Rate (Coverage 2025)";
     document.querySelector('.country1').textContent = "China";
     document.querySelector('.per1').textContent = "99%";
     document.querySelector('.country2').textContent = "Bangladesh";
@@ -1058,7 +1068,7 @@ function showExp() {
     document.querySelector('.list').style.display = 'block';
 
     // Update the content of the selected elements
-    document.querySelector('.titleP').textContent = "Healthcare Expenditure per Capita (2025)";
+    document.querySelector('.titleP').textContent = "Healthcare Expenditure Per Capita (2025)";
     document.querySelector('.country1').textContent = "United States";
     document.querySelector('.per1').textContent = "$12,555";
     document.querySelector('.country2').textContent = "Switzerland";
@@ -1125,16 +1135,16 @@ function showObs() {
     document.querySelector('.country10').textContent = "France";
     document.querySelector('.per10').textContent = "21.6%";
 
-    document.querySelector("path#US.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#Mexico.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#New_Zealand.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#Hungary.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#Australia.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#UK.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#Canada.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#Ireland.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#Germany.st0").style.fill = "#F3C6C6";
-    document.querySelector("path#France.st0").style.fill = "#F3C6C6";
+    document.querySelector("path#US.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Mexico.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#New-Zealand.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Hungary.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Australia.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#UK.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Canada.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Ireland.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Germany.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#France.st0").style.fill = "#5DAAE3";
 }
 
 function showDoc() {
@@ -1182,6 +1192,7 @@ function showDoc() {
 }
 
 function showEnv() {
+    reset();
     document.getElementById("Eco").classList.remove("clicked");
     document.getElementById("Dem").classList.remove("clicked");
     document.getElementById("Soc").classList.remove("clicked");
@@ -1210,27 +1221,27 @@ function showEm() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "CO₂ Emissions (Million Tons, 2023)";
+    document.querySelector('.titleP').textContent = "CO₂ Emissions (Million Tons 2023)";
     document.querySelector('.country1').textContent = "China";
-    document.querySelector('.per1').textContent = "11,467";
+    document.querySelector('.per1').textContent = "11,467M";
     document.querySelector('.country2').textContent = "United States";
-    document.querySelector('.per2').textContent = "5,068";
+    document.querySelector('.per2').textContent = "5,068M";
     document.querySelector('.country3').textContent = "India";
-    document.querySelector('.per3').textContent = "2,888";
+    document.querySelector('.per3').textContent = "2,888M";
     document.querySelector('.country4').textContent = "Russia";
-    document.querySelector('.per4').textContent = "1,474";
+    document.querySelector('.per4').textContent = "1,474M";
     document.querySelector('.country5').textContent = "Japan";
-    document.querySelector('.per5').textContent = "1,086";
+    document.querySelector('.per5').textContent = "1,086M";
     document.querySelector('.country6').textContent = "Iran";
-    document.querySelector('.per6').textContent = "721";
+    document.querySelector('.per6').textContent = "721M";
     document.querySelector('.country7').textContent = "Germany";
-    document.querySelector('.per7').textContent = "665";
+    document.querySelector('.per7').textContent = "665M";
     document.querySelector('.country8').textContent = "South Korea";
-    document.querySelector('.per8').textContent = "659";
+    document.querySelector('.per8').textContent = "659M";
     document.querySelector('.country9').textContent = "Saudi Arabia";
-    document.querySelector('.per9').textContent = "627";
+    document.querySelector('.per9').textContent = "627M";
     document.querySelector('.country10').textContent = "Indonesia";
-    document.querySelector('.per10').textContent = "615";
+    document.querySelector('.per10').textContent = "615M";
 
     document.querySelector("path#China.st0").style.fill = "#5DAAE3";
     document.querySelector("path#US.st0").style.fill = "#5DAAE3";
@@ -1239,8 +1250,8 @@ function showEm() {
     document.querySelector("path#Japan.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Iran.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Germany.st0").style.fill = "#5DAAE3";
-    document.querySelector("path#South_Korea.st0").style.fill = "#5DAAE3";
-    document.querySelector("path#Saudi_Arabia.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#South-Korea.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#KSA.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Indonesia.st0").style.fill = "#5DAAE3";
 }
 
@@ -1298,27 +1309,27 @@ function showRef() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "Refugees Hosted (Millions, 2023)";
+    document.querySelector('.titleP').textContent = "Refugees Hosted (Millions 2023)";
     document.querySelector('.country1').textContent = "Turkey";
-    document.querySelector('.per1').textContent = "3.6";
+    document.querySelector('.per1').textContent = "3.6M";
     document.querySelector('.country2').textContent = "Iran";
-    document.querySelector('.per2').textContent = "3.4";
+    document.querySelector('.per2').textContent = "3.4M";
     document.querySelector('.country3').textContent = "Colombia";
-    document.querySelector('.per3').textContent = "2.5";
+    document.querySelector('.per3').textContent = "2.5M";
     document.querySelector('.country4').textContent = "Germany";
-    document.querySelector('.per4').textContent = "2.2";
+    document.querySelector('.per4').textContent = "2.2M";
     document.querySelector('.country5').textContent = "Pakistan";
-    document.querySelector('.per5').textContent = "1.7";
+    document.querySelector('.per5').textContent = "1.7M";
     document.querySelector('.country6').textContent = "Uganda";
-    document.querySelector('.per6').textContent = "1.5";
+    document.querySelector('.per6').textContent = "1.5M";
     document.querySelector('.country7').textContent = "Russia";
-    document.querySelector('.per7').textContent = "1.4";
+    document.querySelector('.per7').textContent = "1.4M";
     document.querySelector('.country8').textContent = "United States";
-    document.querySelector('.per8').textContent = "1.1";
+    document.querySelector('.per8').textContent = "1.1M";
     document.querySelector('.country9').textContent = "Ethiopia";
-    document.querySelector('.per9').textContent = "1.0";
+    document.querySelector('.per9').textContent = "1.0M";
     document.querySelector('.country10').textContent = "Sudan";
-    document.querySelector('.per10').textContent = "0.9";
+    document.querySelector('.per10').textContent = "0.9M";
 
     document.querySelector("path#Turkey.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Iran.st0").style.fill = "#5DAAE3";
@@ -1342,7 +1353,7 @@ function showAir() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "Air Quality Index (Worst 2023)";
+    document.querySelector('.titleP').textContent = "Air Quality Index (Top Bottom 2023)";
     document.querySelector('.country1').textContent = "Bangladesh";
     document.querySelector('.per1').textContent = "162";
     document.querySelector('.country2').textContent = "Pakistan";
@@ -1386,7 +1397,7 @@ function showRec() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "Recycling Rates (Top 10 Countries, 2023)";
+    document.querySelector('.titleP').textContent = "Recycling Rates (Top 2023)";
     document.querySelector('.country1').textContent = "Germany";
     document.querySelector('.per1').textContent = "66%";
     document.querySelector('.country2').textContent = "Austria";
@@ -1407,20 +1418,21 @@ function showRec() {
     document.querySelector('.per9').textContent = "47%";
     document.querySelector('.country10').textContent = "Sweden";
     document.querySelector('.per10').textContent = "46%";
-
-    document.querySelector("path#Germany.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#Austria.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#SouthKorea.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#UnitedKingdom.st0").style.fill = "#D4FAD7"; // For Wales
-    document.querySelector("path#Switzerland.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#Netherlands.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#Slovenia.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#Belgium.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#Taiwan.st0").style.fill = "#D4FAD7";
-    document.querySelector("path#Sweden.st0").style.fill = "#D4FAD7";
+    
+    document.querySelector("path#Germany.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Austria.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#South-Korea.st0").style.fill = "#5DAAE3";
+    // document.querySelector("path#UnitedKingdom.st0").style.fill = "#5DAAE3"; // For Wales
+    document.querySelector("path#Switzerland.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Netherlands.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Slovenia.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Belgium.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Taiwan.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#Sweden.st0").style.fill = "#5DAAE3";
 }
 
 function showTech() {
+    reset();
     document.getElementById("Eco").classList.remove("clicked");
     document.getElementById("Dem").classList.remove("clicked");
     document.getElementById("Soc").classList.remove("clicked");
@@ -1449,7 +1461,7 @@ function showInter() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "Internet Access (% of Population, 2023)";
+    document.querySelector('.titleP').textContent = "Internet Access (% of Population 2023)";
     document.querySelector('.country1').textContent = "Iceland";
     document.querySelector('.per1').textContent = "99.0%";
     document.querySelector('.country2').textContent = "Norway";
@@ -1478,7 +1490,7 @@ function showInter() {
     document.querySelector("path#UAE.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Switzerland.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Netherlands.st0").style.fill = "#5DAAE3";
-    document.querySelector("path#SouthKorea.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#South-Korea.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Finland.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Luxembourg.st0").style.fill = "#5DAAE3";
 }
@@ -1495,25 +1507,25 @@ function showMob() {
     // Update the content of the selected elements
     document.querySelector('.titleP').textContent = "Mobiles (In Billions)";
     document.querySelector('.country1').textContent = "China";
-    document.querySelector('.per1').textContent = "1.61";
+    document.querySelector('.per1').textContent = "1.61B";
     document.querySelector('.country2').textContent = "India";
-    document.querySelector('.per2').textContent = "1.51";
+    document.querySelector('.per2').textContent = "1.51B";
     document.querySelector('.country3').textContent = "Indonesia";
-    document.querySelector('.per3').textContent = " 0.385";
+    document.querySelector('.per3').textContent = " 0.385B";
     document.querySelector('.country4').textContent = "US";
-    document.querySelector('.per4').textContent = "0.38";
+    document.querySelector('.per4').textContent = "0.38B";
     document.querySelector('.country5').textContent = "Brazil";
-    document.querySelector('.per5').textContent = "0.284";
+    document.querySelector('.per5').textContent = "0.284B";
     document.querySelector('.country6').textContent = "Russia";
-    document.querySelector('.per6').textContent = "0.256";
+    document.querySelector('.per6').textContent = "0.256B";
     document.querySelector('.country7').textContent = "Pakistan";
-    document.querySelector('.per7').textContent = "0.194";
+    document.querySelector('.per7').textContent = "0.194B";
     document.querySelector('.country8').textContent = "Nigeria";
-    document.querySelector('.per8').textContent = "0.19";
+    document.querySelector('.per8').textContent = "0.19B";
     document.querySelector('.country9').textContent = "Bangladesh";
-    document.querySelector('.per9').textContent = "0.18";
+    document.querySelector('.per9').textContent = "0.18B";
     document.querySelector('.country10').textContent = "Japan";
-    document.querySelector('.per10').textContent = "0.146";
+    document.querySelector('.per10').textContent = "0.146B";
     document.querySelector("path#Japan.st0").style.fill="#5DAAE3";
     document.querySelector("path#US.st0").style.fill="#5DAAE3";
     document.querySelector("path#China.st0").style.fill="#5DAAE3";
@@ -1536,7 +1548,7 @@ function showRD() {
     button.classList.add("clicked");
     document.querySelector('.list').style.display = 'block';
 
-    document.querySelector('.titleP').textContent = "R&D Spending (Billion USD, 2023)";
+    document.querySelector('.titleP').textContent = "R&D Spending (Billion USD 2023)";
     document.querySelector('.country1').textContent = "United States";
     document.querySelector('.per1').textContent = "$679.4B";
     document.querySelector('.country2').textContent = "China";
@@ -1562,7 +1574,7 @@ function showRD() {
     document.querySelector("path#China.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Japan.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Germany.st0").style.fill = "#5DAAE3";
-    document.querySelector("path#SouthKorea.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#South-Korea.st0").style.fill = "#5DAAE3";
     document.querySelector("path#France.st0").style.fill = "#5DAAE3";
     document.querySelector("path#India.st0").style.fill = "#5DAAE3";
     document.querySelector("path#UK.st0").style.fill = "#5DAAE3";
@@ -1583,25 +1595,25 @@ function showAI() {
     // Update the content of the selected elements
     document.querySelector('.titleP').textContent = "AI Researchers Score (2023)";
     document.querySelector('.country1').textContent = "United States";
-    document.querySelector('.per1').textContent = "70.06";
+    document.querySelector('.per1').textContent = "70.06%";
     document.querySelector('.country2').textContent = "China";
-    document.querySelector('.per2').textContent = "40.17";
+    document.querySelector('.per2').textContent = "40.17%";
     document.querySelector('.country3').textContent = "United Kingdom";
-    document.querySelector('.per3').textContent = "27.21";
+    document.querySelector('.per3').textContent = "27.21%";
     document.querySelector('.country4').textContent = "India";
-    document.querySelector('.per4').textContent = "25.54";
+    document.querySelector('.per4').textContent = "25.54%";
     document.querySelector('.country5').textContent = "United Arab Emirates";
-    document.querySelector('.per5').textContent = "22.72";
+    document.querySelector('.per5').textContent = "22.72%";
     document.querySelector('.country6').textContent = "France";
     document.querySelector('.per6').textContent = "22.54";
     document.querySelector('.country7').textContent = "South Korea";
-    document.querySelector('.per7').textContent = "20.48";
+    document.querySelector('.per7').textContent = "20.48%";
     document.querySelector('.country8').textContent = "Germany";
-    document.querySelector('.per8').textContent = "18.49";
+    document.querySelector('.per8').textContent = "18.49%";
     document.querySelector('.country9').textContent = "Japan";
-    document.querySelector('.per9').textContent = "18.47";
+    document.querySelector('.per9').textContent = "18.47%";
     document.querySelector('.country10').textContent = "Singapore";
-    document.querySelector('.per10').textContent = "18.15";
+    document.querySelector('.per10').textContent = "18.15%";
 
     // Optional: Highlight countries on map if path IDs exist
     document.querySelector("path#US.st0").style.fill = "#5DAAE3";
@@ -1610,7 +1622,7 @@ function showAI() {
     document.querySelector("path#India.st0").style.fill = "#5DAAE3";
     document.querySelector("path#UAE.st0").style.fill = "#5DAAE3";
     document.querySelector("path#France.st0").style.fill = "#5DAAE3";
-    document.querySelector("path#SouthKorea.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#South-Korea.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Germany.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Japan.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Singapore.st0").style.fill = "#5DAAE3";
@@ -1653,7 +1665,7 @@ function showPat() {
     document.querySelector("path#China.st0").style.fill = "#5DAAE3";
     document.querySelector("path#US.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Japan.st0").style.fill = "#5DAAE3";
-    document.querySelector("path#SouthKorea.st0").style.fill = "#5DAAE3";
+    document.querySelector("path#South-Korea.st0").style.fill = "#5DAAE3";
     document.querySelector("path#Germany.st0").style.fill = "#5DAAE3";
     document.querySelector("path#India.st0").style.fill = "#5DAAE3";
     document.querySelector("path#France.st0").style.fill = "#5DAAE3";
