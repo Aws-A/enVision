@@ -380,81 +380,87 @@ reply.addEventListener("click", () => {
             await updateDoc(replyRef, { likes: (r.likes || 0) + 1 });
         });
 
-     // ✏️ Edit
-    const editIcon = document.createElement("img");
-    editIcon.src = "Images/edit.png";
-    editIcon.width = 14;
-    editIcon.style.cursor = "pointer";
-    editIcon.style.marginLeft = "10px";
+  // ✏️ Edit
+const editIcon = document.createElement("img");
+editIcon.src = "Images/edit.png";
+editIcon.width = 14;
+editIcon.style.cursor = "pointer";
+editIcon.style.marginLeft = "10px";
 
-    editIcon.addEventListener("mouseenter", () => editIcon.src = "Images/editHover.png");
-    editIcon.addEventListener("mouseleave", () => editIcon.src = "Images/edit.png");
+editIcon.addEventListener("mouseenter", () => editIcon.src = "Images/editHover.png");
+editIcon.addEventListener("mouseleave", () => editIcon.src = "Images/edit.png");
 
-    editIcon.addEventListener("click", () => {
-    const textarea = document.createElement("textarea");
-    textarea.value = r.text;
-    textarea.style.width = "100%";
-    textarea.style.marginTop = "5px";
-    textarea.style.backgroundColor = "rgba(0,0,0,0.05)";
-    textarea.style.border = "none";
+editIcon.addEventListener("click", () => {
+  // Save the original content (text + icons)
+  const originalContent = Array.from(repDiv.childNodes);
 
-    const saveBtn = document.createElement("button");
-    saveBtn.textContent = "Save";
-    saveBtn.className = "save";
-    saveBtn.style.marginTop = "5px";
-    saveBtn.style.width = "60px";
-    saveBtn.style.height = "25px";
+  const textarea = document.createElement("textarea");
+  textarea.value = r.text;
+  textarea.style.width = "100%";
+  textarea.style.marginTop = "5px";
+  textarea.style.backgroundColor = "rgba(0,0,0,0.05)";
+  textarea.style.border = "none";
+
+  const saveBtn = document.createElement("button");
+  saveBtn.textContent = "Save";
+  saveBtn.className = "save";
+  saveBtn.style.marginTop = "5px";
+  saveBtn.style.width = "60px";
+  saveBtn.style.height = "25px";
+  saveBtn.style.border = "none";
+  saveBtn.style.borderRadius = "5px";
+  saveBtn.style.color = "white";
+  saveBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
+  saveBtn.style.cursor = "pointer";
+
+  // Hover effect
+  saveBtn.addEventListener("mouseenter", () => {
+    saveBtn.style.border = "1px solid #35B851";
+    saveBtn.style.background = "linear-gradient(#35B851, #2fa843, #068217)";
+  });
+  saveBtn.addEventListener("mouseleave", () => {
     saveBtn.style.border = "none";
-    saveBtn.style.borderRadius = "5px";
-    saveBtn.style.color = "white";
     saveBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
-    saveBtn.style.cursor = "pointer";
+  });
 
-    // Hover effect
-    saveBtn.addEventListener("mouseenter", () => {
-        saveBtn.style.border = "1px solid #35B851";
-        saveBtn.style.background = "linear-gradient(#35B851, #2fa843, #068217)";
-    });
-    saveBtn.addEventListener("mouseleave", () => {
-        saveBtn.style.border = "none";
-        saveBtn.style.background = "linear-gradient(#575757, #333333, #000000)";
-    });
+  // Replace repDiv content with textarea + save button
+  repDiv.innerHTML = "";
+  repDiv.appendChild(textarea);
+  repDiv.appendChild(saveBtn);
+  textarea.focus();
 
+  const handleSave = async () => {
+    const newText = textarea.value;
+
+    // Restore original content (text + icons)
     repDiv.innerHTML = "";
-    repDiv.appendChild(textarea);
-    repDiv.appendChild(saveBtn);
+    originalContent.forEach(node => repDiv.appendChild(node));
 
-    const handleSave = async () => {
-    const newText = textarea.value.trim();
-
-    // Update the <p> text without touching icons
+    // Update the <p> text
     const textP = repDiv.querySelector("p");
     if (textP) {
-        textP.textContent = newText || r.text;
+      textP.textContent = newText;
     }
 
-    // Remove textarea and save button
-    textarea.remove();
-    saveBtn.remove();
-
-    // Update Firestore only if changed
-    if (newText !== r.text) {
-        await updateDoc(replyRef, { text: newText });
+    // Always update Firestore
+    try {
+      await updateDoc(replyRef, { text: newText });
+    } catch (err) {
+      console.error("save reply edit err:", err);
     }
-    };
+  };
 
+  // Click to save
+  saveBtn.addEventListener("click", handleSave);
 
-    // Click to save
-    saveBtn.addEventListener("click", handleSave);
-
-    // Press Enter to save (Shift+Enter = newline)
-    textarea.addEventListener("keydown", (e) => {
+  // Press Enter to save (Shift+Enter = newline)
+  textarea.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        handleSave();
+      e.preventDefault();
+      handleSave();
     }
-    });
-    });
+  });
+});
 
 
     // 🗑 Delete reply with confirm
