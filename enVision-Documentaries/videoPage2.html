@@ -38,58 +38,105 @@
                         <iframe class="vid" 
                                 width="640" 
                                 height="360" 
-                                src="https://www.youtube.com/embed/vD_oSIlMWVc" 
-                                title="Photography Progress Video" 
+                            src="https://www.youtube.com/embed/vD_oSIlMWVc" 
+                                title="Quick Statistics Video" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                         </iframe>
+                        <h1 class="title">
+                            Museum of Progress: Photography Timeline 
+                        </h1>
                     </div>
-                    <h1 class="title"> Museum of Progress: Photography Timeline </h1>
                 </div>
                 <div class="video-info">
                     <div class="info-header">
-                        <div class="info-description">
-                            <h3>
-                                Showing the progress <br> of the photography
-                            </h3>
-                            <h2>
+                        <div class="category-box">
+                            <h2 class="Category">
                                 History
                             </h2>
                         </div>
-                        <div class="info-number">
+                        <div class="views-number">
                             <h2>
                                 751,140
                             </h2>
                         </div>
                     </div>
-                    <div class="info-body">
-                        <h5>
-                           Comments
-                        </h5>
-                        <h6>
-                            Nancy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 August 2025
-                        </h6>
-                        <p>
-                            I like to get some knowledge in visual presentation
-                        </p>
-                        <h6>
-                            Ryan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9 August 2025
-                        </h6>
-                        <p>
-                            Interesting info. about photography!
-                        </p>
+                    <div class="info-description">
+                        <h3>
+                            The Museum of Progress: Photography Timeline showcases the evolution of photography, from its earliest experiments to today’s digital era.<br>
+                            <br>
+                             It highlights key inventions, iconic images, and the cultural impact of photography across time.
+                        </h3>
                     </div>
                 </div>
             </section>
-            <h2 class="others-title"> Other Videos </h5>
-            <section class="otherVids">
-                <img src="images/views1.png" class="others"/>
-                <img src="images/views2.png" class="others"/>
-                <img src="images/views3.png" class="others"/>
-                <img src="images/rates1.png" class="others"/>
-                <img src="images/rates2.png" class="others"/>
-                <img src="images/rates3.png" class="others"/>
+            <section id="interactives">
+                <div id="interactives-icons">
+                    <div class="icon-container">
+                        <img src="images/like.png" class="icon" id="like">
+                        <span id="like-count">0</span>
+                    </div>
+                    <div class="icon-container">
+                        <img src="images/comment.png" class="icon" id="comment">
+                        <span id="comment-count">0</span>
+                    </div>
+                    <div class="icon-container">
+                        <img src="images/share.png" class="icon" id="share">
+                        <span id="share-count">0</span>
+                    </div>
+                </div>
+                <!-- Comments section -->
+                <div id="comment-section" style="display: none; margin-top: 15px;">
+                    <textarea id="comment-input" rows="3" placeholder="Write a comment..."></textarea>
+                    <button id="submit-comment">Comment</button>
+                </div>
+                <!-- Where submitted comments will appear -->
+                <div id="comments-list"></div>
+
+                <!-- Delete Confirmation Overlay -->
+                <div id="delete-confirm" class="delete-confirm hidden">
+                    <p>Are you sure you want to delete this comment?</p>
+                    <button id="confirm-delete">Confirm</button>
+                    <button id="cancel-delete">Cancel</button>
+                </div>
+
+                <!-- Share Options -->
+                <div id="share-options" class="share-options hidden">
+                    <a href="mailto:?subject=Check this out!&body=I thought you’d find this interesting: https://yourwebsite.com" target="_blank">
+                    <img src="Images/email.png" alt="Email" class="icon email">
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">
+                    <img src="Images/facebook.png" alt="Facebook" class="icon facebook">
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check this out!" target="_blank">
+                    <img src="Images/twitter.png" alt="Twitter" class="icon twitter">
+                    </a>
+                    <a href="https://wa.me/?text=Check this out! https://yourwebsite.com" target="_blank">
+                    <img src="Images/whatsapp.png" alt="WhatsApp" class="icon whatsapp">
+                    </a>
+                    <a href="https://t.me/share/url?url=https://yourwebsite.com&text=Check this out!" target="_blank">
+                    <img src="Images/telegram.png" alt="Telegram" class="icon telegram">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                    <img src="Images/instagram.png" alt="Instagram" class="icon instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourwebsite.com" target="_blank">
+                    <img src="Images/linkedIn.png" alt="LinkedIn" class="icon linkedin">
+                    </a>
+                </div>
+            </section>
+
+            <section class="vids">
+                <h4 class="others-title"> Other Videos </h4>
+                <div class="otherVids">
+                    <img src="images/views1.png" class="others"/>
+                    <img src="images/views2.png" class="others"/>
+                    <img src="images/views3.png" class="others"/>
+                    <img src="images/rates1.png" class="others"/>
+                    <img src="images/rates2.png" class="others"/>
+                    <img src="images/rates3.png" class="others"/>
+                </div>
             </section>
        </header>
 <!-- Footer -->
@@ -105,6 +152,8 @@
 </footer>
 
 <!-- Footer -->
+
+<script type="module" src="js/interactives.js"></script>
 
 	</body>
 </html>

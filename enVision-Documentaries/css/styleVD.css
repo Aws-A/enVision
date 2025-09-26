@@ -118,7 +118,7 @@ form  {
 button {
     width: 15%;
     height: 5%;
-    margin-top: 5%;
+    margin-top: 1%;
     background-color: #F36F40;
     border: 1px solid #F36F40;
     border-radius: 5px 0px 0px 5px;;
@@ -130,6 +130,11 @@ input {
     margin-top: 1.5%;
     border: 1px solid #F36F40;
     border-radius: 0px 5px 5px 0px;
+}
+
+.searchButton {
+    height: 50%;
+    margin-top: 1.5%;
 }
 
 .searchButton img{
@@ -401,11 +406,11 @@ input {
 }
 
 #interactives {
-    width: 78%;
+    width: 82%;
     gap: 20px; /* spacing between like/comment/share */
     border-radius: 20px;
     border: solid 2px #F36F40;
-    background-color: rgba(248, 248, 248, 0.66);
+    background-color: rgba(248, 248, 248, 0.33);
     padding: 3%;
     margin-top: 1%;
     margin-left: 5%;
