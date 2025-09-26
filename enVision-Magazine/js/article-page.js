@@ -43,6 +43,15 @@
 
   const shareOptions = document.getElementById("share-options");
 
+    // --- Timestamp Function ---
+  function formatTimestamp(ts) {
+  if (!ts) return "";
+  const date = ts.toDate(); // Firestore Timestamp → JS Date
+  const options = { day: "numeric", month: "short", year: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+}
+
+
   // --- Load article content into the page ---
   async function loadArticleContent(id) {
     try {
@@ -164,8 +173,18 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
       const p = document.createElement("p");
       p.textContent = c.text || "";
 
-      const toolbar = document.createElement("div");
+       const toolbar = document.createElement("div");
       toolbar.className = "comment-toolbar";
+
+      // --- Timestamp for each comment ---
+      const timeSpan = document.createElement("span");
+      timeSpan.className = "comment-time";
+      timeSpan.textContent = formatTimestamp(c.createdAt);
+      timeSpan.style.fontSize = "12px";
+      timeSpan.style.color = "gray";
+      timeSpan.style.marginLeft = "10px";
+
+      p.appendChild(timeSpan);
 
     // Like
     const like = document.createElement("span");
@@ -272,23 +291,33 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
         replyDiv.appendChild(iconsContainer);
         repliesContainer.appendChild(replyDiv);
 
-          // 👉 ADD THIS HOVER BLOCK HERE (for each replyDiv)
-          const likeIcon  = replyDiv.querySelector(".reply-like");
-          const editIcon  = replyDiv.querySelector(".reply-edit");
-          const delIcon   = replyDiv.querySelector(".reply-delete");
+        const repTime = document.createElement("span");
+        repTime.className = "reply-time";
+        repTime.textContent = formatTimestamp(replyData.createdAt);
+        repTime.style.fontSize = "12px";
+        repTime.style.color = "gray";
+        repTime.style.marginLeft = "10px";
 
-          if (likeIcon) {
-            likeIcon.addEventListener("mouseenter", () => { likeIcon.src = "Images/likeHover.png"; });
-            likeIcon.addEventListener("mouseleave", () => { likeIcon.src = "Images/like.png"; });
-          }
-          if (editIcon) {
-            editIcon.addEventListener("mouseenter", () => { editIcon.src = "Images/editHover.png"; });
-            editIcon.addEventListener("mouseleave", () => { editIcon.src = "Images/edit.png"; });
-          }
-          if (delIcon) {
-            delIcon.addEventListener("mouseenter", () => { delIcon.src = "Images/trashHover.png"; });
-            delIcon.addEventListener("mouseleave", () => { delIcon.src = "Images/trash.png"; });
-          }
+        textContainer.appendChild(repTime);
+
+        // 👉 ADD THIS HOVER BLOCK HERE (for each replyDiv)
+        const likeIcon  = replyDiv.querySelector(".reply-like");
+        const editIcon  = replyDiv.querySelector(".reply-edit");
+        const delIcon   = replyDiv.querySelector(".reply-delete");
+
+        if (likeIcon) {
+          likeIcon.addEventListener("mouseenter", () => { likeIcon.src = "Images/likeHover.png"; });
+          likeIcon.addEventListener("mouseleave", () => { likeIcon.src = "Images/like.png"; });
+        }
+        if (editIcon) {
+          editIcon.addEventListener("mouseenter", () => { editIcon.src = "Images/editHover.png"; });
+          editIcon.addEventListener("mouseleave", () => { editIcon.src = "Images/edit.png"; });
+        }
+        if (delIcon) {
+          delIcon.addEventListener("mouseenter", () => { delIcon.src = "Images/trashHover.png"; });
+          delIcon.addEventListener("mouseleave", () => { delIcon.src = "Images/trash.png"; });
+        }
+
 
           // ✅ Like
           replyDiv.querySelector(".reply-like").addEventListener("click", async () => {

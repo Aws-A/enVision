@@ -62,6 +62,16 @@ const topicCollectionMap = {
   "economics": "economics1-articles"
 };
 
+
+//Timestamp Function
+function formatTimestamp(ts) {
+  if (!ts) return "";
+  const date = ts.toDate(); // Firestore Timestamp → JS Date
+  const options = { day: "numeric", month: "short", year: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+}
+
+
 const collectionName = topicCollectionMap[tagText] || "general-articles";
 
 // --- Article ID (based on filename) ---
@@ -204,6 +214,17 @@ function attachRealtimeListeners() {
       // --- Toolbar for each comment ---
       const toolbar = document.createElement("div");
       toolbar.className = "comment-toolbar";
+
+      // --- Timestamp for each comment ---
+      const timeSpan = document.createElement("span");
+      timeSpan.className = "comment-time";
+      timeSpan.textContent = formatTimestamp(commentData.createdAt);
+      timeSpan.style.fontSize = "12px";
+      timeSpan.style.color = "gray";
+      timeSpan.style.marginLeft = "10px";
+
+      p.appendChild(timeSpan);
+
 
       // --- Like ---
       const like = document.createElement("span");
@@ -358,6 +379,17 @@ reply.addEventListener("click", () => {
         const repText = document.createElement("p");
         repText.textContent = r.text || "";
         repDiv.appendChild(repText);
+
+        // --- Timestamp for each replies ---
+        const repTime = document.createElement("span");
+        repTime.className = "reply-time";
+        repTime.textContent = formatTimestamp(r.createdAt);
+        repTime.style.fontSize = "12px";
+        repTime.style.color = "gray";
+        repTime.style.marginLeft = "10px";
+
+        repText.appendChild(repTime);
+
 
         // --- Reply actions (like, edit, delete) ---
         const actions = document.createElement("span");
