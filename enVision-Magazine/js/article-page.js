@@ -43,7 +43,7 @@
 
   const shareOptions = document.getElementById("share-options");
 
-    // --- Timestamp Function ---
+  // --- Timestamp Function ---
   function formatTimestamp(ts) {
   if (!ts) return "";
   const date = ts.toDate(); // Firestore Timestamp → JS Date

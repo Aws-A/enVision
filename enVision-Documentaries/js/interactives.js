@@ -110,7 +110,7 @@ shareImg?.addEventListener("click", (e) => {
 });
 shareOptions?.addEventListener("click", (e) => e.stopPropagation());
 
-/* -------------------- Generic hover icon system for toolbar icons -------------------- */
+/* ------------- Generic hover icon system for toolbar icons ------------ */
 const hoverIcons = {
   like: ["images/like.png", "images/likeHover.png", "images/likeHover.png"],
   comment: ["images/comment.png", "images/commentHover.png", "images/commentHover.png"],
@@ -153,6 +153,15 @@ submitCommentBtn?.addEventListener("click", async (e) => {
   } catch (err) { console.error("submit comment error:", err); }
 });
 
+
+/* -------------------- Timestamp Function -------------------- */
+  function formatTimestamp(ts) {
+  if (!ts) return "";
+  const date = ts.toDate(); // Firestore Timestamp → JS Date
+  const options = { day: "numeric", month: "short", year: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+}
+
 /* -------------------- Realtime listeners -------------------- */
 function attachRealtimeListeners() {
   // video counters
@@ -192,6 +201,17 @@ function attachRealtimeListeners() {
       toolbar.style.alignItems = "center";
       toolbar.style.gap = "8px";
       toolbar.style.marginTop = "8px";
+
+      // Timestamp for each comment
+      const timeSpan = document.createElement("span");
+      timeSpan.className = "comment-time";
+      timeSpan.textContent = formatTimestamp(commentData.createdAt);
+      timeSpan.style.fontSize = "12px";
+      timeSpan.style.color = "gray";
+      timeSpan.style.marginLeft = "10px";
+
+      p.appendChild(timeSpan);
+
 
       // --- Like span (comment level) ---
       const likeSpan = document.createElement("span");
@@ -352,7 +372,7 @@ function evPreventAndToggleReplyBox(commentDiv, commentId) {
   }
 }
 
-/* -------------------- Realtime load replies for a comment -------------------- */
+/* ----------------- Realtime load replies for a comment -------------- */
 function loadRepliesRealtime(repliesContainer, commentId) {
   const repliesRef = collection(db, "videos", videoId, "comments", commentId, "replies");
   const q = query(repliesRef, orderBy("createdAt"));
@@ -367,12 +387,18 @@ function loadRepliesRealtime(repliesContainer, commentId) {
       repDiv.className = "reply-item";
       repDiv.style.marginBottom = "8px";
 
+      // text + time container
+      const textLine = document.createElement("div");
+      textLine.style.display = "inline-flex";
+      textLine.style.alignItems = "baseline"; // keeps baseline aligned
+      textLine.style.gap = "8px";
+
       const repP = document.createElement("p");
       repP.textContent = r.text || "";
 
       // actions: like, edit, delete
       const actions = document.createElement("div");
-      actions.style.display = "inline-flex";
+      actions.style.display = "flex";
       actions.style.alignItems = "center";
       actions.style.gap = "8px";
       actions.style.marginTop = "6px";
@@ -425,6 +451,19 @@ function loadRepliesRealtime(repliesContainer, commentId) {
         });
       });
 
+
+      const repTime = document.createElement("span");
+      repTime.className = "reply-time";
+      repTime.textContent = formatTimestamp(r.createdAt);
+      repTime.style.whiteSpace = "nowrap";
+      repTime.style.fontSize = "12px";
+      repTime.style.color = "gray";
+      repTime.style.marginLeft = "10px";
+
+      textLine.appendChild(repP);
+      textLine.appendChild(repTime);
+      repDiv.appendChild(textLine);
+
       const left = document.createElement("span");
       left.style.display = "inline-flex";
       left.style.alignItems = "center";
@@ -442,7 +481,6 @@ function loadRepliesRealtime(repliesContainer, commentId) {
       actions.appendChild(left);
       actions.appendChild(right);
 
-      repDiv.appendChild(repP);
       repDiv.appendChild(actions);
       repliesContainer.appendChild(repDiv);
     });
