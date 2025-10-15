@@ -14,7 +14,7 @@ h2 {
 }
 
 h3 {
-    font-size: 33px;
+    font-size: 20px;
     font-weight: 600;
     color: #575757;
 }
@@ -363,6 +363,7 @@ input {
     /* Incline right side to the left */
     clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
     align-items: center;
+    text-align: center;
 }
 
 .category {
