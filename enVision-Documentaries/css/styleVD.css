@@ -50,9 +50,10 @@ header {
     background-size: 100%;
     background-repeat: no-repeat;
     width: 101%;
-    height: 100%;
+    height: 85%;
     margin-top: -0.5%;
     margin-left: -0.5%;
+    margin-bottom: 2%;
 }
 
 .top {
@@ -225,6 +226,7 @@ input {
 
 .hero {
     display: flex;
+    margin-top: -2%;
     margin-left: 15%;
     position: relative;
     align-items: flex-start; 
@@ -232,7 +234,8 @@ input {
 
 .hero p{
     width: 60%;
-    margin-left: -40%;
+    margin-top: 8%;
+    margin-left: -9%;
 }
 
 .allContent {
@@ -573,7 +576,7 @@ input {
 
 .vids {
     margin-left: 5%;
-    margin-top: 15%;
+    margin-top: 50px;
     margin-bottom: 10%;
 }
 
