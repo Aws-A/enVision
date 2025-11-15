@@ -45,7 +45,7 @@ function App() {
         <img src={twitter}alt="icons"/>
         <img src={youtube} alt="icons"/>
       </div>
-      <p>info.-envision@innovi.com</p>
+      <p>info.envision@innovi.com</p>
     </footer>
   </div>
 
