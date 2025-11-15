@@ -126,11 +126,11 @@ shareOptions?.addEventListener("click", (e) => e.stopPropagation()); // don't cl
   const commentsQuery = query(commentsRef, orderBy("createdAt", "asc"));
 
   const hoverIcons = {
-    like: ["Images/like.png", "Images/likeHover.png", "Images/likeHover.png"],
-    comment: ["Images/comment.png", "Images/commentHover.png", "Images/commentHover.png"],
-    reply: ["Images/comment.png", "Images/commentHover.png", "Images/commentHover.png"], // new
-    edit: ["Images/edit.png", "Images/editHover.png", "Images/editHover.png"],
-    trash: ["Images/trash.png", "Images/trashHover.png", "Images/trashHover.png"]
+    like: ["images/like.png", "images/likeHover.png", "images/likeHover.png"],
+    comment: ["images/comment.png", "images/commentHover.png", "images/commentHover.png"],
+    reply: ["images/comment.png", "images/commentHover.png", "images/commentHover.png"], // new
+    edit: ["images/edit.png", "images/editHover.png", "images/editHover.png"],
+    trash: ["images/trash.png", "images/trashHover.png", "images/trashHover.png"]
   };
 
 function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
@@ -192,7 +192,7 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
     like.style.display = "inline-flex"; // make icon and count align nicely
     like.style.alignItems = "center";
 
-    like.innerHTML = `<img src="Images/like.png" alt="Like" class="icon" width="17" height="17" style="cursor: pointer;">`;
+    like.innerHTML = `<img src="images/like.png" alt="Like" class="icon" width="17" height="17" style="cursor: pointer;">`;
 
     const likeCountSpan = document.createElement("span");
     likeCountSpan.className = "comment-like-count";
@@ -219,7 +219,7 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
 
     // Reply
     const reply = document.createElement("span");
-    reply.innerHTML = `<img src="Images/comment.png" alt="Reply" class="icon" width="17" height="17" style="margin-right: 10px; cursor: pointer;">`;
+    reply.innerHTML = `<img src="images/comment.png" alt="Reply" class="icon" width="17" height="17" style="margin-right: 10px; cursor: pointer;">`;
     reply.className = "comment-icon";
     attachHoverAndClick(reply, "reply");
 
@@ -281,10 +281,10 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
         iconsContainer.className = "reply-icons";
         iconsContainer.style.marginTop = "5px";
         iconsContainer.innerHTML = `
-          <img src="Images/like.png" alt="Like" class="reply-like" width="14" style="margin-right:5px; cursor:pointer;">
+          <img src="images/like.png" alt="Like" class="reply-like" width="14" style="margin-right:5px; cursor:pointer;">
           <span class="reply-likes">${replyData.likes || 0}</span>
-          <img src="Images/edit.png" alt="Edit" class="reply-edit" width="14" style="margin-left:10px; cursor:pointer;">
-          <img src="Images/trash.png" alt="Delete" class="reply-delete" width="14" style="margin-left:10px; cursor:pointer;">
+          <img src="images/edit.png" alt="Edit" class="reply-edit" width="14" style="margin-left:10px; cursor:pointer;">
+          <img src="images/trash.png" alt="Delete" class="reply-delete" width="14" style="margin-left:10px; cursor:pointer;">
         `;
 
         replyDiv.appendChild(textContainer);
@@ -306,16 +306,16 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
         const delIcon   = replyDiv.querySelector(".reply-delete");
 
         if (likeIcon) {
-          likeIcon.addEventListener("mouseenter", () => { likeIcon.src = "Images/likeHover.png"; });
-          likeIcon.addEventListener("mouseleave", () => { likeIcon.src = "Images/like.png"; });
+          likeIcon.addEventListener("mouseenter", () => { likeIcon.src = "images/likeHover.png"; });
+          likeIcon.addEventListener("mouseleave", () => { likeIcon.src = "images/like.png"; });
         }
         if (editIcon) {
-          editIcon.addEventListener("mouseenter", () => { editIcon.src = "Images/editHover.png"; });
-          editIcon.addEventListener("mouseleave", () => { editIcon.src = "Images/edit.png"; });
+          editIcon.addEventListener("mouseenter", () => { editIcon.src = "images/editHover.png"; });
+          editIcon.addEventListener("mouseleave", () => { editIcon.src = "images/edit.png"; });
         }
         if (delIcon) {
-          delIcon.addEventListener("mouseenter", () => { delIcon.src = "Images/trashHover.png"; });
-          delIcon.addEventListener("mouseleave", () => { delIcon.src = "Images/trash.png"; });
+          delIcon.addEventListener("mouseenter", () => { delIcon.src = "images/trashHover.png"; });
+          delIcon.addEventListener("mouseleave", () => { delIcon.src = "images/trash.png"; });
         }
 
 
@@ -448,7 +448,7 @@ function attachHoverAndClick(iconSpan, key, initiallyActive = false) {
     // --- Edit button with Save ---
 const edit = document.createElement("span");
 edit.className = "comment-icon";
-edit.innerHTML = `<img src="Images/edit.png" width="17" height="17" style="margin-right:10px; cursor:pointer;">`;
+edit.innerHTML = `<img src="images/edit.png" width="17" height="17" style="margin-right:10px; cursor:pointer;">`;
 attachHoverAndClick(edit, "edit");
 
 edit.addEventListener("click", () => {
@@ -521,13 +521,13 @@ edit.addEventListener("click", () => {
 
     // Delete button
     const del = document.createElement("span");
-    del.innerHTML = `<img src="Images/trash.png" alt="Delete" class="icon" width="17" height="17" style="margin-right: 10px; cursor: pointer;">`;
+    del.innerHTML = `<img src="images/trash.png" alt="Delete" class="icon" width="17" height="17" style="margin-right: 10px; cursor: pointer;">`;
     del.className = "comment-icon";
 
     // Hover effect for trash icon
     const trashIcon = del.querySelector("img");
-    const trashDefault = "Images/trash.png";
-    const trashHover = "Images/trashHover.png"; // <-- add your hover image here
+    const trashDefault = "images/trash.png";
+    const trashHover = "images/trashHover.png"; // <-- add your hover image here
 
     trashIcon.addEventListener("mouseover", () => {
       trashIcon.src = trashHover;
@@ -793,13 +793,13 @@ if (shareImg && shareOptions) {
 
   // Hover effect for share icons
   const hoverMap = {
-    email: ["Images/email.png", "Images/emailHover.png"],
-    facebook: ["Images/facebook.png", "Images/facebookHover.png"],
-    twitter: ["Images/twitter.png", "Images/x.png"],
-    whatsapp: ["Images/whatsapp.png", "Images/whatsappHover.png"],
-    telegram: ["Images/telegram.png", "Images/telegramHover.png"],
-    instagram: ["Images/instagram.png", "Images/instagramHover.png"],
-    linkedIn: ["Images/linkedIn.png", "Images/linkedInHover.png"],
+    email: ["images/email.png", "images/emailHover.png"],
+    facebook: ["images/facebook.png", "images/facebookHover.png"],
+    twitter: ["images/twitter.png", "images/x.png"],
+    whatsapp: ["images/whatsapp.png", "images/whatsappHover.png"],
+    telegram: ["images/telegram.png", "images/telegramHover.png"],
+    instagram: ["images/instagram.png", "images/instagramHover.png"],
+    linkedIn: ["images/linkedIn.png", "images/linkedInHover.png"],
   };
 
   Object.keys(hoverMap).forEach((id) => {

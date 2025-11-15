@@ -659,7 +659,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const hoverMap = {
-    like: ["Images/like.png", "Images/likeHover.png"],
-    comment: ["Images/comment.png", "Images/commentHover.png"],
-    share: ["Images/share.png", "Images/shareHover.png"]
+    like: ["images/like.png", "images/likeHover.png"],
+    comment: ["images/comment.png", "images/commentHover.png"],
+    share: ["images/share.png", "images/shareHover.png"]
 };

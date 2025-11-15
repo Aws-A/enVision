@@ -270,14 +270,14 @@ input {
     border-radius: 2%;
 }
 
-.viewsImages {
+.viewsimages {
     display: flex;
     position: relative;
     align-items: flex-start; 
     margin-left: 5%;
 }
 
-.viewsImages img{
+.viewsimages img{
     border-radius: 5%;
     width: 40%;
     height: auto;
@@ -298,14 +298,14 @@ input {
     margin-top: -15%; 
 }
 
-.ratesImages {
+.ratesimages {
     display: flex;
     position: relative;
     align-items: flex-start;
     margin-left: 10%;
 }
 
-.ratesImages img{
+.ratesimages img{
     border-radius: 5%;
     width: 40%;
     height: auto;

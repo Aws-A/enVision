@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+  document.querySelectorAll(".logo").forEach(function(el) {
+        el.style.cursor = "pointer";
+        el.onclick = function () {
+            window.location.href = "https://envision-digitalmedia.com/";
+        };
+  });
+
   document.querySelectorAll('.list a').forEach(link => {
     const linkPath = link.pathname.replace(/^.*[\\/]/, '');
     const currentPath = window.location.pathname.replace(/^.*[\\/]/, '');
@@ -91,9 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const hoverMap = {
-    like: ["Images/like.png", "Images/likeHover.png"],
-    comment: ["Images/comment.png", "Images/commentHover.png"],
-    share: ["Images/share.png", "Images/shareHover.png"]
+    like: ["images/like.png", "images/likeHover.png"],
+    comment: ["images/comment.png", "images/commentHover.png"],
+    share: ["images/share.png", "images/shareHover.png"]
 };
 
 

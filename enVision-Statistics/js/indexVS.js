@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+  document.querySelectorAll(".logo").forEach(function(el) {
+        el.style.cursor = "pointer";
+        el.onclick = function () {
+            window.location.href = "https://envision-digitalmedia.com/";
+        };
+  });
+});
+
 // Function to handle the search functionality
 function search() {
     // Get the value of the input field

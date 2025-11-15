@@ -30,4 +30,11 @@ function addHoverEffect(selector, suffix = "-hover") {
       // Toggle menu visibility
       mobileMenu.style.display = (mobileMenu.style.display === "flex") ? "none" : "flex";
     });
+
+    document.querySelectorAll(".logo").forEach(function(el) {
+        el.style.cursor = "pointer";
+        el.onclick = function () {
+            window.location.href = "https://envision-digitalmedia.com/";
+        };
+    });
   });
