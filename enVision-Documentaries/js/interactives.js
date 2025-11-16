@@ -1,5 +1,5 @@
 // videos-interactions.js
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getFirestore, doc, collection, setDoc, addDoc, updateDoc,
   deleteDoc, onSnapshot, serverTimestamp, increment, query, orderBy, getDoc
@@ -16,7 +16,12 @@ const firebaseConfig = {
   measurementId: "G-3NB50YD8F0"
 };
 
-const app = initializeApp(firebaseConfig);
+  let app;
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApp(); // reuse existing app
+  }
 const db = getFirestore(app);
 
 /* -------------------- DOM ELEMENTS (required) -------------------- */

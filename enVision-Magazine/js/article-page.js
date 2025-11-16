@@ -1,5 +1,5 @@
   // Firebase SDKs
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
   import {
     getFirestore, doc, getDoc, setDoc, updateDoc,
     collection, addDoc, deleteDoc, onSnapshot, serverTimestamp,
@@ -18,7 +18,12 @@
   };
 
   // --- Initialize ---
-  const app = initializeApp(firebaseConfig);
+  let app;
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApp(); // reuse existing app
+  }
   const db = getFirestore(app);
 
   // --- Article ID from URL (?id=xxxx) ---

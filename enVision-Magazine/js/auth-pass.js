@@ -1,4 +1,4 @@
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
   import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
   // Firebase config (same as in index.js)
@@ -12,7 +12,12 @@
     measurementId: "G-3NB50YD8F0"
   };
 
-  const app = initializeApp(firebaseConfig);
+    let app;
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApp(); // reuse existing app
+  }
   const auth = getAuth(app);
 
   // When user is logged in, show their email

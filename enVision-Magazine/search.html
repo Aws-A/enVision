@@ -190,7 +190,7 @@ p {
 
     <script type="module">
         import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyB_aEQJrZILdy2JYl6HbLwT43myJhVJH6g",
@@ -202,7 +202,12 @@ p {
             measurementId: "G-3NB50YD8F0"
         };
 
-        const app = initializeApp(firebaseConfig);
+          let app;
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApp(); // reuse existing app
+  }
         const db = getFirestore(app);
 
         const params = new URLSearchParams(window.location.search);

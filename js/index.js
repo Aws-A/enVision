@@ -1,5 +1,5 @@
 // ===== Firebase and Auth imports =====
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -16,7 +16,12 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   // ===== Initialize Firebase =====
-  const app = initializeApp(firebaseConfig);
+    let app;
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApp(); // reuse existing app
+  }
   const auth = getAuth(app);
 
   // ===== DOM Elements =====

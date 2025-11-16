@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // Firebase config
@@ -12,7 +12,13 @@ const firebaseConfig = {
   measurementId: "G-3NB50YD8F0"
 };
 
-const app = initializeApp(firebaseConfig);
+// --- Initialize Firebase ---
+let app;
+if (!getApps().length) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApp(); // reuse existing app
+}
 const db = getFirestore(app);
 
 const articleCollections = [

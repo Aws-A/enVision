@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getFirestore, doc, collection, setDoc, addDoc, updateDoc,
   deleteDoc, onSnapshot, serverTimestamp, increment, query, orderBy, getDoc
@@ -16,7 +16,12 @@ const firebaseConfig = {
 };
 
 // --- Initialize Firebase ---
-const app = initializeApp(firebaseConfig);
+let app;
+if (!getApps().length) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApp(); // reuse existing app
+}
 const db = getFirestore(app);
 
 // --- DOM elements ---
@@ -38,6 +43,8 @@ let tagText = document.querySelector(".tag")?.textContent
   .replace(/\s*&\s*/g, " & ")
   .replace(/\s+/g, " ")
   .trim();
+
+console.log("tagText:", tagText);
 
 // --- Map tags to collections ---
 const topicCollectionMap = {
@@ -409,7 +416,7 @@ reply.addEventListener("click", () => {
         likeIcon.addEventListener("mouseenter", () => likeIcon.src = "images/likeHover.png");
         likeIcon.addEventListener("mouseleave", () => likeIcon.src = "images/like.png");
         likeIcon.addEventListener("click", async () => {
-            await updateDoc(replyRef, { likes: (r.likes || 0) + 1 });
+            await updateDoc(replyRef, { likes: increment(1) });
         });
 
   // ✏️ Edit
