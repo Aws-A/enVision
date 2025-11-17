@@ -589,6 +589,88 @@ input {
     margin-left: 1%;
 }
 
+.videoForm {
+    width: 75%;
+    margin-left: 7%;
+}
+
+.videoForm .video-details{
+    padding: 5% 2% 5% 5%; 
+}
+
+/* Style for the container */
+.video-details {
+    position: relative;
+    border-radius: 20px;
+    border: solid 2px #F36F40;
+    background-color: rgba(248, 248, 248, 0.66);
+    padding: 5%;
+    margin-top: 3%;
+    height: 60%;
+}
+
+.tag {
+    position: absolute;
+    top: -12px;     /* Slightly above the box */
+    left: -2px;     /* Aligned with the left border */
+    background: linear-gradient(to right, #FC8961, #F36F40);
+    color: #000000;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    border-radius: 7px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Optional shadow */
+}
+
+#videoUrl {
+    width: 95%;
+    height: 3%;
+    margin-bottom: -10%;
+    padding: 2%;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#previewVideo {
+    width: 95%;
+    display:none;
+    margin-top:10px;
+    border-radius: 8px;
+}
+
+#videoTitle {
+    height: 9%;
+    width: 95%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom: -2%;
+    border-radius:5px;
+    border:1px solid #ccc;
+  }
+  
+  #videoDes {
+    width: 95%;
+    height: 40%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom: -2%;
+    border-radius:5px;
+    border:1px solid #ccc;
+  }
+  
+  #submitVideo {
+    width: 17%;
+    height: 10%;
+    padding:10px 20px;
+    background:#F36F40;
+    color:white;
+    font-weight: 600;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+  }
+
 footer {
     display: flex;
     font-family: Avenir;

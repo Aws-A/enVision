@@ -668,3 +668,14 @@ const hoverMap = {
     comment: ["images/comment.png", "images/commentHover.png"],
     share: ["images/share.png", "images/shareHover.png"]
 };
+
+const select = document.getElementById('topic-select');
+const desc = document.getElementById('topic-desc');
+
+function updateDesc() {
+const selected = select.options[select.selectedIndex];
+desc.textContent = selected.getAttribute('data-desc') || '';
+}
+
+select.addEventListener('change', updateDesc);
+window.addEventListener('DOMContentLoaded', updateDesc);
