@@ -149,16 +149,23 @@ table { margin-left: 10px; border-collapse: collapse; }
 
 .up {
     display: flex;
+    justify-content: center;  /* centers horizontally */
+    gap: 50px;                /* optional spacing between items */
+    margin-top: 5%;
 }
 
-.up .cirV {
+/* .up .cirV {
     margin-top: 2%;
     margin-left: 12%;
-}
+} */
 
 .cirV {
     width: 500px;
     display: flex;
+}
+
+#cirG {
+    justify-content: center;
 }
 
 .circle {
@@ -194,9 +201,9 @@ table { margin-left: 10px; border-collapse: collapse; }
 
 }
 
-#cirO {
+/* #cirO {
     margin-left: 14%;
-}
+} */
 
 .down {
     margin-top: 5%;
@@ -265,13 +272,502 @@ footer {
     margin-top: 12%;
     justify-content: space-between;
     padding: 2%;
+    align-items: center;
 }
 
 footer img {
-    height: 33%;
+    width: 11%;
+}
+
+.youtubeIcon {
+    width: 10%;
+    margin-bottom: 2%;
 }
 
 .socials {
     text-align: center;
     margin-top: 1.5%;
 }
+
+@media screen and (width: 1366px) and (height: 1024px) {
+        .content {
+            margin-top: 15%;
+            margin-bottom: -15%;
+        }
+ }
+
+    @media screen and (width: 1024px) and (height: 1366px) {
+    header {
+        margin-bottom: 10%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    #authContainer {
+        margin-right: -8%;
+    }
+    .content {
+        width: 90%;
+    }
+   .up {
+        display: table;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+    .circle {
+        width: 270px;
+        height: 270px;
+   }
+   #cirG {
+        width: 150%;
+   }
+   #cirO {
+        justify-content: center;
+        margin-top: 30%;
+        width: 150%;
+   }
+   .down {
+        margin-left: 0%;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 17%;
+        margin-left: 2%;
+        width: 70%;
+   }
+   footer{
+        width: 100%;
+        margin-top: 17%;
+   }
+   footer p {
+        font-size: 17px;
+   }
+ }
+
+
+ 
+  @media screen and (width: 1368px) and (height: 912px) {
+        footer {
+            margin-top: 17%;
+        }
+ }
+
+@media screen and (width: 1366px) {
+        footer {
+            margin-top: 25%;
+        }
+ }
+
+  @media screen and (min-width: 896px) and (max-width: 935px) {
+    .up {
+        gap: 0px;
+    }
+    .logoG, .logoO{
+        width: 75%;
+    }
+ }
+
+   @media screen and (min-width: 913px) and (max-width: 915px) {
+    .up {
+        gap: 0px;
+        width: 100%;
+        margin-right: 9%;
+    }
+ }
+
+   @media screen and (width: 912px) and (height: 1368px) {
+    header {
+        margin-bottom: 20%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    #authContainer {
+        margin-right: -17%;
+    }
+    .content {
+        margin-left: 10%;
+    }
+   .up {
+        display: table;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirO {
+        justify-content: center;
+        margin-top: 30%;
+   }
+   .down {
+        margin-left: 0%;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirB {
+        margin-top: 17%;
+        margin-left: 2%;
+        width: 68%;
+   }
+   footer{
+        width: 110%;
+        margin-top: 40%;
+   }
+   footer p {
+        font-size: 17px;
+   }
+ }
+
+@media screen and (min-width: 650px) and (max-width: 800px) {
+    .up {
+        gap: 0px;
+    }
+    .cirV  {
+        width: 400px;
+    }
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+    .logoG, .logoO{
+        width: 75%;
+    }
+    footer p {
+        font-size: 15px;
+    }
+ }
+
+ @media screen and (min-width: 880px) and (max-width: 890px) {
+    .up {
+        gap: 0px;
+    }
+    .up .cirV {
+        height: 90%;
+    }
+    #cirB {
+        height: 22%;
+    }
+    footer {
+        margin-top: 20%;
+    }
+ }
+
+@media screen and (width: 853px) and (height: 1280px) {
+    header {
+        margin-bottom: 10%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    #authContainer {
+        margin-right: 0%;
+    }
+    .content {
+        width: 82%;
+    }
+   .up {
+        display: table;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirO {
+        justify-content: center;
+        margin-top: 15%;
+   }
+   .down {
+        margin-left: 0%;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 10%;
+   }
+   footer{
+        width: 95%;
+        margin-top: 35%;
+   }
+   footer p {
+        font-size: 17px;
+   }
+ }
+
+ @media screen and (min-width: 844px) and (max-width: 850px) {
+    .up {
+        gap: 0px;
+    }
+    .logoG, .logoO{
+        width: 75%;
+    }
+    footer p {
+        font-size: 20px;
+    }
+ }
+
+  @media screen and (min-width: 650px) and (max-width: 800px) {
+    footer p {
+        font-size: 13px;
+    }
+ }
+ 
+
+   @media screen and (width: 820px) and (height: 1180px) {
+    header {
+        margin-bottom: 20%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    #authContainer {
+        margin-right: -40%;
+    }
+    .content {
+        margin-left: 25%;
+    }
+   .up {
+        display: table;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   .circle {
+        width: 250px;
+        height: 250px;
+   }
+   #cirG {
+        width: 220%;
+   }
+   #cirO {
+        justify-content: center;
+        margin-top: 40%;
+        width: 220%;
+   }
+   .down {
+        margin-left: 0%;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 20%;
+        width: 100%;
+   }
+   footer{
+        width: 140%;
+        margin-top: 45%;
+   }
+   footer p {
+        font-size: 17px;
+   }
+ }
+
+  @media screen and (width: 768px) and (height: 1024px) {
+    header {
+        margin-bottom: 20%;
+    }
+    .logo img{
+        width: 20%;
+    }
+    #authContainer {
+        margin-right: -50%;
+    }
+    .content {
+        margin-left: 25%;
+    }
+   .up {
+        display: table;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   .circle {
+        width: 250px;
+        height: 250px;
+   }
+   #cirG {
+        width: 220%;
+   }
+   #cirO {
+        justify-content: center;
+        margin-top: 40%;
+        width: 220%;
+   }
+   .down {
+        margin-left: 0%;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirB {
+        margin-top: 20%;
+        width: 120%;
+   }
+   footer{
+        width: 140%;
+        margin-top: 25%;
+   }
+   footer p {
+        font-size: 17px;
+   }
+ }
+
+@media screen and (max-width: 550px) {
+    .logo img{
+        width: 30%;
+    }
+    #authContainer {
+        margin-right: -35%;
+    }
+   .up {
+        display: table;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirO {
+        justify-content: center;
+        margin-top: 10%;
+   }
+   .down {
+        margin-left: 0%;
+        padding-left: 25%;
+        padding-right: 25%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 10%;
+   }
+   footer{
+        width: 140%;
+        font-size: 16px;
+        margin-top: 30%;
+   }
+ }
+
+ @media screen and (max-width: 500px) {
+    header {
+        margin-bottom: 30%;
+    }
+    .logo img{
+        width: 35%;
+    }
+    #authContainer {
+        margin-right: -70%;
+    }
+   #cirO {
+        justify-content: center;
+        margin-top: 40%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 40%;
+   }
+   footer{
+        width: 170%;
+        font-size: 14px;
+        margin-top: 70%;
+   }
+ }
+
+ @media screen and (min-width: 410px) and (max-width: 431px) {
+    footer {
+        margin-top: 85%;
+    }
+  }
+
+  @media screen and (min-width: 350px) and (max-width: 400px) {
+    header {
+        margin-bottom: 30%;
+    }
+    .logo img{
+        width: 35%;
+    }
+    #authContainer {
+        margin-right: -90%;
+    }
+   #cirO {
+        justify-content: center;
+        margin-top: 40%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 60%;
+   }
+   footer{
+        width: 190%;
+        font-size: 12px;
+        margin-top: 70%;
+   }
+ }
+
+ @media screen and (min-width: 370px) and (max-width: 377px) {
+    header {
+        margin-bottom: 30%;
+    }
+    .logo img{
+        width: 35%;
+    }
+    #authContainer {
+        margin-right: -90%;
+    }
+   #cirO {
+        justify-content: center;
+        margin-top: 20%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 30%;
+   }
+   footer{
+        width: 190%;
+        font-size: 12px;
+        margin-top: 60%;
+   }
+ }
+
+
+ @media screen and (min-width: 355px) and (max-width: 370px) {
+    header {
+        margin-bottom: 30%;
+    }
+    .logo img{
+        width: 35%;
+    }
+    #authContainer {
+        margin-right: -90%;
+    }
+   #cirO {
+        justify-content: center;
+        margin-top: 30%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 40%;
+   }
+   footer{
+        width: 190%;
+        font-size: 12px;
+        margin-top: 70%;
+   }
+ }
+
+  @media screen and (max-width: 350px) {
+    header {
+        margin-bottom: 50%;
+    }
+    .logo img{
+        width: 35%;
+    }
+    #authContainer {
+        margin-right: -100%;
+    }
+   #cirO {
+        justify-content: center;
+        margin-top: 50%;
+   }
+   #cirB {
+        justify-content: center;
+        margin-top: 80%;
+   }
+   footer{
+        width: 190%;
+        font-size: 12px;
+        margin-top: 90%;
+   }
+ }

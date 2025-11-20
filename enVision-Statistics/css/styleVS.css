@@ -137,7 +137,7 @@ input::placeholder {
     width: 63%;
     height: 750px;
     /* background-color: rgba(55, 140, 203, 0.25); */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%);
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%); */
 }
 
 .topicsTag {
@@ -372,3 +372,259 @@ footer img {
     text-align: center;
     margin-top: 1.5%;
 }
+
+@media screen and (min-width: 1000px) {
+    #Layer_1 {
+        width: 100%;
+    }
+}
+
+@media screen and (width: 912px) and (height: 1368px) {
+    header {
+        height: 20%;
+    }
+    form {
+        width: 200%;
+    }
+    #Layer_1 {
+        width: 100%;
+        height: 750px;
+    }
+    footer {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (min-width: 913px) and (max-width: 1000px) {
+    form {
+        width: 177%;
+    }
+    .list {
+        margin-top: -40%;
+    }
+}
+
+@media screen and (width: 912px) and (height: 1368px) {
+    header {
+        height: 20%;
+    }
+    form {
+        width: 200%;
+    }
+    #Layer_1 {
+        width: 100%;
+        height: 750px;
+    }
+    footer {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (min-width: 821px) and (max-width: 900px) {
+    form {
+        width: 177%;
+    }
+    .list {
+        margin-top: 0%;
+    }
+}
+
+@media screen and (width: 882px) and (height: 344px) {
+    .topics {
+        margin-top: -10%;
+    }
+}
+
+@media screen and (width: 853px) and (height: 1280px) {
+    header {
+        height: 20%;
+    }
+    svg {
+        height: 40%;
+    }
+    .topics {
+        margin-top: -28%;
+    }
+    .list {
+        margin-top: -60%;
+    }
+    #contact {
+        margin-top: 30%;
+    }
+ }
+
+@media screen and (width: 820px) and (height: 1180px) {
+    header {
+        height: 20%;
+    }
+    form {
+        width: 250%;
+    }
+    #Layer_1 {
+        width: 100%;
+        height: 750px;
+    }
+    footer {
+        margin-top: 20%;
+    }
+    .list {
+        margin-top: -10%;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px) {
+    header {
+        height: 30%;
+    }
+    form {
+        width: 300%;
+    }
+    .list {
+        margin-top: 0%;
+    }
+    svg {
+        height: 88%;
+        margin-top: 30%;
+    }
+    #contact p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (width: 740px) and (height: 360px) { 
+    header {
+        height: 50%;
+    }
+    svg {
+        height: 140%;
+    }
+}
+
+@media screen and (width: 768px) and (height: 1024px) { 
+    header {
+        height: 20%;
+    }
+    svg {
+        width: 100%;
+        margin-top: 0%;
+        margin-bottom: -30%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px) {
+    header {
+        height: 40%;
+    }
+    form {
+        width: 300%;
+    }
+    .list {
+        margin-top: 0%;
+    }
+    svg {
+        height: 115%;
+        margin-top: 30%;
+    }
+    #contact p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+    header {
+        height: 30%;
+        width: 200%;
+    }
+    form {
+        width: 300%;
+    }
+    .topics {
+        margin-left: 80%;
+    }
+    .list {
+        margin-top: -140%;
+    }
+    svg {
+        height: 95%;
+        margin-top: 30%;
+    }
+
+    #contact {
+        margin-top: 65%;
+        width: 190%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        height: 30%;
+        width: 200%;
+    }
+    form {
+        width: 300%;
+    }
+    .topics {
+        margin-left: 80%;
+        margin-top: -40%;
+    }
+    .subTopics {
+        margin-left: 45%;
+    }
+    .list {
+        margin-top: -140%;
+    }
+    svg {
+        height: 58%;
+        margin-top: 30%;
+    }
+    footer {
+        display: table;
+        margin: 130% 60% 0 60%; 
+        text-align: center;
+    }
+    #contact p {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        height: 20%;
+    }
+    form {
+        width: 500%;
+    }
+    .topics {
+        margin-left: 90%;
+        margin-top: -30%;
+    }
+    .subTopics {
+        margin-left: -200%;
+    }
+    svg {
+        width: 180%;
+        margin-top: 150%;
+    }
+    .list {
+        margin-top: -200%;
+    }
+    footer {
+        margin-top: 90%;
+    }
+ }
+
+ @media screen and (min-width: 357px) and (max-width: 377px) { 
+    .topics {
+        margin-top: -20%;
+        margin-left: 80%;
+    }
+    .subTopics {
+        margin-left: -180%;
+    }
+    .list {
+        margin-top: -160%;
+    }
+    footer {
+        margin-top: 12%;
+    }
+ }

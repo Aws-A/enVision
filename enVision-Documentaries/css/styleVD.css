@@ -697,6 +697,9 @@ footer img {
     .allContent {
         margin-top: -17%;
     }
+    #interactives {
+        margin-top: -12%;
+    }
     .category-box h2{
         font-size: 20px;
     }
@@ -706,6 +709,19 @@ footer img {
     .info-body {
         height: 60%;
     }
+    .vid-footer {
+        margin-top: -5%;
+    }
+}
+
+
+@media screen and (min-width: 1270px) and (max-width: 1283px) {
+    .allContent {
+        margin-top: -10%;
+    }
+    #interactives {
+        margin-top: -5%;
+    }
 }
 
 @media screen and (width: 1180px) {
@@ -714,11 +730,20 @@ footer img {
         margin-left: -15%;
     }
     .all {
-        margin-top: -22%;
+        margin-top: -15%;
+    }
+    #interactives {
+        margin-top: -7%;
+    }
+    .hero {
+        margin-top: -4%;
     }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1025px) {
+    .logo img{
+        width: 50%;
+    }
     form {
         width: 250%;
     }
@@ -755,13 +780,16 @@ footer img {
      .video-sec h1 {
         margin-top: 5%;
      }
+     .vid-footer {
+        margin-top: 5%;
+     }
+     .hero h4 {
+        margin-top: 3%;
+     }
+     .hero p {
+        width: 80%;
+     }
 }
-
-@media screen and (width: 1024px) and (height: 768px) {
-    .all {
-        margin-top: -22%;
-    }
- }
 
 @media screen and (width: 1024px) and (height: 1366px) {
     .logo img{
@@ -771,184 +799,65 @@ footer img {
         margin-top: -2%;
     }
     .allContent {
-        margin-top: -77%;
+        margin-top: -73%;
         margin-bottom: 22%;
+        display: table;
+    }
+    .views {
+        width: 80%;
+    }
+    .rates {
+        width: 80%;
+        margin-top: 5%;
+    }
+    #interactives {
+        margin-top: -55%;
     }
     .vid-footer {
-        margin-top: -16%;
+        margin-top: 0%;
     }
     .all {
-        margin-top: -75%;
+        margin-top: -60%;
+        margin-bottom: 35%;
+    }
+    footer {
+        margin-top: -17%;
     }
 }
+
+@media screen and (width: 1024px) and (height: 768px) {
+    .all {
+        margin-top: -22%;
+    }
+ }
 
 @media screen and (width: 1366px) and (height: 1024px) {
     .vid-footer {
         margin-top: 0%;
     }
     .all {
-        margin-top: -30%;
-    }
-}
-
-@media screen and (min-width: 900px) and (max-width: 950px) {
-    header {
-        width: 103%;
-        margin-left: -1%;
-        margin-top: -1%;
-    }
-    .logo img{
-        width: 55%;
-    }
-    nav {
-        margin-top: -3%;
-    }
-    .category-box h2{
-        font-size: 17px;
-    }
-    .category-box h3{
-        font-size: 14px;
-     }
-     .views-number h2 {
-        font-size: 20px;
-     }
-    .otherVids {
-        margin-bottom: 15%;
-    }
-    .vid-footer {
-        margin-top: 40%;
-    }
-    .all {
-        margin-top: -88%;
+        margin-top: -20%;
     }
 }
 
 @media screen and (width: 912px) and (height: 1368px) {
     .all {
-        margin-top: 15%;
+        margin-top: -77%;
     }
     .searchButton img {
         width: 200%;
         margin-left: -40%;
-    }
-}
-
-@media screen and (min-width: 900px) and (max-width: 950px) {
-    .all {
-        margin-top: 15%;
-    }
-    .searchButton img {
-        width: 200%;
-        margin-left: -40%;
-    }
-}
-
-
-@media screen and (min-width: 800px) and (max-width: 900px) {
-    header {
-        width: 103%;
-        margin-left: -1%;
-        margin-top: -1%;
-    }
-    .logo img{
-        width: 55%;
-    }
-    nav {
-        margin-top: -3%;
-    }
-    form {
-        width: 250%;
-    }
-    .views {
-        margin-left: -14%;
-    }
-    .rates {
-        margin-left: 14%;
-    }
-    .category-box h2{
-        font-size: 17px;
-    }
-    .category-box h3{
-        width: 50%;
-        font-size: 14px;
-     }
-     .views-number h2 {
-        font-size: 20px;
-     }
-         .info-body {
-        height: 55%;
-     }
-     .info-body h5{
-        margin-top: -2%;
-     }
-     .info-body h6{
-        margin-top: -1%;
-     }
-     .info-body p{
-        margin-top: -10%;
-     }
-    .otherVids {
-        margin-bottom: 25%;
-    }
-    .vid-footer {
-        margin-top: 40%;
-    }
-    .searchButton img {
-        width: 200%;
-        margin-left: -40%;
-    }
- }
-
- @media screen and (min-width: 880px) and (max-width: 900px) {
-    form {
-        width: 250%;
-    }
-    header {
-        height: 120%;
-    }
-    .title {
-        margin-top: -4%;
-    }
-    .searchButton img {
-        width: 150%;
-        margin-left: -5%;
-    }
-    .favourites {
-        margin-top: -3%;
-    }
-    .rates {
-        margin-left: 7%;
-    }
-    h1 {
-        font-size: 33px;
-    }
-    h3 {
-        font-size: 33px;
-        text-wrap: nowrap;
-    }
-    .category-box h2 {
-        font-size: 19px;
-    }
-    .video-sec h1 {
-        margin-top: 5%;
-    }
-  }
-
-@media screen and (width: 853px) and (height: 1280px) {
-    form {
-        width: 333%;
-    }
-    .title {
-        margin-top: -5%;
-    }
-    .favourites {
-        margin-top: -2%;
-    }
-    h3 {
-        text-wrap: nowrap;
     }
     .allContent {
-        margin-top: -77%;
+        display: table;
+        margin-top: -35%;
+    }
+    .views {
+        width: 80%;
+    }
+    .rates {
+        width: 90%;
+        margin-top: 5%;
     }
     .video-sec {
         display: inline-table;
@@ -965,25 +874,266 @@ footer img {
         width: 90%;
         margin-left: 7%;
     }
+    .category-box  {
+        padding-top: 4%;
+        padding-bottom: 6%;
+    }
     .category-box h2 {
-        margin-top: -3%;
+        margin-top: 0%;
+        font-size: 25px;
+    }
+    .info-body {
+        height: 333px;
+    }
+    .info-body h6 {
+        margin-top: 2%;
+    }
+    .info-body p {
+        margin-top: 2%;
+    }
+    #interactives {
+        margin-top: 40%;
     }
     .vid-footer {
         margin-top: 50%;
     }
+    footer {
+        margin-top: 15%;
+    }
+ }
+
+@media screen and (min-width: 900px) and (max-width: 950px) {
+    header {
+        height: 700px;
+        width: 103%;
+        margin-left: -1%;
+        margin-top: -1%;
+    }
+    .logo img{
+        width: 55%;
+    }
+    nav {
+        margin-top: -3%;
+    }
     .all {
-        margin-top: -90%;
-        margin-left: -7%;
+        margin-top: -25%;
+        margin-bottom: 25%;
+    }
+    .searchButton img {
+        width: 200%;
+        margin-left: -40%;
+    }
+    .info-description {
+        padding-top: 1%;
+        height: 220px;
+    }
+    .vids {
+        margin-bottom: -30%;
+    }
+    .allContent {
+        margin-top: -20%;
+    }
+    .category-box {
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }
+    .category-box h2{
+        font-size: 15px;
+     }
+    .category-box h3{
+        font-size: 12px;
+     }
+     .views-number h2 {
+        font-size: 20px;
+     }
+    .otherVids {
+        margin-bottom: 15%;
+    }
+    .vid-footer {
+        margin-top: 40%;
+    }
+}
+
+@media screen and (width: 932px) {
+    #interactives {
+        margin-top: -10%;
+    }
+}
+
+@media screen and (width: 915px) {
+    #interactives {
+        margin-top: -10%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 900px) {
+    header {
+        height: 700px;
+        width: 103%;
+        margin-left: -1%;
+        margin-top: -1%;
+    }
+    .logo img{
+        width: 100%;
+    }
+    nav {
+        margin-top: -3%;
+    }
+    form {
+        width: 500%;
+    }
+    .searchButton img {
+        width: 150%;
+        margin-left: -30%;
+    }
+    .hero h4 {
+        margin-top: 1%;
+    }
+    .allContent {
+        display: table;
+        margin-top: -35%;
+    }
+    .views {
+        width: 80%;
+    }
+    .rates {
+        width: 90%;
+        margin-top: 5%;
+    }
+    .video-sec {
+        display: inline-table;
+    }
+    .video-screen {
+        width: 100%;
+        margin-left: 0%;
+        text-align: center;
+    }
+    .video-screen h1{
+        margin-top: 5%;
+    }
+    .video-info {
+        width: 90%;
+        margin-left: 7%;
+    }
+    .category-box  {
+        padding-top: 4%;
+        padding-bottom: 6%;
+    }
+    .category-box h2 {
+        margin-top: 0%;
+        font-size: 25px;
+    }
+    .info-body {
+        height: 333px;
+    }
+    .info-body h6 {
+        margin-top: 2%;
+    }
+    .info-body p {
+        margin-top: 2%;
+    }
+    #interactives {
+        margin-top: 45%;
+        width: 80%;
+    }
+    .vid-footer {
+        margin-top: 10%;
+    }
+    footer {
+        margin-top: 20%;
+    }
+    footer p{
+        font-size: 17px;
+    }
+ }
+
+ @media screen and (min-width: 880px) and (max-width: 900px) {
+    #interactives {
+        margin-top: 40%;
+    }
+    .vid-footer {
+        margin-top: 0%;
+    }
+    .all {
+        margin-top: -30%;
+    }
+  }
+
+@media screen and (width: 853px) and (height: 1280px) {
+    form {
+        width: 333%;
+    }
+    .title {
+        margin-top: -5%;
+    }
+    .favourites {
+        margin-top: -2%;
+    }
+    .allContent {
+        display: table;
+        margin-top: -40%;
+    }
+    .views {
+        width: 80%;
+    }
+    .rates {
+        width: 90%;
+        margin-top: 5%;
+    }
+    .video-sec {
+        display: inline-table;
+    }
+    .video-screen {
+        width: 100%;
+        margin-left: 0%;
+        text-align: center;
+    }
+    .video-screen h1{
+        margin-top: 5%;
+    }
+    .video-info {
+        width: 90%;
+        margin-left: 7%;
+    }
+    .video-part {
+        margin-left: 1%;
+    }
+    .info-header {
+        margin-left: -1%;
+    }
+    .info-description {
+        height: 150px;
+    }
+    .category-box {
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }
+    .category-box h2 {
+        margin-top: -3%;
+    }
+    #interactives {
+        margin-top: 40%;
+    }
+    .vid-footer {
+        margin-top: 10%;
+    }
+    .all {
+        margin-top: -30%;
+        margin-left: 0%;
+        margin-bottom: 20%;
     }
     .doc {
         margin-left: 3%;
     }
     footer {
-        margin-top: 25%;
+        margin-top: 5%;
     }
 }
 
 @media screen and (width: 844px) and (height: 390px) {
+    header {
+        height: 500px;
+    }
     .title {
         font-size: 33px;
         margin-top: -4%;
@@ -1003,100 +1153,11 @@ footer img {
     .video-screen h1 {
         margin-top: 5%;
     }
- }
-
-@media screen and (width: 820px) and (height: 1180px) {
-    .logo img{
-        width: 55%;
-    }
-    nav {
-        margin-top: -4%;
-    }
-    form {
-        width: 350%;
-    }
-    .searchButton img {
-        width: 200%;
-    }
-    .title {
-        margin-top: -5%;
-    }
-    h1 {
-        font-size: 40px;
-    }
-    .favourites {
-        margin-top: -2%;
-    }
-    h3 {
-        text-wrap: nowrap;
-    }
-    .allContent {
-        margin-top: -80%;
-        margin-bottom: 33%;
-    }
-    footer img {
-        width: 10%;
-        height: 60%;
-    }
-    footer p {
-        font-size: 14px;
-    }
-    .socials {
-        width: 30%;
-    }
-    .info-body {
-        height: 66%;
-    }
-    .video-sec h1{
-        margin-top: 5%;
-    }
-    .vid-footer {
-        margin-top: -20%;
-    }
-    .all {
-        margin-top: -70%;
-    }
-    .bottom {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-@media screen and (width: 912px) and (height: 1368px) {
-    .all {
-        margin-top: -77%;
-    }
-    .video-sec {
-        display: inline-table;
-    }
-    .video-screen {
-        width: 100%;
-        margin-left: 0%;
-        text-align: center;
-    }
-    .video-screen h1{
-        margin-top: 5%;
-    }
-    .video-info {
-        width: 90%;
-        margin-left: 7%;
-    }
-    .category-box h2 {
-        margin-top: -3%;
-    }
-    .info-body {
-        height: 333px;
-    }
-    .info-body h6 {
-        margin-top: 2%;
-    }
-    .info-body p {
-        margin-top: 2%;
-    }
-    .vid-footer {
-        margin-top: 50%;
+    #interactives {
+        margin-top: 70%;
     }
  }
+
 
 @media screen and (min-width: 930px) and (max-width: 950px) {
     .searchButton img {
@@ -1130,40 +1191,87 @@ footer img {
   }
 
 @media screen and (min-width: 700px) and (max-width: 800px) {
-    .logo img {
-        width: 70%;
+    header {
+            height: 700px;
+            width: 103%;
+            margin-left: -1%;
+            margin-top: -1%;
+    }
+    .logo img{
+        width: 100%;
     }
     nav {
-        margin-top: -4%;
+        margin-top: -3%;
     }
-    nav a {
-        font-size: 17px;
+    .hero h4 {
+        margin-top: 0%;
+    }
+    .all {
+        margin-top: -33%;
     }
     form {
-        width: 500%;
+        width: 650%;
     }
-    .title {
-        margin-top: -5%;
-    }
-    h1 {
-        font-size: 40px;
-    }
-    .favourites {
-        margin-top: -2%;
-    }
-    h3 {
-        text-wrap: nowrap;
+    .searchButton img {
+        width: 150%;
+        margin-left: -30%;
     }
     .allContent {
-        margin-top: -80%;
-        margin-bottom: 33%;
+        display: table;
+        margin-top: -35%;
     }
-    footer p {
-    font-size: 15px;
+    .views {
+        width: 80%;
     }
-    footer img {
-    width: 5%;
-  }
+    .rates {
+        width: 90%;
+        margin-top: 5%;
+    }
+    .video-sec {
+        display: inline-table;
+    }
+    .video-screen {
+        width: 100%;
+        margin-left: 0%;
+        text-align: center;
+    }
+    .video-screen h1{
+        margin-top: 5%;
+    }
+    .video-info {
+        width: 90%;
+        margin-left: 7%;
+    }
+    .category-box  {
+        padding-top: 4%;
+        padding-bottom: 6%;
+    }
+    .category-box h2 {
+        margin-top: 0%;
+        font-size: 25px;
+    }
+    .info-body {
+        height: 333px;
+    }
+    .info-body h6 {
+        margin-top: 2%;
+    }
+    .info-body p {
+        margin-top: 2%;
+    }
+    #interactives {
+        margin-top: 45%;
+        width: 80%;
+    }
+    .vid-footer {
+        margin-top: -5%;
+    }
+    footer {
+        margin-top: 20%;
+    }
+    footer p{
+        font-size: 14px;
+    }
 }
 
 @media screen and (min-width: 765px) and (max-width: 770px) {
@@ -1174,7 +1282,7 @@ footer img {
         font-size: 17px;
     }
     .all {
-        margin-top: -60%;
+        margin-top: -30%;
     }
     .bottom {
         display: flex;
@@ -1182,228 +1290,208 @@ footer img {
     }
  }
 
-@media screen and (width: 740px) and (height: 360px) {
+@media screen and (min-width: 600px) and (max-width: 700px) {
     header {
-        width: 102%;
-        margin-top: -1%;
-        margin-left: -1%;
-    }
-    form {
-        width: 500%;
-    }
-    .searchButton img {
-        width: 200%;
-        margin-left: -30%;
-    }
-    .title {
-        margin-top: -5%;
-    }
-    h1 {
-        font-size: 33px;
-    }
-    .favourites {
-        margin-top: -2%;
-    }
-    h3 {
-        text-wrap: nowrap;
-    }
-    .allContent {
-        margin-top: 0%;
-    }
-    .vid-footer {
-        margin-top: 130%;
-    }
-    .idea {
-        font-size: 30px;
-    }
-    .ideaP {
-        font-size: 17px;
-    }
-    .all h3 {
-        font-size: 25px;
-    }
-}
-
-@media screen and (width: 720px) and (height: 540px) {
-    header {
+        height: 700px;
         width: 103%;
         margin-left: -1%;
         margin-top: -1%;
-    }
+        }
     .logo img{
-        width: 100%;
+        width: 70%;
     }
     nav {
-        margin-top: -5%;
-    }
-    form {
-        width: 555%;
-        height: 50px;
-    }
-    .searchButton img {
-        width: 300%;
-        margin-left: -70%;
-    }
-    .title {
-        margin-top: -5%;
-    }
-    h1 {
-        font-size: 33px;
-    }
-    .favourites {
-        margin-top: -2%;
-    }
-    h3 {
-        text-wrap: nowrap;
-    }
-    .allContent {
-        margin-top: -22%;
-    }
-    footer img {
-        width: 10%;
-        height: 60%;
-    }
-    .socials {
-        width: 45%;
-    }
-    .all h3 {
-        font-size: 25px;
-    }
-    .idea {
-        font-size: 30px;
-    }
-    .vid-footer {
-        margin-top: 111%;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 700px) {
-    header {
-        margin-top: -1%;
-        margin-left: -1%;
-        width: 102%;
-    }
-    .logo img {
-        width: 60%;
-    }
-    nav {
-        margin-top: -5%;
+        margin-top: -3%;
     }
     nav a {
         font-size: 15px;
-        padding-left: 25px;
+        padding-left: 1%;
+    }
+    .hero h4{
+        margin-top: -1%;
+    }
+    .all {
+        margin-top: -30%;
     }
     form {
         width: 500%;
     }
     .searchButton img {
         width: 150%;
+        margin-left: -30%;
     }
-    .title {
+    .allContent {
+        display: table;
+        margin-top: -35%;
+    }
+    .views {
+        width: 80%;
+    }
+    .rates {
+        width: 90%;
+        margin-top: 5%;
+    }
+    .video-sec {
+        display: inline-table;
+    }
+    .video-screen {
+        width: 100%;
+        margin-left: 0%;
+        text-align: center;
+    }
+    .video-screen h1{
+        margin-top: 5%;
+    }
+    .video-info {
+        width: 90%;
+        margin-left: 7%;
+    }
+    .category-box  {
+        padding-top: 4%;
+        padding-bottom: 6%;
+    }
+    .category-box h2 {
+        margin-top: 0%;
         font-size: 25px;
+    }
+    .info-body {
+        height: 333px;
+    }
+    .info-body h6 {
+        margin-top: 2%;
+    }
+    .info-body p {
+        margin-top: 2%;
+    }
+    #interactives {
+        margin-top: 55%;
+        width: 80%;
+    }
+    .vid-footer {
         margin-top: -5%;
     }
-    .favourites {
-        margin-top: -2%;
+    footer {
+        margin-top: 20%;
     }
-    h3 {
-        font-size: 25px;
-        text-wrap: nowrap;
+    footer p{
+        font-size: 12px;
     }
     footer img {
         width: 10%;
-        height: 50%;
-    }
-    footer p {
-        font-size: 15px;
-    }
-    .socials {
-        width: 30%;
-    }
-    .vid-footer {
-        margin-top: 130%;
+        height: 70%;
     }
 }
 
 @media screen and (min-width: 500px) and (max-width: 600px) {
     header {
+        height: 700px;
         width: 104%;
         margin-left: -2%;
         margin-top: -2%;
-    }
-    .log {
-        margin-left: 5%;
-    }
+        }
     .logo img{
-        width: 100%;
+        width: 70%;
     }
     nav {
-        margin-top: -6%;
+        margin-top: -3%;
+        margin-right: 7%;
     }
     nav a {
-        font-size: 17px;
-        padding-left: 15px;
+        font-size: 15px;
+        padding-left: 1%;
+        padding-right: 5%;
+    }
+    .hero h4{
+        margin-top: -1%;
+    }
+    .all {
+        margin-top: -30%;
     }
     form {
-        width: 1111%;
+        width: 500%;
     }
     .searchButton img {
-        width: 350%;
-        margin-left: -77%;
-    }
-    .title {
-        font-size: 22px;
-        margin-top: -5%;
-    }
-    .favourites {
-        margin-top: -3%;
-    }
-    h3 {
-        font-size: 33px;
-        text-wrap: nowrap;
+        width: 150%;
+        margin-left: -30%;
     }
     .allContent {
-        margin-top: -77%;
+        display: table;
+        margin-top: -35%;
+    }
+    .views {
+        width: 80%;
+    }
+    .rates {
+        width: 90%;
+        margin-top: 5%;
+    }
+    .video-sec {
+        display: inline-table;
+    }
+    .video-screen {
+        width: 100%;
+        margin-left: 0%;
+        text-align: center;
+    }
+    .video-screen h1{
+        margin-top: 5%;
+    }
+    .video-info {
+        width: 90%;
+        margin-left: 7%;
+    }
+    .category-box  {
+        padding-top: 4%;
+        padding-bottom: 6%;
+    }
+    .category-box h2 {
+        margin-top: 0%;
+        font-size: 25px;
+    }
+    .info-body {
+        height: 333px;
+    }
+    .info-body h6 {
+        margin-top: 2%;
+    }
+    .info-body p {
+        margin-top: 2%;
+    }
+    #interactives {
+        margin-top: 55%;
+        width: 80%;
+    }
+    .vid-footer {
+        margin-top: -5%;
+    }
+    footer {
+        display: table;
+        padding-left: 30%;
+        padding-right: 30%;
+        margin-top: 20%;
+        text-align: center;
+    }
+    footer p{
+        font-size: 15px;
     }
     footer img {
         width: 10%;
-        height: 50%;
-    }
-    footer p {
-        font-size: 14px;
-    }
-    .socials {
-        width: 30%;
-    }
-    .vid-footer {
-        margin-top: 90%;
-    }
-    .all h3 {
-        font-size: 25px;
-    }
-    .all {
-        margin-top: -50%;
-    }
-    .idea {
-        font-size: 30px;
-    }
-    .hero p {
-        margin-left: -33%;
+        height: 70%;
     }
 }
 
 @media screen and (max-width: 500px) {
     header {
-        width: 116%;
+        height: 700px;
+        width: 104%;
         margin-left: -2%;
         margin-top: -2%;
-        margin-bottom: -75%;
     }
-    .log {
-        margin-left: 5%;
+    .top {
+        height: 11%;
     }
     .logo img{
-        width: 30%;
+        width: 50%;
     }
     nav {
         display: none;
@@ -1431,125 +1519,197 @@ footer img {
         cursor: pointer;
         margin: 10px;
     }
-    form {
-        width: 300%;
-        height: 50px;
-    }
-    .searchButton img {
-        width: 150%;
-    }
-    .title {
-        font-size: 33px;
-        margin-left: 12%;
-    }
-    .favourites {
+    .hero h4 {
         margin-top: -3%;
     }
-    h1 {
-        font-size: 25px;
+    .hero p {
+        margin-top: 15%;
+        margin-left: -33%;
     }
-    h3 {
-        font-size: 25px;
-        text-wrap: nowrap;
-    }
-    .allContent {
-        display: inline-table;
-        margin-top: -75%;
-        margin-bottom: 20%;
-    }
-    .rates{
-        margin-top: 25%;
-    }
-    footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-left: 7%;
-    }
-    footer img {
-        width: 10%;
-        height: 50%;
-    }
-    .category-box h2{
-        font-size: 19px;
-    }
-    .vid-footer {
-        margin-top: 111%;
+    .all {
+        margin-top: -30%;
     }
     .bottom {
         display: flex;
         flex-direction: column;
     }
+    form {
+        width: 600%;
+    }
     .searchButton img {
-        width: 300%;
-        margin-left: -50%;
+        width: 170%;
+        margin-left: -30%;
+    }
+    .hero-title {
+        font-size: 25px;
+    }
+    .allContent {
+        display: table;
+        margin-top: -55%;
+    }
+    .views {
+        width: 80%;
+    }
+    .rates {
+        width: 90%;
+        margin-top: 5%;
+    }
+    .video-sec {
+        display: inline-table;
+    }
+    .video-screen {
+        width: 100%;
+        margin-left: 0%;
+        text-align: center;
+    }
+    .video-screen h1{
+        margin-top: 5%;
+    }
+    .video-info {
+        width: 90%;
+        margin-left: 7%;
+    }
+    .category-box  {
+        padding-top: 4%;
+        padding-bottom: 6%;
+    }
+    .category-box h2 {
+        margin-top: 0%;
+        font-size: 25px;
+    }
+    .info-description h3 {
+        font-size: 15px;
+    }
+    .info-body {
+        height: 333px;
+    }
+    .info-body h6 {
+        margin-top: 2%;
+    }
+    .info-body p {
+        margin-top: 2%;
+    }
+    #interactives {
+        margin-top: 60%;
+        width: 80%;
+    }
+    .vid-footer {
+        margin-top: -5%;
+    }
+    footer {
+        display: table;
+        padding-left: 30%;
+        padding-right: 30%;
+        margin-top: 20%;
+        text-align: center;
+    }
+    footer p{
+        font-size: 15px;
+    }
+    footer img {
+        width: 10%;
+        height: 70%;
     }
 }
 
-@media screen and (width: 412px) {
+@media screen and (min-width: 410px) and (max-width: 430px) {
     .ideaP {
         margin-top: 15%;
+    }
+    .allContent {
+        margin-top: -100%;
+        margin-bottom: 0%;
     }
  }
 
 @media screen and (max-width: 400px) {
-    form {
-        width: 350%;
+    header {
+        width: 104%;
+        margin-left: -2%;
+        margin-top: -2%;
     }
-    .searchButton img {
-        width: 150%;
+    .all {
+        margin-top: -60%;
     }
     .allContent {
-        margin-top: -50%;
-    }   
-    .category-box h2{
-        font-size: 16px;
+        margin-top: -130%;
     }
-    .vid-footer {
-        margin-top: 177%;
-    }
-    .hero-About {
-        margin-left: 10%;
-    }
-    .hero p{
-        margin-left: -30%;
+    form {
+        width: 700%;
     }
     .searchButton img {
-        width: 500%;
-        margin-left: -50%;
+        width: 250%;
+        margin-left: -75%;
+    }
+    .hero-title {
+        font-size: 17px;
+    }
+    .title-About {
+        font-size: 27px;
+    }
+    .hero h4 {
+        font-size: 22px;
+        margin-left: 5%;
+    }
+    .hero p {
+        width: 100%;
+    }
+    .magaz h4 {
+        font-size: 22px;
+    }
+    .magaz p {
+        width: 140%;
+    }
+    .bottom h4 {
+        font-size: 22px;
+        white-space: nowrap;
+    }
+    .bottom p {
+        width: 200%;
+    }
+    .category-box {
+        padding-top: 12%;
+        padding-bottom: 15%;
+    }
+    .category-box h2{
+        font-size: 15px;
+    }
+    .views-number h2{
+        font-size: 17px;
+    }
+    #interactives {
+        margin-top: 85%;
+    }
+    footer {
+        margin-top: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
 
 @media screen and (width: 390px) and (height: 844px) {
     .searchButton img {
-        width: 300%;
-        margin-left: -60%;
+        width: 200%;
+        margin-left: -50%;
+    }
+    .views {
+        width: 90%;
+    }
+    #interactives {
+        margin-top: 70%;
     }
  }
 
-@media screen and (width: 375px) and (height: 667px) {
-    .all {
-        margin-top: 33%;
-    }
-    form {
-        width: 400%;
-    }
-    .searchButton img {
-        width: 350%;
-        margin-left: -75%;
-    }
-} 
-
 @media screen and (max-width: 345px) {
-    .allContent {
-        margin-top: -111%;
-    }
+     .category-box {
+        padding-top: 14%;
+        padding-bottom: 7%;
+     }
     .category-box h2{
-        font-size: 15px;
-    }
-    .category-box h3{
         font-size: 12px;
+    }
+    .info-description h3{
+        font-size: 14px;
     }
     .views-number h2{
         font-size: 17px;
