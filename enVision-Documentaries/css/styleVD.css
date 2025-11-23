@@ -235,7 +235,7 @@ input {
 .hero p{
     width: 60%;
     margin-top: 8%;
-    margin-left: -9%;
+    margin-left: -9.5%;
 }
 
 .allContent {
@@ -722,6 +722,9 @@ footer img {
     #interactives {
         margin-top: -5%;
     }
+    .hero p {
+        margin-left: -10.3%;
+    }
 }
 
 @media screen and (width: 1180px) {
@@ -738,6 +741,9 @@ footer img {
     .hero {
         margin-top: -4%;
     }
+    .hero p {
+        margin-left: -11.3%
+    };
 }
 
 @media screen and (min-width: 900px) and (max-width: 1025px) {
@@ -798,6 +804,9 @@ footer img {
     nav {
         margin-top: -2%;
     }
+    .favourites {
+        margin-top: -5%;
+    }
     .allContent {
         margin-top: -73%;
         margin-bottom: 22%;
@@ -810,15 +819,24 @@ footer img {
         width: 80%;
         margin-top: 5%;
     }
+    .category {
+        margin-top: 15%;
+    }
     #interactives {
         margin-top: -55%;
     }
-    .vid-footer {
-        margin-top: 0%;
+    .hero p {
+        margin-left: -13%;
     }
     .all {
         margin-top: -60%;
         margin-bottom: 35%;
+    }
+    .vid-footer {
+        margin-top: 14%;
+    }
+    .about-footer {
+        margin-top: -10%;
     }
     footer {
         margin-top: -17%;
@@ -826,8 +844,41 @@ footer img {
 }
 
 @media screen and (width: 1024px) and (height: 768px) {
+    .favourites {
+        margin-top: -5%;
+    }
     .all {
         margin-top: -22%;
+    }
+    .info-description {
+        height: 205px;
+    }
+    .category {
+        margin-top: 15%;
+    }
+    .hero p {
+        margin-left: -13%;
+    }
+ }
+
+ @media screen and (width: 1024px) and (height: 600px) {
+    .favourites {
+        margin-top: -5%;
+    }
+    .info-description {
+        height: 205px;
+    }
+    #interactives {
+        margin-top: 12%;
+    }
+    .vid-footer {
+        margin-top: -5%;
+    }
+    .hero p {
+        margin-left: -13%;
+    }
+    .about-footer {
+        margin-top: 30%;
     }
  }
 
@@ -837,6 +888,67 @@ footer img {
     }
     .all {
         margin-top: -20%;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 950px) {
+    header {
+        height: 700px;
+        width: 101.5%;
+        margin-left: -1%;
+        margin-top: -1%;
+    }
+    .logo img{
+        width: 55%;
+    }
+    nav {
+        margin-top: -3%;
+    }
+    .all {
+        margin-top: -25%;
+        margin-bottom: 25%;
+    }
+    .searchButton img {
+        width: 200%;
+        margin-left: -40%;
+    }
+    .favourites {
+        margin-top: -5%;
+    }
+    .info-description {
+        padding-top: 1%;
+        height: 220px;
+    }
+    .vids {
+        margin-bottom: -30%;
+    }
+    .allContent {
+        margin-top: -20%;
+    }
+    .category-box {
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }
+    .category-box h2{
+        font-size: 15px;
+     }
+    .category-box h3{
+        font-size: 12px;
+     }
+     .views-number h2 {
+        font-size: 20px;
+     }
+    .otherVids {
+        margin-bottom: 15%;
+    }
+    .info-description h3 {
+        font-size: 16px;
+    }
+    .vid-footer {
+        margin-top: 40%;
+    }
+    .hero p {
+        margin-left: -14%;
     }
 }
 
@@ -874,6 +986,9 @@ footer img {
         width: 90%;
         margin-left: 7%;
     }
+    .vid {
+        margin-left: -12%;
+    }
     .category-box  {
         padding-top: 4%;
         padding-bottom: 6%;
@@ -882,77 +997,26 @@ footer img {
         margin-top: 0%;
         font-size: 25px;
     }
-    .info-body {
-        height: 333px;
-    }
-    .info-body h6 {
-        margin-top: 2%;
-    }
-    .info-body p {
-        margin-top: 2%;
+    .info-description {
+        height: 150px;
     }
     #interactives {
-        margin-top: 40%;
+        width: 79%;
+        margin-top: 33%;
+    }
+    .all {
+        margin-top: -30%;
     }
     .vid-footer {
         margin-top: 50%;
+    }
+    .about-footer {
+        margin-top: 33%;
     }
     footer {
         margin-top: 15%;
     }
  }
-
-@media screen and (min-width: 900px) and (max-width: 950px) {
-    header {
-        height: 700px;
-        width: 103%;
-        margin-left: -1%;
-        margin-top: -1%;
-    }
-    .logo img{
-        width: 55%;
-    }
-    nav {
-        margin-top: -3%;
-    }
-    .all {
-        margin-top: -25%;
-        margin-bottom: 25%;
-    }
-    .searchButton img {
-        width: 200%;
-        margin-left: -40%;
-    }
-    .info-description {
-        padding-top: 1%;
-        height: 220px;
-    }
-    .vids {
-        margin-bottom: -30%;
-    }
-    .allContent {
-        margin-top: -20%;
-    }
-    .category-box {
-        padding-top: 6%;
-        padding-bottom: 6%;
-    }
-    .category-box h2{
-        font-size: 15px;
-     }
-    .category-box h3{
-        font-size: 12px;
-     }
-     .views-number h2 {
-        font-size: 20px;
-     }
-    .otherVids {
-        margin-bottom: 15%;
-    }
-    .vid-footer {
-        margin-top: 40%;
-    }
-}
 
 @media screen and (width: 932px) {
     #interactives {
@@ -966,10 +1030,16 @@ footer img {
     }
 }
 
+@media screen and (width: 914px) {
+    #interactives {
+        margin-top: -10%;
+    }
+}
+
 @media screen and (min-width: 800px) and (max-width: 900px) {
     header {
         height: 700px;
-        width: 103%;
+        width: 101.5%;
         margin-left: -1%;
         margin-top: -1%;
     }
@@ -988,6 +1058,9 @@ footer img {
     }
     .hero h4 {
         margin-top: 1%;
+    }
+    .favourites {
+        margin-top: -5%;
     }
     .allContent {
         display: table;
@@ -1036,6 +1109,9 @@ footer img {
         margin-top: 45%;
         width: 80%;
     }
+    .hero p {
+        margin-left: -16%;
+    }
     .vid-footer {
         margin-top: 10%;
     }
@@ -1051,11 +1127,17 @@ footer img {
     #interactives {
         margin-top: 40%;
     }
+    .vid {
+        margin-left: -10%;
+    }
     .vid-footer {
         margin-top: 0%;
     }
     .all {
         margin-top: -30%;
+    }
+    .hero p {
+        margin-left: -14.5%;
     }
   }
 
@@ -1150,6 +1232,9 @@ footer img {
     .info-body {
         height: 66%;
     }
+    .vid {
+        margin-left: -10%;
+    }
     .video-screen h1 {
         margin-top: 5%;
     }
@@ -1157,6 +1242,18 @@ footer img {
         margin-top: 70%;
     }
  }
+
+ @media screen and (width: 820px) {
+    .all {
+        margin-top: -25%;
+    }
+    .about-footer {
+        margin-top: 3%;
+    }
+    .vid {
+        margin-left: -10%;
+    }
+}
 
 
 @media screen and (min-width: 930px) and (max-width: 950px) {
@@ -1203,6 +1300,9 @@ footer img {
     nav {
         margin-top: -3%;
     }
+    .favourites {
+        margin-top: -3%;
+    }
     .hero h4 {
         margin-top: 0%;
     }
@@ -1242,6 +1342,10 @@ footer img {
         width: 90%;
         margin-left: 7%;
     }
+    .vid {
+        margin-left: -5%;
+        height: 300px;
+    }
     .category-box  {
         padding-top: 4%;
         padding-bottom: 6%;
@@ -1263,6 +1367,9 @@ footer img {
         margin-top: 45%;
         width: 80%;
     }
+    .hero p {
+        margin-left: -18%;
+    }
     .vid-footer {
         margin-top: -5%;
     }
@@ -1281,12 +1388,21 @@ footer img {
     .ideaP {
         font-size: 17px;
     }
+    .vid {
+        margin-left: -9%;
+    }
     .all {
         margin-top: -30%;
     }
     .bottom {
         display: flex;
         flex-direction: column;
+    }
+    .stats {
+        width: 77%;
+    }
+    .doc {
+        width: 77%;
     }
  }
 
@@ -1296,7 +1412,7 @@ footer img {
         width: 103%;
         margin-left: -1%;
         margin-top: -1%;
-        }
+    }
     .logo img{
         width: 70%;
     }
@@ -1307,8 +1423,14 @@ footer img {
         font-size: 15px;
         padding-left: 1%;
     }
+    .favourites {
+        margin-top: -3%;
+    }
     .hero h4{
         margin-top: -1%;
+    }
+    .hero p {
+        margin-left: -19%;
     }
     .all {
         margin-top: -30%;
@@ -1330,6 +1452,9 @@ footer img {
     .rates {
         width: 90%;
         margin-top: 5%;
+    }
+    .vid {
+        height: 250px;
     }
     .video-sec {
         display: inline-table;
@@ -1394,15 +1519,21 @@ footer img {
     }
     nav {
         margin-top: -3%;
-        margin-right: 7%;
+        margin-right: 10%;
     }
     nav a {
         font-size: 15px;
         padding-left: 1%;
         padding-right: 5%;
     }
+    .favourites {
+        margin-top: -3%;
+    }
     .hero h4{
         margin-top: -1%;
+    }
+    .hero p {
+        margin-left: -24%;
     }
     .all {
         margin-top: -30%;
@@ -1416,7 +1547,7 @@ footer img {
     }
     .allContent {
         display: table;
-        margin-top: -35%;
+        margin-top: -55%;
     }
     .views {
         width: 80%;
@@ -1424,6 +1555,9 @@ footer img {
     .rates {
         width: 90%;
         margin-top: 5%;
+    }
+    .vid {
+        height: 250px;
     }
     .video-sec {
         display: inline-table;
@@ -1483,7 +1617,7 @@ footer img {
 @media screen and (max-width: 500px) {
     header {
         height: 700px;
-        width: 104%;
+        width: 106%;
         margin-left: -2%;
         margin-top: -2%;
     }
@@ -1519,6 +1653,14 @@ footer img {
         cursor: pointer;
         margin: 10px;
     }
+    .favourites {
+        display: flex;
+        flex-direction: column;
+    }
+    .favourites img {
+        width: 80%;
+        margin-left: 0%;
+    }
     .hero h4 {
         margin-top: -3%;
     }
@@ -1545,14 +1687,41 @@ footer img {
     }
     .allContent {
         display: table;
-        margin-top: -55%;
+        margin-top: 55%;
+    }
+    .allContent h4 {
+        text-align: center;
+        margin-left: -25%;
     }
     .views {
-        width: 80%;
+        margin-top: 20%;
+        margin-left: 3%;
+    }
+    .views img {
+        width: 87%;
+        margin-top: 5%;
+    }
+    .viewsImages {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0%;
     }
     .rates {
+        margin-top: 5%;
+        margin-left: 8%;
+    }
+    .rates img {
         width: 90%;
         margin-top: 5%;
+    }
+    .ratesImages {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0%;
+    }
+    .vid {
+        height: 180px;
+        margin-left: -5%;
     }
     .video-sec {
         display: inline-table;
@@ -1568,6 +1737,9 @@ footer img {
     .video-info {
         width: 90%;
         margin-left: 7%;
+    }
+    .views-number h2 {
+        font-size: 22px;
     }
     .category-box  {
         padding-top: 4%;
@@ -1590,18 +1762,61 @@ footer img {
         margin-top: 2%;
     }
     #interactives {
-        margin-top: 60%;
-        width: 80%;
+        margin-top: 20%;
+        width: 82%;
+        height: 6%;
+        margin-left: 4%;
+    }
+    .vids {
+        margin-left: 0%;
+    }
+    .vids h4 {
+        text-align: center;
+    }
+    .others-title {
+        margin-left: 4%;
+    }
+    .otherVids {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8%;
+    }
+    .others {
+        margin-top: 5%;
+        margin-left: 11%;
+        width: 75%;
     }
     .vid-footer {
         margin-top: -5%;
     }
+    .hero h4 {
+        margin-top: 0%;
+    }
+    .hero p {
+        margin-left: -34%;
+    }
+    .all {
+        margin-left: 3%;
+    }
+    .hero {
+        width: 77%;
+    }
+    .magaz {
+        width: 77%;
+    }
+    .stats {
+        width: 77%;
+    }
+    .doc {
+        width: 77%;
+    }
     footer {
         display: table;
-        padding-left: 30%;
+        padding-left: 25%;
         padding-right: 30%;
         margin-top: 20%;
         text-align: center;
+        white-space: nowrap;
     }
     footer p{
         font-size: 15px;
@@ -1617,7 +1832,6 @@ footer img {
         margin-top: 15%;
     }
     .allContent {
-        margin-top: -100%;
         margin-bottom: 0%;
     }
  }
@@ -1649,10 +1863,10 @@ footer img {
     }
     .hero h4 {
         font-size: 22px;
-        margin-left: 5%;
     }
     .hero p {
         width: 100%;
+        margin-left: -29%;
     }
     .magaz h4 {
         font-size: 22px;
@@ -1677,8 +1891,11 @@ footer img {
     .views-number h2{
         font-size: 17px;
     }
+    .magaz, .stats, .doc {
+        width: 44%;
+    }
     #interactives {
-        margin-top: 85%;
+        margin-top: 35%;
     }
     footer {
         margin-top: 20%;
@@ -1697,6 +1914,9 @@ footer img {
     }
     #interactives {
         margin-top: 70%;
+    }
+    .hero p {
+        margin-left: -28%;
     }
  }
 

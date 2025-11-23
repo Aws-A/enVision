@@ -88,7 +88,7 @@ header > * {
 form  {
     display: flex;
     width: 115%;
-    height: 50%;
+    height: 35%;
     margin-top: 6%;
     margin-right: 5%;
 }
@@ -373,15 +373,58 @@ footer img {
     margin-top: 1.5%;
 }
 
+@media screen and (min-width: 1100px) and (max-width: 1400px) {
+    .list {
+        margin-top: -80%;
+    }
+ }
+
 @media screen and (min-width: 1000px) {
     #Layer_1 {
         width: 100%;
     }
 }
 
+@media screen and (width: 1024px)  and (height: 1366px) {
+    header {
+        height: 20%;
+    }
+    .topics {
+        margin-top: -25%;
+    }
+    .list {
+        margin-top: -95%;
+    }
+    #Layer_1 {
+        height: 100%;
+        margin-top: -40%;
+    }
+    footer {
+        margin-top: 27%;
+    }
+ }
+
+@media screen and (width: 1024px)  and (height: 768px) {
+    .list {
+        margin-top: -77%;
+    }
+ }
+
+
+@media screen and (width: 1024px)  and (height: 600px) {
+    .list {
+        margin-top: -66%;
+    }
+ }
+
 @media screen and (width: 912px) and (height: 1368px) {
     header {
         height: 20%;
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+    .logo img {
+        width: 45%;
     }
     form {
         width: 200%;
@@ -396,11 +439,26 @@ footer img {
 }
 
 @media screen and (min-width: 913px) and (max-width: 1000px) {
+    header {
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+    .logo img {
+        width: 45%;
+    }
     form {
         width: 177%;
+        height: 60%;
+    }
+    .searchButton img {
+        width: 100%;
+    }
+        #layer_1{
+        height: 144%;
+        margin-top: 20%;
     }
     .list {
-        margin-top: -40%;
+        margin-top: -70%;
     }
 }
 
@@ -411,21 +469,42 @@ footer img {
     form {
         width: 200%;
     }
+    .topics {
+        margin-top: -25%;
+    }
     #Layer_1 {
         width: 100%;
         height: 750px;
+    }
+    .list {
+        margin-top: -70%;
     }
     footer {
         margin-top: 20%;
     }
 }
 
+@media screen and (min-width: 800px) and (max-width: 900px) {
+    header {
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+    .logo img {
+        width: 45%;
+    }
+ }
+
 @media screen and (min-width: 821px) and (max-width: 900px) {
     form {
         width: 177%;
+        height: 60%;
+    }
+    #layer_1{
+        height: 144%;
+        margin-top: 20%;
     }
     .list {
-        margin-top: 0%;
+        margin-top: -70%;
     }
 }
 
@@ -433,23 +512,29 @@ footer img {
     .topics {
         margin-top: -10%;
     }
+    .list {
+        margin-top: -53%;
+    }
 }
 
 @media screen and (width: 853px) and (height: 1280px) {
     header {
-        height: 20%;
+        height: 15%;
     }
     svg {
         height: 40%;
     }
     .topics {
-        margin-top: -28%;
+        margin-top: -20%;
+    }
+    #layer_1 {
+        height: 43%;
     }
     .list {
-        margin-top: -60%;
+        margin-top: -73%;
     }
     #contact {
-        margin-top: 30%;
+        margin-top: 26%;
     }
  }
 
@@ -460,6 +545,9 @@ footer img {
     form {
         width: 250%;
     }
+    .topics {
+        margin-top: -25%;
+    }
     #Layer_1 {
         width: 100%;
         height: 750px;
@@ -468,19 +556,22 @@ footer img {
         margin-top: 20%;
     }
     .list {
-        margin-top: -10%;
+        margin-top: -85%;
     }
 }
 
 @media screen and (min-width: 700px) and (max-width: 800px) {
     header {
         height: 30%;
+        margin-top: -1%;
+        margin-left: -1%;
+    }
+    .logo img {
+        width: 60%;
     }
     form {
         width: 300%;
-    }
-    .list {
-        margin-top: 0%;
+        height: 60%;
     }
     svg {
         height: 88%;
@@ -488,7 +579,7 @@ footer img {
     }
     #contact p {
         font-size: 14px;
-    }
+    }   
 }
 
 @media screen and (width: 740px) and (height: 360px) { 
@@ -504,10 +595,21 @@ footer img {
     header {
         height: 20%;
     }
-    svg {
+    form {
+        width: 400%;
+        height: 50%;
+    }
+    #layer_1 {
         width: 100%;
+        height: 80%;
         margin-top: 0%;
         margin-bottom: -30%;
+    }
+    .list {
+        margin-top: -60%;
+    }
+    footer {
+        margin-top: 20%;
     }
 }
 
@@ -517,13 +619,15 @@ footer img {
     }
     form {
         width: 300%;
+        height: 60%;
+    }
+    #layer_1 {
+        width: 100%;
+        margin-top: 40%;
+        margin-bottom: -30%;
     }
     .list {
-        margin-top: 0%;
-    }
-    svg {
-        height: 115%;
-        margin-top: 30%;
+        margin-top: -50%;
     }
     #contact p {
         font-size: 14px;
@@ -534,9 +638,15 @@ footer img {
     header {
         height: 30%;
         width: 200%;
+        margin-top: -2%;
+        margin-left: -2%;
+    }
+    .logo img {
+        width: 50%;
     }
     form {
-        width: 300%;
+        width: 250%;
+        height: 60%;
     }
     .topics {
         margin-left: 80%;
@@ -556,43 +666,18 @@ footer img {
 }
 
 @media screen and (max-width: 500px) {
-    header {
-        height: 30%;
-        width: 200%;
+    .logo img {
+        width: 70%;
     }
-    form {
-        width: 300%;
-    }
-    .topics {
-        margin-left: 80%;
-        margin-top: -40%;
-    }
-    .subTopics {
-        margin-left: 45%;
-    }
-    .list {
-        margin-top: -140%;
-    }
-    svg {
-        height: 58%;
-        margin-top: 30%;
-    }
-    footer {
-        display: table;
-        margin: 130% 60% 0 60%; 
-        text-align: center;
-    }
-    #contact p {
-        font-size: 25px;
-    }
-}
-
-@media screen and (max-width: 500px) {
     header {
         height: 20%;
+        width: 200%;
+        margin-top: -2%;
+        margin-left: -2%;
     }
     form {
         width: 500%;
+        height: 60%;
     }
     .topics {
         margin-left: 90%;
@@ -601,15 +686,44 @@ footer img {
     .subTopics {
         margin-left: -200%;
     }
-    svg {
-        width: 180%;
-        margin-top: 150%;
-    }
     .list {
-        margin-top: -200%;
+        margin-top: -220%;
+    }
+    #layer_1 {
+        width: 180%;
+        margin-top: 20%;
     }
     footer {
-        margin-top: 90%;
+        display: table;
+        margin: 90% 60% 0 60%; 
+        text-align: center;
+    }
+    #contact p {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 400px)  {
+    .logo img {
+        width: 70%;
+    }
+    #layer_1 {
+        margin-top: 70%;
+    }
+    .list {
+        margin-top: -280%;
+    }
+    footer {
+        margin-top: 70%;
+    }
+}
+
+@media screen and (width: 390px) {
+    .topics {
+        margin-top: -25%;
+    }
+    footer {
+        margin-top: 75%;
     }
  }
 
@@ -622,7 +736,7 @@ footer img {
         margin-left: -180%;
     }
     .list {
-        margin-top: -160%;
+        margin-top: -220%;
     }
     footer {
         margin-top: 12%;
