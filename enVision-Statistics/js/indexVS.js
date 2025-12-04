@@ -1043,7 +1043,7 @@ function showVac() {
     document.querySelector('.per3').textContent = "98%";
     document.querySelector('.country4').textContent = "Vietnam";
     document.querySelector('.per4').textContent = "97%";
-    document.querySelector('.country5').textContent = "Sri-Lanka";
+    document.querySelector('.country5').textContent = "Sri Lanka";
     document.querySelector('.per5').textContent = "97%";
     document.querySelector('.country6').textContent = "Nepal";
     document.querySelector('.per6').textContent = "96%";

@@ -28,49 +28,55 @@
             </div>
         <!-- Hidden menu content -->
         <div id="mobile-menu">
-            <a href="enVisionMagazine.html">Home</a>
+            <a href="enVisionDocumentaries.html">Home</a>
             <a href="about.html">About</a>
             <a href="#contact">Contact</a>
         </div>
             <section class="video-sec">
                 <div class="video-screen">
                     <div class="video-part">
-                        <iframe class="vid" 
-                                width="640" 
-                                height="360" 
-                            src="https://www.youtube.com/embed/GARh8N8Ji2s" 
-                                title="Quick Statistics Video" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                        <h1 class="title">
-                           Tourism Around The World Overview
+                        <!-- Dynamic YouTube iframe -->
+                    <iframe class="vid" 
+                        id="previewVideo"
+                        width="640" 
+                        height="360" 
+                        src="" 
+                        title="Video Player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                        <!-- Dynamic Title -->
+                        <h1 class="title" id="videoTitleDisplay">
+                            <!-- Title will be injected here -->
                         </h1>
                     </div>
                 </div>
+
                 <div class="video-info">
                     <div class="info-header">
+                        <!-- Dynamic Topic / Category -->
                         <div class="category-box">
-                            <h2 class="Category">
-                                Sports and Entertainment
+                            <h2 class="Category" id="videoTopicDisplay">
+                                <!-- Topic will be injected here -->
                             </h2>
                         </div>
+                        <!-- Views -->
                         <div class="views-number">
-                            <h2>
-                                1,005,333
+                            <h2 id="videoViews">
+                                33,059
                             </h2>
                         </div>
                     </div>
+                    <!-- Dynamic Description -->
                     <div class="info-description">
-                        <h3>
-                            The Overview of Tourism Around the World explores how travel connects cultures, drives economies, and shapes global experiences.<br>
-                            <br>
-                            It highlights top destinations, emerging trends, and the ways tourism continues to evolve in the modern era.
+                        <h3 id="videoDescDisplay">
+                            <!-- Description will be injected here -->
                         </h3>
                     </div>
                 </div>
             </section>
+
         </header>
             <section id="interactives">
                 <div id="interactives-icons">
@@ -152,7 +158,94 @@
 
 <!-- Footer -->
 
-<script type="module" src="js/interactives.js"></script>
+<script type="module">
+
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, getDocs, doc, getDoc, query, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    window.addEventListener("DOMContentLoaded", async () => {
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyB_aEQJrZILdy2JYl6HbLwT43myJhVJH6g",
+  authDomain: "envision-ed5f3.firebaseapp.com",
+  projectId: "envision-ed5f3",
+  storageBucket: "envision-ed5f3.appspot.com",
+  messagingSenderId: "202691344541",
+  appId: "1:202691344541:web:2f6c93e7f5138adf127c74",
+  measurementId: "G-3NB50YD8F0"
+};
+
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// DOM elements
+const videoTitleDisplay = document.getElementById("videoTitleDisplay");
+const videoDescDisplay = document.getElementById("videoDescDisplay");
+const videoTopicDisplay = document.getElementById("videoTopicDisplay");
+const iframeVideo = document.getElementById("previewVideo");
+
+// Convert YouTube URL to embed URL
+function toEmbedURL(url) {
+    if (!url) return "";
+    let videoId = "";
+    try {
+        // Short URL youtu.be
+        if (url.includes("youtu.be/")) {
+            videoId = url.split("youtu.be/")[1].split(/[?&]/)[0];
+        }
+        // Standard YouTube URL
+        else if (url.includes("youtube.com/watch")) {
+            const params = new URL(url).searchParams;
+            videoId = params.get("v");
+        }
+        else {
+            return url; // Already embed or unknown
+        }
+        if (!videoId) return ""; // safety
+        return `https://www.youtube.com/embed/${videoId}`;
+    } catch (e) {
+        console.error("Invalid YouTube URL", url);
+        return "";
+    }
+}
+
+// Load video by ID
+async function loadVideoById(id) {
+  const videoDocRef = doc(db, "science&nature-videos", id);
+  const docSnap = await getDoc(videoDocRef);
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    videoTitleDisplay.textContent = data.title;
+    videoDescDisplay.innerHTML = data.description.replace(/\n/g, "<br>");
+    videoTopicDisplay.textContent = data.topic;
+
+    if (data.videoUrl) {
+      // 🔹 Use toEmbedURL here!
+      iframeVideo.src = toEmbedURL(data.videoUrl);
+    }
+  } else {
+    console.error("❌ No video found with ID:", id);
+  }
+}
+
+// Load first video in the collection
+async function loadFirstVideo() {
+  const videosCol = collection(db, "science&nature-videos");
+  const q = query(videosCol, limit(1));
+  const snapshot = await getDocs(q);
+  if (!snapshot.empty) {
+    const firstDoc = snapshot.docs[0];
+    await loadVideoById(firstDoc.id);
+  } else {
+    console.error("❌ No videos found in collection");
+  }
+}
+
+// Main
+loadFirstVideo();
+});
+
+</script>
 
 	</body>
 </html>
