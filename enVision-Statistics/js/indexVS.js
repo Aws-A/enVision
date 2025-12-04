@@ -112,7 +112,7 @@ function showInf() {
     document.querySelector('.country7').textContent = "Haiti";
     document.querySelector('.per7').textContent = "44.5%";
     document.querySelector('.country8').textContent = "Suriname";
-    document.querySelector('.per8').textContent = "$2.42";
+    document.querySelector('.per8').textContent = "16.2%";
     document.querySelector('.country9').textContent = "Iran";
     document.querySelector('.per9').textContent = "42.5%";
     document.querySelector('.country10').textContent = "Sierra Leone";
@@ -854,7 +854,7 @@ function showResources() {
     document.querySelector('.country5').textContent = "Iran";
     document.querySelector('.per5').textContent = "$27.3T";
     document.querySelector('.country6').textContent = "China";
-    document.querySelector('.per6').textContent = "$23T";
+    document.querySelector('.per6').textContent = "$23.0T";
     document.querySelector('.country7').textContent = "Brazil";
     document.querySelector('.per7').textContent = "$21.8T";
     document.querySelector('.country8').textContent = "Australia";
@@ -897,7 +897,7 @@ function showClim() {
     document.querySelector('.country5').textContent = "India";
     document.querySelector('.per5').textContent = "27.3%";
     document.querySelector('.country6').textContent = "Norway";
-    document.querySelector('.per6').textContent = "23%";
+    document.querySelector('.per6').textContent = "23.0%";
     document.querySelector('.country7').textContent = "UK";
     document.querySelector('.per7').textContent = "21.8%";
     document.querySelector('.country8').textContent = "Lithuania";
@@ -1615,7 +1615,7 @@ function showAI() {
     document.querySelector('.country5').textContent = "United Arab Emirates";
     document.querySelector('.per5').textContent = "22.72%";
     document.querySelector('.country6').textContent = "France";
-    document.querySelector('.per6').textContent = "22.54";
+    document.querySelector('.per6').textContent = "22.54%";
     document.querySelector('.country7').textContent = "South Korea";
     document.querySelector('.per7').textContent = "20.48%";
     document.querySelector('.country8').textContent = "Germany";
