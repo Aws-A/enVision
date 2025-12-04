@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> enVisionMagazine </title>
+<title> enVisionDocumentaries </title>
 <link href="css/styleVD.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/indexVD.js"></script>
 </head>
@@ -28,55 +28,47 @@
             </div>
         <!-- Hidden menu content -->
         <div id="mobile-menu">
-            <a href="enVisionDocumentaries.html">Home</a>
+            <a href="enVisionMagazine.html">Home</a>
             <a href="about.html">About</a>
             <a href="#contact">Contact</a>
         </div>
             <section class="video-sec">
                 <div class="video-screen">
                     <div class="video-part">
-                        <!-- Dynamic YouTube iframe -->
-                    <iframe class="vid" 
-                        id="previewVideo"
-                        width="640" 
-                        height="360" 
-                        src="" 
-                        title="Video Player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                        <!-- Dynamic Title -->
-                        <h1 class="title" id="videoTitleDisplay">
-                            <!-- Title will be injected here -->
+                        <iframe class="vid"
+                                width="640" 
+                                height="360" 
+                                src="" 
+                                title="Video Player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                        <h1 id="videoTitleDisplay" class="title">
+                            
                         </h1>
                     </div>
                 </div>
-
                 <div class="video-info">
                     <div class="info-header">
-                        <!-- Dynamic Topic / Category -->
                         <div class="category-box">
-                            <h2 class="Category" id="videoTopicDisplay">
-                                <!-- Topic will be injected here -->
+                            <h2 id="videoTopicDisplay" class="Category">
+                                
                             </h2>
                         </div>
-                        <!-- Views -->
                         <div class="views-number">
-                            <h2 id="videoViews">
+                            <h2>
                                 33,059
                             </h2>
                         </div>
                     </div>
-                    <!-- Dynamic Description -->
-                    <div class="info-description">
-                        <h3 id="videoDescDisplay">
-                            <!-- Description will be injected here -->
+                    <div id="videoDescDisplay" class="info-description">
+                        <h3>
+                            
                         </h3>
                     </div>
                 </div>
             </section>
-
         </header>
             <section id="interactives">
                 <div id="interactives-icons">
@@ -133,6 +125,7 @@
                     </a>
                 </div>
             </section>
+
         <section class="vids">
             <h4 class="others-title"> Other Videos </h4>
             <div class="otherVids">
@@ -158,6 +151,7 @@
 
 <!-- Footer -->
 
+<script type="module" src="js/interactives.js"></script>
 <script type="module">
 
 import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -182,7 +176,7 @@ const db = getFirestore(app);
 const videoTitleDisplay = document.getElementById("videoTitleDisplay");
 const videoDescDisplay = document.getElementById("videoDescDisplay");
 const videoTopicDisplay = document.getElementById("videoTopicDisplay");
-const iframeVideo = document.getElementById("previewVideo");
+const iframeVideo = document.getElementsByClassName("vid")[0];
 
 // Convert YouTube URL to embed URL
 function toEmbedURL(url) {
